@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+main{
+  margin: 100px 0;
+}
+
+.sub-visual {
+  width: 100%;
+  height: 540px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/about/brand-story-top-bg.png');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  text-align: right;
+  color: #fff;
+  padding-right: 7%;
+}
+
+.visual-logo img {
+  width: 200px; 
+  margin-bottom: 20px;
+}
+.visual-txt{
+  font-size: 22px;
+  font-weight: 300;
+}
+
+
+.story-title{
+  width: 100%;
+  background-color: #F5F5F5;
+  text-align: center;
+  padding: 150px 0;
+}
+.story-title img{
+  width: 350px;
+}
+.story-title h3{
+  margin: 60px 0 20px;
+}
+
+.brand-story-contents{
+  width: 100%;
+}
+.content1{
+  width: 85%;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+.content1 h3{
+  margin-top: 10px;
+}
+.content1 .ss-desc{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.content1 .ss-desc p{
+  width: 48%;
+}
+
+.content2, .content3{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.s-img-area{
+  width: 50%;
+}
+.s-img-area img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content2 .desc-area{
+  padding: 110px 160px 110px 70px;
+}
+.content3 .desc-area{
+  padding: 110px 70px 110px 160px;
+}
+
+
+/* content2,3 공통 */
+.desc-area{
+  background-color: #F5F5F5;
+  width: 50%;
+}
+.desc-area p{
+  margin-top: 50px;
+}
+
+
+
+
+/* 1780px이하 */
+@media (max-width: 1780px) {
+  .content2 .desc-area{
+    padding: 80px 80px 80px 50px;
+  }
+  .content3 .desc-area{
+    padding: 80px 50px 80px 80px;
+  }
+}
+
+/* 1280px이하 */
+@media (max-width: 1280px) {
+  .content2 .desc-area{
+    padding: 50px 50px 50px 30px;
+  }
+  .content3 .desc-area{
+    padding: 50px 30px 50px 50px;
+  }
+}
+
+/* 767px이하 */
+@media (max-width: 767px) {
+  .sub-visual {
+    height: 400px;
+    text-align: center;
+    padding: 0 7%;
+  }
+  main{
+    margin: 100px 0 50px;
+  }
+  .story-title{
+    padding: 100px 7%;
+  }
+  .story-title img{
+    width: 250px;
+  }
+  .content1{
+    padding: 50px 0 20px;
+  }
+  .content1 .ss-desc{
+    display: block;
+    margin-top: 40px;
+  }
+  .content1 .ss-desc p{
+    width: 100%;
+  }
+  .content1 .ss-desc p+p{
+    margin-top: 20px;
+  }
+
+  .content2, .content3{
+    width: 85%;
+    margin: 40px auto 0;
+    display: block;
+  }
+  .content3{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .s-img-area{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+  .content2 .desc-area, .content3 .desc-area{
+    padding: 20px;
+  }
+
+  /* content2,3 공통 */
+  .desc-area{
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+  .desc-area p{
+    margin-top: 20px;
+  }
+}

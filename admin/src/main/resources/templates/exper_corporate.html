@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/exper_corporate.css" th:href="@{/css/exper_corporate.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+  
+  <main>
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Experiences</h1>
+        <p class="visual-txt">기업연수</p>
+      </div>
+    </section>
+
+    <section class="wrap-corporate">
+      <div class="corporate-title">
+        <h3 class="common-title">자연속 힐링과 비즈니스가 공존하는 단독 대관 워크숍</h3>
+        <p class="common-desc">
+          죽림과 해송이 감싸는 고즈넉한 한옥마을에서 우리 팀만을 위한 프라이빗한 단독 대관 행사를 경험해 보세요.<br>자연 배경의 만찬과 세미나 공간은 행사의 집중도를 높이는 동시에, 일상을 벗어난 특별한 휴식을 선사합니다.<br>단순한 회의를 넘어 구성원 모두에게 깊은 영감과 완성도 높은 결과물을 안겨주는 상화원만의 힐링 워크숍을 제안합니다
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

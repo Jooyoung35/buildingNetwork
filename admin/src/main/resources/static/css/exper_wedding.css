@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+main{
+  margin: 100px 0 ;
+}
+/* 상단 영역 */
+.sub-visual {
+  width: 100%;
+  height: 540px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/experiences/wedding-top-bg.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.visual-tit{
+  font-size: 30px;
+  font-weight: 500;
+}
+.visual-txt{
+  font-size: 36px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+/* 상단 웨딩 설명부분 */
+.wedding-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;      
+  padding: 150px 20px;     
+  position: relative;
+}
+.wedding-title img {
+  max-width: 400px;       
+  margin-bottom: -60px;   
+}
+.wedding-title > p {
+  margin-top: 26px;
+}
+.inquiry-btn {
+  display: inline-block;
+  padding: 12px 60px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 30px;     
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s;  
+  margin-top: 80px;  
+}
+
+.inquiry-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white)
+}
+
+/* 컨텐츠 공통 텍스트 -------------------*/
+.wedding-common-title {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  color: var(--color-main-text);
+}
+
+.wedding-common-desc {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  color: var(--color-sub-text);
+  line-height: 1.6;
+}
+/* ----------------------------------------------- */
+
+
+/* program */
+.wedding-programs{
+  width: 65%;
+  margin: 0 auto;
+}
+.program-item{
+  display: flex;
+  align-items: end;
+  margin-bottom: 50px;
+}
+.program-info{
+  margin-left: 50px;
+  padding-bottom: 30px;
+}
+.program-info > h3{
+  margin-bottom: 17px;
+}
+
+/* 대관장소 */
+.wedding-venue {
+  padding: 150px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+.venue-header {
+  margin-bottom: 40px;
+  padding: 0 7%;
+}
+.venue-title {
+  margin-bottom: 15px;
+}
+.venue-desc {
+  font-size: 18px;
+  color: var(--color-sub-text);
+  line-height: 1.5;
+}
+.venue-list {
+  display: flex;
+  gap: 15px;
+}
+.venue-list li {
+  flex: 1;            
+  height: 280px;      
+  overflow: hidden;
+}
+.venue-list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  transition: transform 0.5s; 
+}
+.venue-list li:hover img {
+  transform: scale(1.1);
+}
+
+
+/* 추가 선택 서비스 */
+.add-service {
+  width: 85%;
+  margin: 0 auto 150px;
+}
+
+.service-header h2 {
+  margin-bottom: 30px;
+}
+.service-container{
+  display: flex;
+  gap: 50px; 
+  align-items: center;
+}
+/* 왼쪽 이미지 박스 */
+.service-img-box {
+  width: 40%;
+}
+
+.service-img-box img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.img-location {
+  font-size: 16px;
+  color: #585858;
+}
+
+/* 오른쪽 텍스트 박스 */
+.service-info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-item h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.2rem, 1.8vw, 1.75rem);
+  color: var(--color-main-text);
+}
+
+
+
+
+
+/* 하단 정보 배너 */
+.wedding-banner{
+  width: 100%;
+  height: 350px;
+  background-image: url(../images/experiences/wedding-membership.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color-white);
+  padding-left: 7%;
+  padding-top: 60px;
+}
+.wedding-banner h3{
+  font-size: clamp(1.35rem, 1.9vw, 1.97rem);
+  font-weight: 500;
+}
+.wedding-banner p{
+  font-size: clamp(1em, 1.7vw, 1.3rem);
+  margin: 5px 0 90px;
+  font-weight: 300;
+}
+.wedding-banner .info{
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 300;
+}
+.wedding-banner .info b{
+  font-weight: 500;
+}
+
+/* 태블릿 및 큰 모바일 */
+@media (max-width: 1280px) {
+
+/* program */
+  .wedding-programs{
+    width: 65%;
+  }
+  .program-item{
+    display: block;
+    align-items: start;
+  }
+  .program-item img{
+    width: 100%;
+  }
+  .program-info{
+    margin-top: 20px;
+    margin-left: 0px;
+    padding-bottom: 0px;
+  }
+  
+  .program-item:last-child{
+    margin-bottom: 0px;
+  }
+
+
+  .venue-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+  }
+  .venue-list li {
+    height: 300px; 
+  }
+
+/* 추가선택서비스 */
+  .service-container{
+    display: block;
+  }
+  /* 왼쪽 이미지 박스 */
+  .service-img-box {
+    width: 100%;
+  }
+  .service-info-box{
+    margin-top: 50px;
+  }
+}
+
+/* 767이하 */
+@media (max-width: 767px) {
+  .sub-visual {
+    height: 400px;
+  }
+  .wedding-title{     
+    padding: 80px 20px;   
+  }
+  .wedding-title img { 
+    max-width: 250px; 
+    margin-bottom: -40px;   
+  }
+  .inquiry-btn { 
+    margin-top: 50px;  
+  }
+
+  /* programs */
+  .wedding-programs{
+    width: 85%;
+  }
+  .program-thumb{
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  /* 장소대관 */
+  .wedding-venue {
+    padding: 80px 0;
+  }
+  .venue-list {
+    grid-template-columns: 1fr;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .venue-list li {
+    border-radius: 10px;
+  }
+
+  /* 추가선택서비스 */
+  .add-service {
+    margin: 0 auto 80px;
+  }
+  .service-img-box img {
+    border-radius: 10px;
+  }
+
+  /* 멤버십혜택 배너 */
+  .wedding-banner{
+    width: 85%;
+    margin: 0 auto 40px;
+    border-radius: 10px;
+    padding: 60px 5% 0;
+  }
+  .wedding-banner .info{
+    padding-right: 15px;
+    line-height: 1.6;
+  }
+  .wedding-banner .info b:last-child{
+    /* margin-left: -10px; */
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+  
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin> 
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/destinations.css" th:href="@{/css/destinations.css}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+  <!-- js -->
+  <!-- <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script>
+</head>
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="destination-header sub-page-header">
+      <ul class="wrap-bd-header">
+        <li class="title-area">
+          <h2 class="font-en">DESTINATIONS</h2>
+          <p>네 개의 도심을 지나 마주한 다섯 개의 조각, 당신의 계절이 머무는 완벽한 휴양지입니다.</p>
+        </li>
+        <li class="tab-menu-container">
+          <ul class="tab-wrapper">
+            <li class="active" data-tab="jukdo">죽도</li>
+            <li data-tab="donggeomdo">동검도</li>
+            <li data-tab="anmyeondo">안면도</li>
+            <li data-tab="jeju">제주도</li>
+            <li data-tab="jodo">조도</li>
+          </ul>
+          <div class="tab-indicator"></div>
+        </li>
+      </ul>
+    </section>
+
+    
+    <ul class="contents-area">
+      <li id="jukdo" class="tab-content">
+        <div class="destination-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              자연의 숨결 그대로, 조화를 숭상하는 한국식 전통정원
+            </h3>
+            <p class="common-desc">
+              충남 보령 죽도에 위치한 상화원은 나무 한 그루, 돌 한 조각까지 소중히 여겨 자연을 훼손하지 않고 조성된 한국식 전통정원입니다.<br>4월부터 11월까지 관람은 물론, 기업연수, 워케이션, 웨딩, 가족연회 등 고객이 원하는 형태의 특별한 순간을 자연이라는 가장 아름다운 배경 위에 그려냅니다.
+            </p>
+          </div>
+          <div class="destination-main-img">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-01.png" th:src="@{/images/destinations/sanghwawon-slide-img-01.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-02.png" th:src="@{/images/destinations/sanghwawon-slide-img-02.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-03.png" th:src="@{/images/destinations/sanghwawon-slide-img-03.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-04.png" th:src="@{/images/destinations/sanghwawon-slide-img-04.png}" alt="">
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-destination-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">죽도 상화원</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">충청남도 보령시 남포면 남포방조제로 408-52</div>
+              </div>
+              <div class="row">
+                <div class="label">운영기간</div>
+                <div class="content">4월~11월</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">숙박(상화원 한국빌라)</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">한옥마을</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">회랑(산책길)</div>
+              </div>
+              <div class="row">
+                <div class="label">주변시설</div>
+                <div class="content">상화헌 카페</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="cafe-sanghwaheon">
+          <div class="cafe-text">
+            <img src="../static/images/destinations/cafe-typo.png" th:src="@{/images/destinations/cafe-typo.png}" alt="cafe타이포그라피">
+            <h2>카페 상화헌</h2>
+            <p>무창포에 위치한 카페로 한옥의 고즈넉함과 바다뷰가 조화를 이루어 상화원 여정끝에 여운을 즐길 수 있는 여행의 마침표 같은 공간입니다.</p>
+          </div>
+          <div class="cafe-img-area">
+            <img src="../static/images/destinations/cafe-img.png" th:src="@{/images/destinations/cafe-img.png}" alt="상화헌이미지">
+          </div>
+          <div class="info-table">
+            <div class="row">
+              <div class="label">위치</div>
+              <div class="content">충청남도 보령시 웅천읍 열린바다2길 44</div>
+            </div>
+            <div class="row">
+              <div class="label">운영기간</div>
+              <div class="content">4월~11월 (금,토)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 destination-benefit">
+                <div class="destination-benefit-img-area">
+                  <img src="../static/images/destinations/benefit-sanghwawon-01.png" th:src="@{/images/destinations/benefit-sanghwawon-01.png}" alt="상화원한국빌라">
+                </div>
+                <div class="destination-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                </div>
+              </li>
+              <li class="benefit02 destination-benefit">
+                <div class="destination-benefit-img-area">
+                  <img src="../static/images/destinations/benefit-sanghwawon-02.png" th:src="@{/images/destinations/benefit-sanghwawon-02.png}" alt="상화원웨딩대관">
+                </div>
+                <div class="destination-benefit-text-area">
+                  <h3>대관료 할인</h3>
+                  <p>웨딩, 가족연회, 워케이션 등 시설 이용 시 대관료 20% 할인</p>
+                </div>
+              </li>
+              <li class="benefit03 destination-benefit">
+                <div class="destination-benefit-img-area">
+                  <img src="../static/images/destinations/benefit-sanghwawon-03.png" th:src="@{/images/destinations/benefit-sanghwawon-03.png}" alt="f&b이미지">
+                </div>
+                <div class="destination-benefit-text-area">
+                  <h3>상화헌 카페</h3>
+                  <p>음료 1+1 제공</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+
+      <li id="donggeomdo" class="tab-content">
+        <div class="destination-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              서울 근교, 고즈넉한 힐링 스팟
+            </h3>
+            <p class="common-desc">
+              인천 강화군 동검도 섬 끝자락에 위치한 동검도 한국빌라는 시시각각 변하는 서해 풍경을 배경삼아 숙박, 워크숍, 워케이션을 즐기실 수 있습니다.
+            </p>
+          </div>
+          <div class="destination-main-img">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/donggeom-slide-img-01.png" th:src="@{/images/destinations/donggeom-slide-img-01.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-02.png" th:src="@{/images/destinations/sanghwawon-slide-img-02.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-03.png" th:src="@{/images/destinations/sanghwawon-slide-img-03.png}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/destinations/sanghwawon-slide-img-04.png" th:src="@{/images/destinations/sanghwawon-slide-img-04.png}" alt="">
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-destination-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">동검도 한국빌라</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">인천광역시 강화군 길상면 동검리125-6</div>
+              </div>
+              <div class="row">
+                <div class="label">운영기간</div>
+                <div class="content">4월~11월</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">숙박</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">바비큐장</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">수영장</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">세미나실</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 destination-benefit">
+                <div class="destination-benefit-img-area">
+                  <img src="../static/images/destinations/benefit-sanghwawon-01.png" th:src="@{/images/destinations/benefit-sanghwawon-01.png}" alt="상화원한국빌라">
+                </div>
+                <div class="destination-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                </div>
+              </li>
+              <li class="benefit02 destination-benefit">
+                <div class="destination-benefit-img-area">
+                  <img src="../static/images/destinations/benefit-sanghwawon-02.png" th:src="@{/images/destinations/benefit-sanghwawon-02.png}" alt="상화원웨딩대관">
+                </div>
+                <div class="destination-benefit-text-area">
+                  <h3>대관료 할인</h3>
+                  <p>세미나실, 웨딩, 가족연회, 워케이션 등 시설 이용 시 대관료 20% 할인</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li id="anmyeondo" class="tab-content">
+        <section class="ready-text" style="width: 50%; margin: 150px auto 250px; text-align: center;" >
+          <img src="../static/images/thelink-coming-logo.png" th:src="@{/images/thelink-coming-logo.png}" alt="로고">
+          <p style="font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin-top: 50px; line-height: 1.5;",>현재 페이지는 준비중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+        </section>
+      </li>
+      <li id="jeju" class="tab-content">
+        <section class="ready-text" style="width: 50%; margin: 150px auto 250px; text-align: center;" >
+          <img src="../static/images/thelink-coming-logo.png" th:src="@{/images/thelink-coming-logo.png}" alt="로고">
+          <p style="font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin-top: 50px; line-height: 1.5;",>현재 페이지는 준비중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+        </section>
+      </li>
+      <li id="jodo" class="tab-content">
+        <section class="ready-text" style="width: 50%; margin: 150px auto 250px; text-align: center;" >
+          <img src="../static/images/thelink-coming-logo.png" th:src="@{/images/thelink-coming-logo.png}" alt="로고">
+          <p style="font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin-top: 50px; line-height: 1.5;",>현재 페이지는 준비중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+        </section>
+      </li>
+    </ul>
+  </main>
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/buildings.css" th:href="@{/css/buildings.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script>
+</head>
+<body class="buildings-page">
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="buildings-header sub-page-header">
+      <ul class="wrap-bd-header">
+        <li class="title-area">
+          <h2 class="font-en">BUILDINGS</h2>
+          <p>4개의 랜드마크 빌딩을 하나의 비즈니스 네트워크로 통합합니다.</p>
+        </li>
+        <li class="tab-menu-container">
+          <ul class="tab-wrapper">
+            <li class="active" data-tab="cheonggye">청계</li>
+            <li data-tab="eulji">을지</li>
+            <li data-tab="sogong">소공</li>
+            <li data-tab="jongro">종로</li>
+          </ul>
+          <div class="tab-indicator"></div>
+        </li>
+      </ul>
+    </section>
+    
+    <ul class="contents-area">
+      <li id="cheonggye" class="tab-content">
+        <div class="building-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              청계천의 활력과 비즈니스의 정점이 만나는 곳
+            </h3>
+            <p class="common-desc">
+              청계 광장 앞에 위치하여 각종 행사 등 볼거리가 다양하며, 정치∙행정∙언론∙문화의 중심지로서 비즈니스 활동에 최적의 업무 환경을 제공합니다.
+            </p>
+          </div>
+          <div class="building-main-img">
+            <img src="../static/images/buildings/cheonggye_main.png" th:src="@{/images/buildings/cheonggye_main.png}" alt="청계한국빌딩정면">
+          </div>
+        </div>
+
+        <div class="wrap-building-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">청계한국빌딩</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">서울시 종로구 청계천로 11</div>
+              </div>
+              <div class="row">
+                <div class="label">규모</div>
+                <div class="content">지하 2층 / 지상 20층</div>
+              </div>
+              <div class="row">
+                <div class="label">접근성</div>
+                <div class="content">5호선 광화문역 도보 5분, 1호선·2호선 시청역 도보 10분</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">B1~B2: 주차장 및 식당가</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">1F~2F: 로비 및 식당가</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">3F~20F: 오피스 존</div>
+              </div>
+              <div class="row">
+                <div class="label">입점 브랜드</div>
+                <div class="content">블루보틀(1F), 올리페페(2F), 엉터리 생고기(B1) 등</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-01.png" th:src="@{/images/buildings/cheonggye-benefit-01.png}" alt="상화원이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                  <p>상화원, 동검도 한국빌라 세미나실, 웨딩, 가족연회, 워케이션 등<br>시설 이용 시 대관료 15% 할인</p>
+                </div>
+              </li>
+              <li class="benefit02 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-02.png" th:src="@{/images/buildings/cheonggye-benefit-02.png}" alt="발렛서비스이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>주차 및 발렛 서비스</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit03 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-03.png" th:src="@{/images/buildings/cheonggye-benefit-03.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>F&B</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li id="eulji" class="tab-content">
+        <div class="building-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              을지로의 심장부, 비즈니스를 위한 견고한 거점
+            </h3>
+            <p class="common-desc">
+              을지로와 오랜 역사를 공유해 온 깊이감과 리모델링으로 더해진 현대적 감각이 지하철역 직결의 편의성과 만나 비즈니스 인프라의 가치를 전합니다.
+            </p>
+          </div>
+          <div class="building-main-img">
+            <img src="../static/images/buildings/eulji_main.png" th:src="@{/images/buildings/eulji_main.png}" alt="을지한국빌딩정면">
+          </div>
+        </div>
+
+        <div class="wrap-building-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">을지한국빌딩</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">서울시 중구 을지로 50</div>
+              </div>
+              <div class="row">
+                <div class="label">규모</div>
+                <div class="content">지하 4층 / 지상 20층</div>
+              </div>
+              <div class="row">
+                <div class="label">접근성</div>
+                <div class="content">2호선 을지로입구역 5번출구 방향과 연결(우천시 외부 노출없이 진입 가능)</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">B1~B4: 주차장</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">1F~3F: 로비 및 식당가, 금융 비즈니스존</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">4F~20F: 오피스 존</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">10F: 라운지 및 회의실 조성 예정</div>
+              </div>
+              <div class="row">
+                <div class="label">입점 브랜드</div>
+                <div class="content">스타벅스(1F), 웰컴저축은행(2F), 우리금융저축은행(3F) 등</div>
+              </div>
+              <div class="row">
+                <div class="label">상징성</div>
+                <div class="content">1986년 서울시 건축상 금상 수상</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-01.png" th:src="@{/images/buildings/cheonggye-benefit-01.png}" alt="상화원이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                  <p>상화원, 동검도 한국빌라 세미나실, 웨딩, 가족연회, 워케이션 등<br>시설 이용 시 대관료 15% 할인</p>
+                </div>
+              </li>
+              <li class="benefit02 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-02.png" th:src="@{/images/buildings/cheonggye-benefit-02.png}" alt="발렛서비스이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>주차 및 발렛 서비스</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit03 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-03.png" th:src="@{/images/buildings/cheonggye-benefit-03.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>F&B</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit04 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/eulji-benefit-04.png" th:src="@{/images/buildings/eulji-benefit-04.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>회의실</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li id="sogong" class="tab-content">
+        <div class="building-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              비즈니스와 프리미엄 인프라가 교차하는 중심
+            </h3>
+            <p class="common-desc">
+              롯데백화점과 웨스틴조선호텔을 잇는 고품격 입지에서, 명동과 을지로의 네트워크를 아우르는 차별화된 비즈니스 경험을 제안합니다.
+            </p>
+          </div>
+          <div class="building-main-img">
+            <img src="../static/images/buildings/sogong_main.png" th:src="@{/images/buildings/sogong_main.png}" alt="소공한국빌딩정면">
+          </div>
+        </div>
+
+        <div class="wrap-building-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">소공한국빌딩</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">서울시 중구 남대문로 7길16</div>
+              </div>
+              <div class="row">
+                <div class="label">규모</div>
+                <div class="content">지하 4층 / 지상 12층</div>
+              </div>
+              <div class="row">
+                <div class="label">접근성</div>
+                <div class="content">2호선 을지로입구역 도보 5분</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">B3~B4: 주차장</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">B2: 휴게공간</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">B1~2F: 식당가 및 카페, 피부과 입점</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">3F~12F: 오피스존 </div>
+              </div>
+              <div class="row">
+                <div class="label">입점 브랜드</div>
+                <div class="content">크리스탈제이드(미셰린가이드 서울 2025 선정 중식당)(B1), 커피빈(1F), 셀린피부과의원(1F) 등</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-01.png" th:src="@{/images/buildings/cheonggye-benefit-01.png}" alt="상화원이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                  <p>상화원, 동검도 한국빌라 세미나실, 웨딩, 가족연회, 워케이션 등<br>시설 이용 시 대관료 15% 할인</p>
+                </div>
+              </li>
+              <li class="benefit02 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-02.png" th:src="@{/images/buildings/cheonggye-benefit-02.png}" alt="발렛서비스이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>주차 및 발렛 서비스</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit03 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-03.png" th:src="@{/images/buildings/cheonggye-benefit-03.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>F&B</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit04 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/eulji-benefit-04.png" th:src="@{/images/buildings/eulji-benefit-04.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>회의실</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li id="jongro" class="tab-content">
+        <div class="building-top">
+          <div class="text-area">
+            <h3 class="common-title">
+              종로와 청계천을 한눈에 담는 비즈니스 조망
+            </h3>
+            <p class="common-desc">
+              서린동 코너의 프라임급 입지에서 펼쳐지는 도심의 풍경과 종각역 역세권의 편리함이 어우러진 최적의 오피스 인프라를 갖추고 있습니다.
+            </p>
+          </div>
+          <div class="building-main-img">
+            <img src="../static/images/buildings/jongro_main.png" th:src="@{/images/buildings/jongro_main.png}" alt="종로한국빌딩정면">
+          </div>
+        </div>
+
+        <div class="wrap-building-info">
+          <div class="wrap-table">
+            <h3 class="row common-title">종로한국빌딩</h3>
+            <div class="info-table">
+              <div class="row">
+                <div class="label">위치</div>
+                <div class="content">서울시 종로구 종로 34</div>
+              </div>
+              <div class="row">
+                <div class="label">규모</div>
+                <div class="content">지하 5층 / 지상 15층</div>
+              </div>
+              <div class="row">
+                <div class="label">접근성</div>
+                <div class="content">종각역 도보 3분</div>
+              </div>
+              <div class="row">
+                <div class="label">시설</div>
+                <div class="content">B1~B5: 주차장</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">B1~2F: 식당가 및 금융권</div>
+              </div>
+              <div class="row no-label">
+                <div class="content">3F~15F: 오피스 존</div>
+              </div>
+              <div class="row">
+                <div class="label">입점 브랜드</div>
+                <div class="content">투썸플레이스(1F), 아비꼬(2F), 하나은행(2F) 등</div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="wrap-memeber-benefit">
+          <div class="benefits-contents">
+            <div class="text-area">
+              <h3 class="common-title">
+                THE H CLUB 멤버십 혜택
+              </h3>
+              <a href="join.html">멤버십가입 &nbsp;&#62;</a>
+            </div>
+
+            <ul class="contents">
+              <li class="benefit01 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-01.png" th:src="@{/images/buildings/cheonggye-benefit-01.png}" alt="상화원이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>휴양시설</h3>
+                  <p>상화원, 동검도 한국빌라 상시 객실 우대 할인</p>
+                  <p class="sub-txt">
+                    - 주중(월~목) 30% 할인, 주말(금~토) 20% 할인
+                  </p>
+                  <p class="sub-txt">
+                    - 2026년 운영기간: 4월~11월
+                  </p>
+                  <p>상화원, 동검도 한국빌라 세미나실, 웨딩, 가족연회, 워케이션 등<br>시설 이용 시 대관료 15% 할인</p>
+                </div>
+              </li>
+              <li class="benefit02 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-02.png" th:src="@{/images/buildings/cheonggye-benefit-02.png}" alt="발렛서비스이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>주차 및 발렛 서비스</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit03 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/cheonggye-benefit-03.png" th:src="@{/images/buildings/cheonggye-benefit-03.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>F&B</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+              <li class="benefit04 building-benefit">
+                <div class="building-benefit-img-area">
+                  <img src="../static/images/buildings/eulji-benefit-04.png" th:src="@{/images/buildings/eulji-benefit-04.png}" alt="f&b이미지">
+                </div>
+                <div class="building-benefit-text-area">
+                  <h3>회의실</h3>
+                  <p>현재 서비스를 준비 중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

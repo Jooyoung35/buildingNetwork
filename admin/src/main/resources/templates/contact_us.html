@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+  
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/contact_us.css" th:href="@{/css/contact_us.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="contact-header sub-page-header">
+      <ul class="wrap-bd-header">
+        <li class="title-area">
+          <h2 class="font-en">Contact us</h2>
+          <p>문의사항은 해당 부서로 연락 주시면 상세히 답변드리겠습니다.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <section class="info-section">
+        <div class="category">빌딩안내</div>
+        <div class="content-grid">
+          <div class="info-item">
+            <h4 class="item-title">청계 한국빌딩</h4>
+            <a href="tel:0212345678" class="item-contact">☎ 02.1234.5678</a>
+            <p class="item-contact">✉ cghkbuilding@kci.co.kr</p>
+          </div>
+          <div class="info-item">
+            <h4 class="item-title">을지 한국빌딩</h4>
+            <a href="tel:0212345678" class="item-contact">☎ 02.1234.5678</a>
+            <p class="item-contact">✉ cghkbuilding@kci.co.kr</p>
+          </div>
+          <div class="info-item">
+            <h4 class="item-title">소공 한국빌딩</h4>
+            <a href="tel:0212345678" class="item-contact">☎ 02.1234.5678</a>
+            <p class="item-contact">✉ cghkbuilding@kci.co.kr</p>
+          </div>
+          <div class="info-item">
+            <h4 class="item-title">종로 한국빌딩</h4>
+            <a href="tel:0212345678" class="item-contact">☎ 02.1234.5678</a>
+            <p class="item-contact">✉ cghkbuilding@kci.co.kr</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <section class="info-section">
+        <div class="category">기타안내</div>
+        <div class="content-grid">
+          <div class="info-item">
+            <h4 class="item-title">숙박·행사·연회·멤버십 안내</h4>
+            <a href="tel:0263775162" class="item-contact">☎ 02.6377.5162</a>
+            <a href="tel:0263775254" class="item-contact">☎ 02.6377.5254</a>
+            <p class="item-contact">✉ reservation@kci.co.kr</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+    
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

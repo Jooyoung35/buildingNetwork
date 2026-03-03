@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/about_building.css" th:href="@{/css/about_building.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">About us</h1>
+        <p class="visual-txt">한국빌딩안내</p>
+      </div>
+    </section>
+    <section class="map-area">
+      <div class="map-text title-area">
+        <h2>비즈니스의 경계를 넓히는<br>서울 도심 네트워크</h2>
+        <p>서울의 역사와 경제가 교차하는 핵심 거점에 한국빌딩이 자리하고 있습니다.</p>
+      </div>
+      <div class="map-img"></div>
+    </section>
+    <section class="sticky-container">
+      <div class="sticky-text title-area">
+        <h2>사대문 안 핵심 입지가<br>선사하는 비즈니스 인프라</h2>
+        <p>주요 행정∙금융 기관과 인접한 사대문 안 거점마다 한국빌딩이<br>
+최적화된 비즈니스 환경을 제공합니다.</p>
+      </div>
+
+      <div class="scroll-content">
+        <div class="card">
+          <img src="../static/images/about/cheonggye.png" th:src="@{/images/about/cheonggye.png}" alt="청계한국빌딩">
+          <div class="wrap-card-txt">
+            <div class="building-name-desc">
+              <h3>청계한국빌딩</h3>
+              <p>청계천의 활력과 비즈니스의 정점이 만나는곳</p>
+            </div>
+            <div class="building-view-more">
+              <a href="buildings.html?tab=cheonggye">자세히보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../static/images/about/eulji.png" th:src="@{/images/about/eulji.png}" alt="을지한국빌딩">
+          <div class="wrap-card-txt">
+            <div class="building-name-desc">
+              <h3>을지한국빌딩</h3>
+              <p>시간의 깊이 위에 세워진 현대적 감각의 랜드마크</p>
+            </div>
+            <div class="building-view-more">
+              <a href="buildings.html?tab=eulji">자세히보기</a>
+            </div>
+          </div>
+        </div>        
+        <div class="card">
+          <img src="../static/images/about/sogong.png" th:src="@{/images/about/sogong.png}" alt="소공한국빌딩">
+          <div class="wrap-card-txt">
+            <div class="building-name-desc">
+              <h3>소공한국빌딩</h3>
+              <p>품격있는 인프라가 완성하는 비즈니스 라이프 스타일</p>
+            </div>
+            <div class="building-view-more">
+              <a href="buildings.html?tab=sogong">자세히보기</a>
+            </div>
+          </div>
+        </div>        
+        <div class="card">
+          <img src="../static/images/about/jongro.png" th:src="@{/images/about/jongro.png}" alt="종로한국빌딩">
+          <div class="wrap-card-txt">
+            <div class="building-name-desc">
+              <h3>종로한국빌딩</h3>
+              <p>종로의 풍경을 소유하는 프라임급 비즈니스 공간</p>
+            </div>
+            <div class="building-view-more">
+              <a href="buildings.html?tab=jongro">자세히보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

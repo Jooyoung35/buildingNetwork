@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+
+main{
+  margin: 100px 0 ;
+}
+/* 상단 영역 */
+.sub-visual {
+  width: 100%;
+  height: 540px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/about/building4-top-bg.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+.visual-tit{
+  font-size: 30px;
+  font-weight: 500;
+}
+.visual-txt{
+  font-size: 36px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+
+/* map */
+.map-area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.map-text{
+  width: 50%;
+  margin-left: 7%;
+  line-height: 1.6;
+}
+.map-text > .font-en{
+  font-size: clamp(1.375rem, 1.8vw,1.75rem);
+  color: var(--color-primary);
+}
+.map-text > h2{
+  margin: 15px 0 40px;
+}
+.map-img{
+  width: 60%;
+  aspect-ratio: 1/1.1;
+  background-image: url(../images/about/membership-map.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}

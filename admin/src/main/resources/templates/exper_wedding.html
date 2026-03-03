@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/exper_wedding.css" th:href="@{/css/exper_wedding.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main style="margin-bottom: 0;">
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Experiences</h1>
+        <p class="visual-txt">웨딩</p>
+      </div>
+    </section>
+
+    <section class="wrap-wedding">
+      <div class="wedding-title">
+        <img src="../static/images/experiences/wedding-typo.png" th:src="@{/images/experiences/wedding-typo.png}" alt="웨딩타이포">
+        <h3 class="common-title">바다와 한옥, 자연을 배경으로 진행되는 프라이빗 웨딩</h3>
+        <p class="common-desc">
+          바다와 하늘, 고즈넉한 한옥을 배경으로 계절과 시간의 흐름을 오롯이 느낄 수 있는 야외에서 특별한 순간을 맞이해 보세요.<br> 1일 1팀 단독 진행으로 여유로운 예식이 가능하며, 평생 기억될 인생의 특별한 순간을<br> 가족, 지인, 인생의 새로운 동반자와 여행을 떠나온 듯여유롭게 즐기시길 바랍니다.
+        </p>
+        <a class="inquiry-btn" href="">문의하기</a>
+      </div>
+      <ul class="wedding-contents">
+        <li class="wedding-programs">
+          <article class="program-item">
+            <div class="program-thumb">
+              <img src="../static/images/experiences/wedding-con01.png" th:src="@{/images/experiences/wedding-con01.png}" alt="야외 웨딩">
+            </div>
+            <div class="program-info">
+              <h3 class="wedding-common-title">웨딩</h3>
+              <p class="wedding-common-desc">규모와 형태에 따라 고즈넉한 한옥을 배경으로 야외에서 진행되는 웨딩.<br> 상상만 하던 로망을 현실로 바꿀 수 있습니다.</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-thumb">
+              <img src="../static/images/experiences/wedding-con02.png" th:src="@{/images/experiences/wedding-con02.png}" alt="만찬">
+            </div>
+            <div class="program-info">
+              <h3 class="wedding-common-title">만찬</h3>
+              <p class="wedding-common-desc">은은한 조명 아래 서해 바다를 온전히 품은 푸른 잔디정원에서,<br> 가족·지인들과 즐거운 담소의 시간을 가지며 품격 있는 만찬을 즐기실 수 있습니다.</p>
+            </div>
+          </article>
+
+          <article class="program-item">
+            <div class="program-thumb">
+              <img src="../static/images/experiences/wedding-con03.png" th:src="@{/images/experiences/wedding-con03.png}" alt="프리 이벤트">
+            </div>
+            <div class="program-info">
+              <h3 class="wedding-common-title">프리 이벤트</h3>
+              <p class="wedding-common-desc">브라이덜 샤워, 웨딩 애프터파티, 하우스파티, 갈라디너, 가족 피로연 등<br> 누구의 방해도 받지 않고 오롯이 즐길 수 있는 파티로 특별한 날의 여운을 더욱 풍성하게 이어갈 수 있습니다.</p>
+            </div>
+          </article>
+        </li>
+        <li class="wedding-venue">
+          <div class="venue-header">
+            <h2 class="wedding-common-title venue-title">대관장소</h2>
+            <p class="wedding-common-desc">정형화된 웨딩에서 벗어나 새로운 가족 파트너와 함께 시작하는 처음을 온전한 우리에게 맞춰 진행할 수 있습니다. 자세한 내용은 상담을 통해 안내해 드리겠습니다.</p>
+          </div>
+
+          <ul class="venue-list">
+            <li><img src="../static/images/experiences/wedding-place-01.png" th:src="@{/images/experiences/wedding-place-01.png}" alt="테이블 셋팅"></li>
+            <li><img src="../static/images/experiences/wedding-place-02.png" th:src="@{/images/experiences/wedding-place-02.png}" alt="야외 한옥 예식장"></li>
+            <li><img src="../static/images/experiences/wedding-place-03.png" th:src="@{/images/experiences/wedding-place-03.png}" alt="바다 배경 테이블"></li>
+            <li><img src="../static/images/experiences/wedding-place-04.png" th:src="@{/images/experiences/wedding-place-04.png}" alt="한옥 전경"></li>
+          </ul>
+        </li>
+
+        <li class="add-service">
+          <div class="service-header">
+            <h2 class="wedding-common-title">추가 선택 서비스</h2>
+          </div>
+
+          <div class="service-container">
+            <div class="service-img-box">
+              <img src="../static/images/experiences/wedding-add-service.png" th:src="@{/images/experiences/wedding-add-service.png}" alt="숙박 객실 내부">
+              <p class="img-location">진행 가능 장소 : 죽도 상화원</p>
+            </div>
+
+            <ul class="service-info-box">
+              <li class="info-item">
+                <h3>숙박</h3>
+                <p class="wedding-common-desc">해송 사이로 보이는 서해바다의 풍경을 한눈에 볼 수 있는 아늑한 객실에서의 휴식은 또 하나의 여운과 추억을 선사합니다.</p>
+              </li>
+              
+              <li class="info-item">
+                <h3>장비 업그레이드</h3>
+                <p class="wedding-common-desc">
+                  음향 혹은 영상 장비 업그레이드 요청 시, 추가비용이 발생할 수 있습니다.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="wedding-banner">
+          <h3>THE H CLUB 멤버십 혜택</h3>
+          <P>대관료 10~20% 할인 적용, 1일 1팀 단독 진행</P>
+          <P class="info">
+            <b>문의·예약</b>&ensp;02-6377-5162/5254 &ensp;
+            <b>E-mail</b>&ensp;reservation.kci.co.kr
+          </P>
+        </li>
+      </ul>
+    </section>
+  </main>
+  
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

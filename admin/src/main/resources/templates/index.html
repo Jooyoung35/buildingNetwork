@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+  <link rel="stylesheet" href="../static/assets/js/swiper-bundle.min.css" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script>
+  <script src="../static/assets/js/gsap.min.js" th:src="@{/assets/js/gsap.min.js}"></script>
+  <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
+  <script src="../static/js/index.js" th:src="@{/js/index.js}" defer></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+<body class="main-page">
+  <section id="intro-screen">
+    <h2 class="intro-txt font-en">FROM BUSINESS TO BEYOND</h2>
+    <h1 class="logo-ani"><img src="../static/images/splash/thelink.png" th:src="@{/images/splash/thelink.png}" alt="로고"></h1>
+  </section>
+
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+
+  <!-- section -->
+  <main id="section">
+    <!-- main banner -->
+    <section class="main-banner">
+      <swiper-container class="mainSwiper" effect="fade" speed="2000"  pagination="true" pagination-clickable="true"  space-between="0"
+          centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
+          <swiper-slide class="bg1 slide">
+            <div class="ban-txt">
+              <h2 class="m-banner-txt font-en">
+                Refining the Rhythm of Your Life : From Business to Beyond
+              </h2>
+              <img src="../static/images/index/thelink.png" th:src="@{/images/index/thelink.png}" alt="theLink로고">
+            </div>
+          </swiper-slide>
+          <swiper-slide class="bg2 slide">
+            <div class="ban-txt">
+              <h2 class="m-banner-txt font-en">
+                Refining the Rhythm of Your Life : From Business to Beyond
+              </h2>
+              <img src="../static/images/index/thelink.png" th:src="@{/images/index/thelink.png}" alt="theLink로고">
+            </div>
+          </swiper-slide>
+          <swiper-slide class="bg3 slide">
+            <div class="ban-txt">
+                <h2 class="m-banner-txt font-en">
+                  Refining the Rhythm of Your Life : From Business to Beyond
+                </h2>
+                <img src="../static/images/index/thelink.png" th:src="@{/images/index/thelink.png}" alt="theLink로고">
+            </div>
+          </swiper-slide>
+      </swiper-container>
+    </section>
+
+    <!-- brand story -->
+    <section class="brand-story">
+      <div class="brand-txt">
+        <div class="brand-title">
+          <h2 class="main-title font-en">
+            BRAND STORY
+          </h2>
+          <p class="sub-title font-en">
+            THE LINK : FROM BUSINESS TO BEYOND
+          </p>
+        </div>
+        <div class="brand-desc">
+          <h3 class="main-desc">
+            단순한 앱을 넘어, 입주사 임직원의 삶과 혜택을 유기적으로 잇는 <b>'커넥팅 플랫폼'</b>
+          </h3>
+          <!-- <h3 class="main-desc">
+            유기적으로 잇는 <b>'커넥팅 플랫폼'</b>
+          </h3> -->
+          <p class="sub-desc">
+            다양한 혜택과 문화·휴양 시설을 통해 입주사의 비즈니스와 일상을 함께 지원하고자 합니다.<br>
+            회사가 소유한 공간을 기반으로 안정적인 운영과 관리를 제공하며,<br>
+            입주사가 본연의 업무에 집중할 수 있는 환경을 만들어갑니다.<br>
+            하나의 공간에서 형성된 연결은 입주사 간의 협력과 새로운 비즈니스 기회로 확장됩니다.<br>
+            회사는 공간을 매개로,  지속 가능한 성장을 함께하는 커뮤니티를 지향합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="brand-img">
+        <img src="../static/images/header/thelink_w.png" th:src="@{/images/header/thelink_w.png}" alt="브랜드로고">
+        <span class="bg-area"></span>
+      </div>
+    </section>
+
+    <!-- our building -->
+    <section class="our-building">
+      <div class="title build-tit">
+        <h1 class="sect-tit font-en">
+          OUR BUILDING
+        </h1>
+        <p class="sect-desc">
+          안정적인 운영과 관리를 제공하고 입주사와 함께 성장하는 한국빌딩
+        </p>
+      </div>
+      <ul class="buildings">
+        <li class="building1 building">
+          <div class="txt">
+            <h3>청계한국빌딩</h3>
+            <p class="building-desc">
+              도시의 흐름을 담은 비지니스 공간
+            </p>
+          </div>
+          <a class="view-more" href="buildings.html?tab=cheonggye">자세히 보기</a>
+        </li>
+        <li class="building2 building">
+          <div class="txt">
+            <h3>을지한국빌딩</h3>
+            <p class="building-desc">
+              일상의 중심이 되는 업무 공간
+            </p>
+          </div>
+          <a class="view-more" href="buildings.html?tab=eulji">자세히 보기</a>
+        </li>
+        <li class="building3 building">
+          <div class="txt">
+            <h3>종로한국빌딩</h3>
+            <p class="building-desc">
+              지속 가능한 가치를 만드는 공간
+            </p>
+          </div>
+          <a class="view-more" href="buildings.html?tab=jongro">자세히 보기</a>
+        </li>
+                <li class="building4 building">
+          <div class="txt">
+            <h3>소공한국빌딩</h3>
+            <p class="building-desc">
+              신뢰와 가치를 담은 비지니스 공간
+            </p>
+          </div>
+          <a class="view-more" href="buildings.html?tab=sogong">자세히 보기</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- membership benefit -->
+    <section class="membership">
+      <div class="title membership-tit">
+        <h1 class="sect-tit font-en">
+          MEMBERSHIP BENEFITS
+        </h1>
+        <p class="sect-desc">
+          THE LINK 멤버십 회원을 위한 혜택을 만나보세요.
+        </p>
+      </div>
+      <ul class="benefits">
+        <li class="benefit1 benefit">
+          <div class="benefit-img-area">
+              <a href="#">
+                  <img src="../static/images/index/benefit-01.png" th:src="@{/images/index/benefit-01.png}" alt="상화원">
+              </a>
+          </div>
+          <div class="benefit-txt-area">
+              <a href="#">
+                  <h2>상화원/한국빌라 할인</h2>
+                  <p>멤버십 회원을 위한 전용 예약 혜택을 제공합니다.</p>
+              </a>
+          </div>
+        </li>
+        <li class="benefit2 benefit">
+            <div class="benefit-img-area">
+                <a href="#">
+                    <img src="../static/images/index/benefit-02.png" th:src="@{/images/index/benefit-02.png}" alt="공유라운지">
+                </a>
+            </div>
+            <div class="benefit-txt-area">
+                <a href="#">
+                    <h2>공유라운지/회의실/휴게옥상</h2>
+                    <p>라운지, 회의실, 휴게 공간을 자유롭게 이용할 수 있습니다.</p>
+                </a>
+            </div>
+        </li>
+        <li class="benefit3 benefit">
+            <div class="benefit-img-area">
+                <a href="#">
+                    <img src="../static/images/index/benefit-03.png" th:src="@{/images/index/benefit-03.png}" alt="카페할인">
+                </a>
+            </div>
+            <div class="benefit-txt-area">
+                <a href="#">
+                    <h2>다이닝/카페/피부과 할인혜택</h2>
+                    <p>입점사 이용 시 다양한 할인 혜택을 제공합니다.</p>
+                </a>
+            </div>
+        </li>
+        <li class="benefit4 benefit">
+            <div class="benefit-img-area">
+                <a href="#">
+                    <img src="../static/images/index/benefit-04.png" th:src="@{/images/index/benefit-04.png}" alt="발렛서비스">
+                </a>
+            </div>
+            <div class="benefit-txt-area">
+                <a href="#">
+                    <h2>발렛서비스 지원</h2>
+                    <p>편리한 주차 서비스를 통해 이동의 부담을 줄여드립니다.</p>
+                </a>
+            </div>
+        </li>
+      </ul>  
+    </section>
+
+
+    <!-- 상화원/동검도 -->
+    <section class="rest">
+      <div class="rest-bnr">
+        <div class="rs-bnr-txt-area">
+          <em class="font-en">FIRST ACCESS TO RETREAT</em>
+          <p>THE LINK 멤버십을 위한 상화원/동검도 한국빌라</p>
+          <a class="reserv-btn" href="destinations.html?tab=jukdo">자세히보기</a>
+        </div>
+      </div>
+      <div class="rest-contents">
+        <div class="title rest-tit">
+          <h1 class="sect-tit font-en">
+            YOUR REST
+          </h1>
+          <p class="sect-desc">
+            일상 속 쉼은 늘 부족하지만,<br>이곳에 들어서는 순간 온전한 나만의 휴식이 시작됩니다.
+          </p>
+        </div>
+        <swiper-container class="swiper-rest" init="false" pagination-type="none" space-between="20" style="--swiper-theme-color: #10365C;
+            --swiper-pagination-progressbar-bg-color:#bbb; 
+            " centered-slides="false"   slides-offset-before="0"  slides-offset-after="0"   grab-cursor="true" loop="true" autoplay-delay="4000" autoplay-disable-on-interaction="false">
+          <!-- <swiper-slide class="dummy-slide" aria-hidden="true" ></swiper-slide> -->
+          <swiper-slide class="cont-slide sd1">
+            <a href="destinations.html?tab=jukdo">
+              <div class="slide-img-area"></div>
+              <div class="slide-txt-area">
+                <div class="slide-tit-area">
+                  <p class="slide-sub-tit">
+                    자연을 간직한 비밀정원
+                  </p>
+                  <h3 class="slide-main-tit">상화원</h3>
+                </div>
+                <div class="slide-sub-area">
+                  <p class="slide-sub-desc">
+                    상화원은 조화를 숭상한다는 이름 그대로 죽도가 지닌<br>
+                    자연미를 보존하는 것을 기본 원칙으로 삼았습니다.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </swiper-slide>
+          <swiper-slide class="cont-slide sd2">
+            <a href="destinations.html?tab=donggeomdo">
+              <div class="slide-img-area"></div>
+              <div class="slide-txt-area">
+                <div class="slide-tit-area">
+                  <p class="slide-sub-tit">
+                    당신의 하루를 더 행복하게
+                  </p>
+                  <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                </div>
+                <div class="slide-sub-area">
+                  <p class="slide-sub-desc">
+                    석양이 머무르는 풍경과 함께 즐기는<br>
+                    아주 평범하고도 특별한 날의 추억
+                  </p>
+                </div>
+              </div>
+            </a>
+          </swiper-slide>
+          <swiper-slide class="cont-slide sd1">
+            <a href="">
+              <div class="slide-img-area"></div>
+              <div class="slide-txt-area">
+                <div class="slide-tit-area">
+                  <p class="slide-sub-tit">
+                    자연을 간직한 비밀정원
+                  </p>
+                  <h3 class="slide-main-tit">상화원</h3>
+                </div>
+                <div class="slide-sub-area">
+                  <p class="slide-sub-desc">
+                    상화원은 조화를 숭상한다는 이름 그대로 죽도가 지닌<br>
+                    자연미를 보존하는 것을 기본 원칙으로 삼았습니다.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </swiper-slide>
+          <swiper-slide class="cont-slide sd2">
+            <a href="">
+              <div class="slide-img-area"></div>
+              <div class="slide-txt-area">
+                <div class="slide-tit-area">
+                  <p class="slide-sub-tit">
+                    당신의 하루를 더 행복하게
+                  </p>
+                  <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                </div>
+                <div class="slide-sub-area">
+                  <p class="slide-sub-desc">
+                    석양이 머무르는 풍경과 함께 즐기는<br>
+                    아주 평범하고도 특별한 날의 추억
+                  </p>
+                </div>
+              </div>
+            </a>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </section>
+
+    <!-- 회원가입배너 -->
+    <section class="join-banner">
+      <div class="join-txt">
+        <h3>입주사를 위한 전용 멤버십 혜택, 지금 바로 만나보세요.</h3>
+        <a class="join-btn" href="about_membership.html">멤버십 혜택보기</a>
+      </div>
+    </section>
+
+  </main>
+
+<!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

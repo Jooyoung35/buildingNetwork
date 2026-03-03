@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/about_membership.css" th:href="@{/css/about_membership.css}">
+  <link rel="stylesheet" href="../static/assets/js/swiper-bundle.min.css" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script>
+  <script src="../static/assets/js/gsap.min.js" th:src="@{/assets/js/gsap.min.js}"></script>
+  <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
+  <script src="../static/js/index.js" th:src="@{/js/index.js}" defer></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+<body>
+  
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">About us</h1>
+        <p class="visual-txt">멤버십</p>
+      </div>
+    </section>
+
+    <section class="map-area">
+      <div class="map-text title-area">
+        <b class="font-en">THE H CLUB</b>
+        <h2>빌딩과 섬, 도심과 자연을 잇는 단 하나의 멤버십</h2>
+        <p>THE H CLUB 멤버십 서비스는 H가 관리 보존해 온 유무형의 자산을 한국빌딩 네트워크, THE H CLUB 멤버와 공유하고 연결하는 서비스입니다. THE H CLUB 멤버에게는 H가 가꾸어 온 각 지역의 인프라와일상의 질을 높이는 도심 서비스를 향유할 수 있는 특별한 권한이 주어집니다.</p>
+      </div>
+      <div class="map-img"></div>
+    </section>
+  </main>
+
+
+  <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
+
+</body>
+</html>

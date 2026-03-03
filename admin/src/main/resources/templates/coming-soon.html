@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+
+  <style>
+    main{
+      margin: 100px 0;
+    }
+    .ready-text{
+      width: 50%;
+      margin: 250px auto;
+      text-align: center;
+      padding: 150px 0;
+      border-top: 1px solid var(--color-main-text);
+      border-bottom: 1px solid var(--color-main-text);
+    }
+    p{
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      margin-top: 50px;
+      line-height: 1.5;
+    }
+
+    /* 767이하 */
+    @media (max-width: 767px) {
+      .ready-text{
+        width: 85%;
+        margin: 200px auto 150px;
+        padding: 50px 0;
+      }
+      .ready-text > img{
+        width: 150px;
+      }
+    }
+  </style>
+
+    <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script>
+</head>
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="ready-text">
+      <img src="../static/images/thelink-coming-logo.png" th:src="@{/images/thelink-coming-logo.png}" alt="로고">
+      <p>현재 페이지는 준비중입니다.<br>빠른 시일 내에 준비하여 찾아뵙겠습니다.</p>
+    </section>
+  </main>
+
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

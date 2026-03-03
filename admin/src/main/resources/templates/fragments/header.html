@@ -1,0 +1,174 @@
+  <header id="header" th:fragment="header">
+    <div class="hd-wrap">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="../static/images/header/thelink_w.png" th:src="@{/images/header/thelink_w.png}" alt="로고흰색" class="logo-w"> 
+          <img src="../static/images/header/thelink_b.png" th:src="@{/images/header/thelink_b.png}" alt="로고네이비" class="logo-b"> 
+        </a>
+      </h1>
+
+      <ul class="gnb">
+        <li>
+          <a href="" class="menu">About us</a>
+          <ul class="sub">
+            <li><a href="about_brandstroy.html">브랜드스토리</a></li>
+            <li><a href="about_building.html">한국빌딩안내</a></li>
+            <li><a href="about_membership.html">멤버십</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="menu">Buildings</a>
+          <ul class="sub">
+            <li><a href="buildings.html?tab=cheonggye">청계 한국빌딩</a></li>
+            <li><a href="buildings.html?tab=eulji">을지 한국빌딩</a></li>
+            <li><a href="buildings.html?tab=sogong">소공 한국빌딩</a></li>
+            <li><a href="buildings.html?tab=jongro">종로 한국빌딩</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="menu">Destinations</a>
+          <ul class="sub">
+            <li><a href="destinations.html?tab=jukdo">죽도 상화원</a></li>
+            <li><a href="destinations.html?tab=donggeomdo">동검도 한국빌라</a></li>
+            <li><a href="coming-soon.html?tab=anmyeondo">안면도 한국빌라</a></li>
+            <li><a href="coming-soon.html?tab=jeju">제주 상화원</a></li>
+            <li><a href="coming-soon.html?tab=jodo">조도 상화원</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="menu">Experiences</a>
+          <ul class="sub">
+            <li><a href="">숙박</a></li>
+            <li><a href="exper_corporate.html">기업연수</a></li>
+            <li><a href="">워케이션</a></li>
+            <li><a href="exper_wedding.html">웨딩</a></li>
+            <li><a href="">가족연회</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="menu">Benefits</a>
+          <ul class="sub">
+            <li><a href="coming-soon.html">프로모션</a></li>
+            <li><a href="coming-soon.html">다이닝쿠폰</a></li>
+            <li><a href="coming-soon.html">웰니스</a></li>
+            <li><a href="coming-soon.html">Parking Service</a></li>
+            <li><a href="coming-soon.html">라운지 예약</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="menu">Customer</a>
+          <ul class="sub">
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="coming-soon.html">FAQ</a></li>
+            <li><a href="coming-soon.html">고객의소리</a></li>
+            <li><a href="contact_us.html">Contact us</a></li>
+          </ul>
+        </li>
+        <span class="nav-indicator"></span>
+      </ul>
+
+      <ul class="side-menu">
+        <li class="status-logged-out">
+          <a class="btn-login" href="login.html">LOGIN</a>
+          <a class="btn-join" href="login.html">JOIN</a>
+        </li>
+        <li class="status-logged-in">
+          <a href="mypage.html" class="btn-mypage">MY PAGE</a>
+          <button type="button" class="btn-logout">LOGOUT</button>
+        </li>
+      </ul>
+    </div>
+
+<!-- 모바일용 -->
+    <div class="mo-header">
+      <div class="mo-main-page-header">
+        <h1 class="mo-logo">
+          <a href="index.html">
+            <img src="../static/images/header/thelink_w.png" th:src="@{/images/header/thelink_w.png}" alt="로고흰색" class="mo-logo-w"> 
+            <img src="../static/images/header/thelink_b.png" th:src="@{/images/header/thelink_b.png}" alt="로고네이비" class="mo-logo-b"> 
+          </a>
+        </h1>
+        <div class="mo-gnb-btn">
+          <img src="../static/images/header/menu.png" th:src="@{/images/header/menu.png}" alt="메뉴아이콘" class="menu-ico">
+          <img src="../static/images/header/menu-b.png" th:src="@{/images/header/menu-b.png}" alt="메뉴아이콘" class="menu-ico-b">
+        </div>
+      </div>
+      
+      <ul class="mo-top-area">
+        <li>
+          <h1 class="mo-logo">
+            <a href="index.html">
+              <img src="../static/images/header/thelink_w.png" th:src="@{/images/header/thelink_w.png}" alt="로고흰색" class="mo-logo-w"> 
+              <!-- <img src="../static/images/header/thelink_b.png" th:src="@{/images/header/thelink_b.png}" alt="로고네이비" class="mo-logo-b">  -->
+            </a>
+          </h1>
+        </li>
+        <li class="wrap-logout mo-status-logged-out">
+          <a href="login.html" class="mo-login">LOGIN</a>
+          <a href="login.html" class="mo-join" >JOIN</a>
+        </li>
+        <li class="wrap-login mo-status-logged-in">
+          <a href="mypage.html" class="mo-btn-mypage">MY PAGE</a>
+          <button type="button" class="mo-logout">LOGOUT</button>
+        </li>
+        <li class="mo-gnb-btn">
+          <img src="../static/images/header/close.png" th:src="@{/images/header/close.png}" alt="닫기아이콘" class="close-ico">
+        </li>
+      </ul>
+      <div class="wrap-mo-gnb">
+        <div class="mo-gnb-container">
+          <ul class="mo-main-menu">
+            <li class="active" data-tab="about"><a href="#">About us</a></li>
+            <li data-tab="buildings"><a href="#">Buildings</a></li>
+            <li data-tab="destinations"><a href="#">Destications</a></li>
+            <li data-tab="experiences"><a href="#">Experiences</a></li>
+            <li data-tab="benefits"><a href="#">Benefits</a></li>
+            <li data-tab="customer"><a href="#">Customer</a></li>
+          </ul>
+
+          <div class="mo-sub-content">
+            <ul id="about" class="tab-content active">
+              <li><a href="about_brandstroy.html">브랜드스토리</a></li>
+              <li><a href="about_building.html">한국빌딩안내</a></li>
+              <li><a href="about_membership.html">멤버십</a></li>
+            </ul>
+            <ul id="buildings" class="tab-content">
+              <li><a href="buildings.html?tab=cheonggye">청계 한국빌딩</a></li>
+              <li><a href="buildings.html?tab=eulji">을지 한국빌딩</a></li>
+              <li><a href="buildings.html?tab=sogong">소공 한국빌딩</a></li>
+              <li><a href="buildings.html?tab=jongro">종로 한국빌딩</a></li>
+            </ul>
+            <ul id="destinations" class="tab-content">
+              <li><a href="destinations.html?tab=jukdo">죽도 상화원</a></li>
+              <li><a href="destinations.html?tab=donggeomdo">동검도 한국빌라</a></li>
+              <li><a href="coming-soon.html?tab=anmyeondo">안면도 한국빌라</a></li>
+              <li><a href="coming-soon.html?tab=jeju">제주 상화원</a></li>
+              <li><a href="coming-soon.html?tab=jodo">조도 상화원</a></li>
+            </ul>
+            <ul id="experiences" class="tab-content">
+              <li><a href="#">숙박</a></li>
+              <li><a href="exper_corporate.html">기업연수</a></li>
+              <li><a href="#">워케이션</a></li>
+              <li><a href="exper_wedding.html">웨딩</a></li>
+              <li><a href="#">가족연회</a></li>
+            </ul>
+            <ul id="benefits" class="tab-content">
+              <li><a href="coming-soon.html">프로모션</a></li>
+              <li><a href="coming-soon.html">다이닝쿠폰</a></li>
+              <li><a href="coming-soon.html">웰니스</a></li>
+              <li><a href="coming-soon.html">Parking Service</a></li>
+              <li><a href="coming-soon.html">라운지 예약</a></li>
+            </ul>
+            <ul id="customer" class="tab-content">
+              <li><a href="notice.html">공지사항</a></li>
+              <li><a href="coming-soon.html">FAQ</a></li>
+              <li><a href="coming-soon.html">고객의소리</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap-gnb"></div>
+
+  </header>

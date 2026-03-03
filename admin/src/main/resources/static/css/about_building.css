@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+main{
+  margin: 100px 0 ;
+}
+/* 상단 영역 */
+.sub-visual {
+  width: 100%;
+  height: 540px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/about/building4-top-bg.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+.visual-tit{
+  font-size: 30px;
+  font-weight: 500;
+}
+.visual-txt{
+  font-size: 36px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+
+/* map */
+.map-area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 150px auto;
+}
+.map-text{
+  margin-left: 7%;
+}
+.map-img{
+  width: 60%;
+  aspect-ratio: 16/9;
+  background-image: url(../images/about/building4-map.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 컨텐츠 영역 */
+.sticky-container {
+  display: flex;
+  gap: 80px;
+  padding-top: 100px;
+  width: 85%;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.sticky-text {
+  flex: 1; 
+  position: sticky;
+  top: 150px;
+  height: auto;
+}
+.sticky-text p{
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.scroll-content {
+  flex: 1.5; 
+}
+
+.card {
+  margin-bottom: 100px; 
+}
+.card img{
+  max-width: 100%;
+}
+.wrap-card-txt{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: end;
+}
+.wrap-card-txt h3{
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-sub-text);
+}
+.wrap-card-txt p{
+  font-size: 20px;
+  color: var(--color-secondary);
+  margin-top: 15px;
+}
+.building-view-more a{
+  color: var(--color-sub-text);
+  font-size: 22px;
+}
+.building-view-more a::after{
+  content: "\002B";
+  display: inline-block;
+  transform-origin: center; 
+  margin-left: 5px;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+.card:hover .building-view-more a::after{
+  transform: rotate(90deg) translateX(2px);
+  transform-origin: center;
+}
+
+
+
+
+/* 1066px 이하 */
+@media (max-width: 1066px) {
+    
+  /* map */
+  .map-area{
+    width: 85%;
+    display: block;
+    margin: 50px auto;
+  }
+  .map-img{
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/about/building4-map.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 50px auto 0;
+  }
+
+
+
+/* 컨텐츠 영역 */
+  .sticky-container {
+    display: block;
+    padding-top: 50px;
+  }
+
+  .sticky-text {
+    position: relative;
+    top: 0px;
+    margin-bottom: 30px;
+  }
+
+    
+}
+
+/* 767px 이하 */
+@media (max-width: 767px) {
+  .sub-visual {
+    width: 100%;
+    height: 400px;
+  }
+  .card {
+    margin-bottom: 50px; 
+  }
+  .wrap-card-txt{
+    display: block;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: end;
+  }
+  .wrap-card-txt h3{
+    font-size: 24px;
+  }
+  .wrap-card-txt p{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .building-view-more{
+    margin-top: 20px;
+  }
+  .building-view-more a{
+    font-size: 18px;
+  }
+  .building-view-more a::after{
+    font-size: 22px;
+  }
+}
