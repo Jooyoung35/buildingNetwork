@@ -31,6 +31,18 @@ main{
 }
 
 
+/* 텍스트 공통 */
+.sub-title{
+  font-size: clamp(1.375rem, 1.8vw,1.75rem);
+  color: var(--color-primary);
+}
+.title-area > h2{
+  margin: 15px 0 80px;
+}
+
+/* ------------------------------- */
+
+
 /* map */
 .map-area{
   display: flex;
@@ -42,11 +54,11 @@ main{
   margin-left: 7%;
   line-height: 1.6;
 }
-.map-text > .font-en{
+.sub-title{
   font-size: clamp(1.375rem, 1.8vw,1.75rem);
   color: var(--color-primary);
 }
-.map-text > h2{
+.title-area > h2{
   margin: 15px 0 40px;
 }
 .map-img{
@@ -55,4 +67,26 @@ main{
   background-image: url(../images/about/membership-map.png);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* destinations */
+
+.destination-area{
+  background-color: #F5F5F5;
+}
+.wrap-destination{
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+}
+.wrap-destination > .title-area{
+  width: 40%;
+  padding-right: 10%;
+  border: 1px solid red;
+}
+
+.wrap-destination > .desti-img-area{
+  width: 60%;
+  display: flex;
+  border: 1px solid lime;
 }

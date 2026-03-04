@@ -19,6 +19,98 @@
   <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
   <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
   <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script>
+  <!-- Kakao Maps: buildings.html과 유사한 구조 -->
+  <script type="text/javascript"
+    src="/dapi.kakao.com/v2/maps/sdk.js?appkey=37d07f67361728518b6b8e883c9be25f">
+  </script>
+  <script>
+    // 휴양지별 지도 보관용
+    var destinationMaps = {};
+
+    // selector: '#jukdo #map' 같은 CSS 셀렉터
+    function createDestinationMap(selector, latitude, longitude, name) {
+      if (!window.kakao || !window.kakao.maps) return;
+
+      var container = document.querySelector(selector);
+      if (!container) return;
+
+      var center = new kakao.maps.LatLng(latitude, longitude);
+      var map = new kakao.maps.Map(container, {
+        center: center,
+        level: 8,
+      });
+
+      // 처음 그릴 때 레이아웃 두 번 잡아줌
+      if (map.relayout) {
+        map.relayout();
+        setTimeout(function () {
+          if (map && map.relayout) map.relayout();
+        }, 100);
+      }
+
+      // 공통 마커 (buildings.html과 동일 스타일)
+      var imageSrc = '../static/images/buildings/marker_active.png';
+      var imageSize = new kakao.maps.Size(41, 51);
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+      var marker = new kakao.maps.Marker({
+        position: center,
+        image: markerImage,
+      });
+      marker.setMap(map);
+
+      // 마우스 오버 시 시설 이름 인포윈도우 표시 (name이 있을 때만)
+      if (name) {
+        var iwContent =
+          '<div style="padding:6px 10px; font-size:13px; white-space:nowrap;">' +
+          name +
+          '</div>';
+        var infowindow = new kakao.maps.InfoWindow({ content: iwContent });
+
+        (function (markerInst, infowindowInst) {
+          kakao.maps.event.addListener(markerInst, 'mouseover', function () {
+            infowindowInst.open(map, markerInst);
+          });
+          kakao.maps.event.addListener(markerInst, 'mouseout', function () {
+            infowindowInst.close();
+          });
+        })(marker, infowindow);
+      }
+
+      // 상화원과 상화헌은 같이 표시
+      if (name == "죽도 상화원") {
+        // 공통 마커 (buildings.html과 동일 스타일)
+        var imageSrc = '../static/images/buildings/marker.png';
+        var imageSize = new kakao.maps.Size(41, 51);
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        var center = new kakao.maps.LatLng(36.2485875, 126.5376328);        
+        var marker = new kakao.maps.Marker({
+          position: center,
+          image: markerImage,
+        });
+        marker.setMap(map);
+        var iwContent =
+          '<div style="padding:6px 10px; font-size:13px; white-space:nowrap;">' +
+          "죽도 상화헌" +
+          '</div>';
+        var infowindow = new kakao.maps.InfoWindow({ content: iwContent });
+
+        (function (markerInst, infowindowInst) {
+          kakao.maps.event.addListener(markerInst, 'mouseover', function () {
+            infowindowInst.open(map, markerInst);
+          });
+          kakao.maps.event.addListener(markerInst, 'mouseout', function () {
+            infowindowInst.close();
+          });
+        })(marker, infowindow);
+
+      }
+
+
+      destinationMaps[selector] = map;
+    }
+  </script>
 </head>
 
 <body>
@@ -197,13 +289,13 @@
                   <img src="../static/images/destinations/donggeom-slide-img-01.png" th:src="@{/images/destinations/donggeom-slide-img-01.png}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="../static/images/destinations/sanghwawon-slide-img-02.png" th:src="@{/images/destinations/sanghwawon-slide-img-02.png}" alt="">
+                  <img src="../static/images/destinations/donggeom-slide-img-02.png" th:src="@{/images/destinations/donggeom-slide-img-02.png}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="../static/images/destinations/sanghwawon-slide-img-03.png" th:src="@{/images/destinations/sanghwawon-slide-img-03.png}" alt="">
+                  <img src="../static/images/destinations/donggeom-slide-img-03.png" th:src="@{/images/destinations/donggeom-slide-img-03.png}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="../static/images/destinations/sanghwawon-slide-img-04.png" th:src="@{/images/destinations/sanghwawon-slide-img-04.png}" alt="">
+                  <img src="../static/images/destinations/donggeom-slide-img-04.png" th:src="@{/images/destinations/donggeom-slide-img-04.png}" alt="">
                 </div>
               </div>
               <div class="swiper-button-next"></div>
@@ -269,7 +361,7 @@
               </li>
               <li class="benefit02 destination-benefit">
                 <div class="destination-benefit-img-area">
-                  <img src="../static/images/destinations/benefit-sanghwawon-02.png" th:src="@{/images/destinations/benefit-sanghwawon-02.png}" alt="상화원웨딩대관">
+                  <img src="../static/images/destinations/benefit-donggeomdo-02.png" th:src="@{/images/destinations/benefit-donggeomdo-02.png}" alt="상화원웨딩대관">
                 </div>
                 <div class="destination-benefit-text-area">
                   <h3>대관료 할인</h3>

@@ -1,9 +1,49 @@
 
 let tabSwipers ={};
 
+const buildingNames = {
+  cheonggye: '청계한국빌딩',
+  eulji: '을지한국빌딩',
+  sogong: '소공한국빌딩',
+  jongro: '종로한국빌딩'
+};
+
+const mapSelectorByTab = {
+    cheonggye: '.map-cheonggye',
+    eulji: '.map-eulji',
+    sogong: '.map-sogong',
+    jongro: '.map-jongro',
+};
+
+const centerByTab = {
+    cheonggye: { lat: 37.5694616, lng: 126.978752 },
+    eulji:     { lat: 37.5656459, lng: 126.9833533    },
+    sogong:    { lat: 37.5641542,  lng: 126.9811848    },
+    jongro:    { lat: 37.5698444,  lng: 126.9811096    },
+};
+
+// DESTINATIONS 메타 정보 (탭 id 기준) 애는 selector 와 name 도 같이. 흠... 쫌....
+const destinationInfoByTab = {
+  jukdo: {
+    selector: '#jukdo #map',
+    lat: 36.2760727,
+    lng: 126.5381458,
+    name: '죽도 상화원',
+  },
+
+  donggeomdo: {
+    selector: '#donggeomdo #map',
+    lat: 37.5816127,
+    lng: 126.5162822,
+    name: '동검도 한국빌라',
+  },
+};
+
+
 // ui.js에서 실행될 메인 함수
 function initPageUI() {
     initBuildingTabs();
+    initDestinationMaps();
 }
 
 // [추가된 빌딩 탭 로직]--------
@@ -51,6 +91,33 @@ function initBuildingTabs() {
                 tabSwipers[targetId].autoplay.start();
             }
 
+            // 빌딩 탭 전환 시 해당 지도 리프레시
+        // - 처음 클릭하는 탭이면 createBuildingMap으로 한 번만 생성
+        // - 이미 만들어진 탭이면 relayout + setCenter만 수행 (잔상 방지)
+        if (window.buildingMaps && typeof window.createBuildingMap === 'function') {
+
+            const selector = mapSelectorByTab[targetId];
+            const center = centerByTab[targetId];
+
+            if (selector && center) {
+                const existingMap = window.buildingMaps[selector];
+                if (!existingMap) {
+                    // 아직 생성 안 된 탭이면 최초 1회 생성
+                    window.createBuildingMap(selector, center.lat, center.lng);
+                } else if (existingMap.relayout) {
+                    // 이미 생성된 지도는, 탭 내용이 display:block으로 바뀐 뒤에 레이아웃 재계산
+                    setTimeout(function () {
+                        const currentCenter = existingMap.getCenter();
+                        existingMap.relayout();
+                        // 중심이 틀어지지 않도록 한 번 더 세팅
+                        existingMap.setCenter(
+                            currentCenter || new kakao.maps.LatLng(center.lat, center.lng)
+                        );
+                    }, 100);
+                }
+            }
+        }
+
         // 인디케이터 이동 (약간의 지연을 주면 더 정확하게 )
         setTimeout(() => updateIndicator(target), 50);
     }
@@ -96,7 +163,53 @@ function initBuildingTabs() {
     });
 }
 }
-    
+
+
+// DESTINATIONS: Kakao 지도 생성/연동
+function initDestinationMaps() {
+  const destinationHeader = document.querySelector('.destination-header');
+  if (!destinationHeader) return; // destinations.html 이 아닐 때는 패스
+
+  const tabs = destinationHeader.querySelectorAll('.tab-wrapper li');
+  if (!tabs.length) return;
+  if (typeof window.createDestinationMap !== 'function') return;
+
+  // 초기 활성 탭(예: 죽도) 지도 생성
+  const activeTab = destinationHeader.querySelector('.tab-wrapper li.active');
+  if (activeTab) {
+    const tabId = activeTab.dataset.tab;
+    const cfg = destinationInfoByTab[tabId];
+    if (cfg) {
+      window.createDestinationMap(cfg.selector, cfg.lat, cfg.lng, cfg.name);
+    }
+  }
+
+  // 탭 전환 시 해당 탭 지도 생성/리프레시
+  tabs.forEach(function (tab) {
+    const tabId = tab.getAttribute('data-tab');
+    const cfg = destinationInfoByTab[tabId];
+    if (!cfg) return;
+
+    tab.addEventListener('click', function () {
+      // 공통 탭 UI(슬라이더/컨텐츠 전환) 동작 이후에 지도 처리
+      setTimeout(function () {
+        const mapsStore = window.destinationMaps || {};
+        const existingMap = mapsStore[cfg.selector];
+
+        if (!existingMap) {
+          window.createDestinationMap(cfg.selector, cfg.lat, cfg.lng, cfg.name);
+        } else if (existingMap.relayout) {
+          const currentCenter = existingMap.getCenter();
+          existingMap.relayout();
+          existingMap.setCenter(
+            currentCenter || new kakao.maps.LatLng(cfg.lat, cfg.lng),
+          );
+        }
+      }, 150);
+    });
+  });
+}
+
 
 
 

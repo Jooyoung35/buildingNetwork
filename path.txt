@@ -1,0 +1,1 @@
+C:\01.projects\07.Building_Network_Service\BuildingNetwork\admin\src\main\resources\templates\server.py

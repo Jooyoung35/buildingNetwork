@@ -15,6 +15,109 @@
   <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
   <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
   <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script>
+
+    <!-- Kakao Maps: 같은 origin 프록시 사용 (Python/Node 서버 시 지도 정상 로드) -->
+  <script type="text/javascript"
+    src="/dapi.kakao.com/v2/maps/sdk.js?appkey=37d07f67361728518b6b8e883c9be25f">
+  </script>
+  <script>
+        // 빌딩별 지도 보관용
+        var buildingMaps = {};
+
+        // selector: '.map-cheonggye' 같은 CSS 셀렉터
+        function createBuildingMap(selector, latitude, longitude) {
+          if (!window.kakao || !window.kakao.maps) return;
+
+          var container = document.querySelector(selector);
+          if (!container) return;
+
+          var center = new kakao.maps.LatLng(latitude, longitude);
+          var map = new kakao.maps.Map(container, {
+            center: center,
+            level: 5,
+          });
+
+          // 처음 그릴 때 레이아웃 두 번 잡아줌
+          if (map.relayout) {
+            map.relayout();
+            setTimeout(function () {
+              if (map && map.relayout) map.relayout();
+            }, 100);
+          }
+
+          // 공통 마커
+          var imageSrc = "../static/images/buildings/marker_active.png" ;
+          var imageSize = new kakao.maps.Size(41, 51);
+          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+          var marker = new kakao.maps.Marker({
+            position: center,
+            image: markerImage,
+          });
+          marker.setMap(map);
+
+          var buildingName = ""
+          for (var key in centerByTab) {
+            var item = centerByTab[key];
+            if (selector.includes(key)) {
+              buildingName = buildingNames[key];  // 해당 마커의 빌딩 이름
+              break;
+            }
+          }
+          var iwContent =
+            '<div style="padding:6px 10px; font-size:13px; white-space:nowrap;">'
+            + buildingName +
+            '</div>';
+          var infowindow = new kakao.maps.InfoWindow({ content: iwContent });
+
+          // 여기서 IIFE로 marker, infowindow를 각각 고정
+          (function(marker, infowindow) {
+            kakao.maps.event.addListener(marker, 'mouseover', function () {
+              infowindow.open(map, marker);   // 해당 마커 위에 표시
+            });
+            kakao.maps.event.addListener(marker, 'mouseout', function () {
+              infowindow.close();
+            });
+          })(marker, infowindow);          
+          buildingMaps[selector] = map;
+
+        //////////////////////////////////////////////////////          
+        for (var key in centerByTab) {
+          var item = centerByTab[key];
+          if (!selector.includes(key)) {
+
+            var imageSrc = '../static/images/buildings/marker.png';;
+            var imageSize = new kakao.maps.Size(31, 41);
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+            var center = new kakao.maps.LatLng(item.lat, item.lng);
+            var marker = new kakao.maps.Marker({
+              position: center,
+              image: markerImage,
+            });
+            marker.setMap(map);
+            var buildingName = buildingNames[key];  // 해당 마커의 빌딩 이름
+            var iwContent =
+              '<div style="padding:6px 10px; font-size:13px; white-space:nowrap;">'
+              + buildingName +
+              '</div>';
+            var infowindow = new kakao.maps.InfoWindow({ content: iwContent });
+
+            // 여기서 IIFE로 marker, infowindow를 각각 고정
+            (function(marker, infowindow) {
+              kakao.maps.event.addListener(marker, 'mouseover', function () {
+                infowindow.open(map, marker);   // 해당 마커 위에 표시
+              });
+              kakao.maps.event.addListener(marker, 'mouseout', function () {
+                infowindow.close();
+              });
+            })(marker, infowindow);
+          }
+        }
+      }
+        // 페이지 로드시 지도는 탭 UI에서 필요할 때(createBuildingMap) 생성/리프레시한다.
+    </script>    
+
 </head>
 <body class="buildings-page">
   <!-- header -->
@@ -87,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div id="map"></div>
+          <div id="map" class="map-cheonggye"></div>
         </div>
 
         <div class="wrap-memeber-benefit">
@@ -193,7 +296,7 @@
               </div>
             </div>
           </div>
-          <div id="map"></div>
+          <div id="map" class="map-eulji"></div>
         </div>
 
         <div class="wrap-memeber-benefit">
@@ -304,7 +407,7 @@
               </div>
             </div>
           </div>
-          <div id="map"></div>
+          <div id="map" class="map-sogong"></div>
         </div>
 
         <div class="wrap-memeber-benefit">
@@ -412,7 +515,7 @@
               </div>
             </div>
           </div>
-          <div id="map"></div>
+          <div id="map" class="map-jongro"></div>
         </div>
 
         <div class="wrap-memeber-benefit">
