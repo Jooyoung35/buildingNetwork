@@ -617,7 +617,7 @@ body.is-logged-in .mo-status-logged-out{
 }
 .title-area p{
   color: var(--color-sub-text);
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   font-weight: 300;
   margin-top: 12px;
 }

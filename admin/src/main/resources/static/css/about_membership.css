@@ -71,22 +71,33 @@ main{
 
 /* destinations */
 
-.destination-area{
-  background-color: #F5F5F5;
-}
+
 .wrap-destination{
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
+  position: relative;
 }
 .wrap-destination > .title-area{
-  width: 40%;
-  padding-right: 10%;
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 500px;
+}
+.wrap-destination > .title-area .wrap-text{
+  width: 30%;
+  margin-left: 7%;
   border: 1px solid red;
+}
+.wrap-text .sub-desc{
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.8vw, 1.65rem);
+  color: var(--color-secondary);
 }
 
 .wrap-destination > .desti-img-area{
-  width: 60%;
+  width: 50%;
   display: flex;
-  border: 1px solid lime;
+  gap: 20px;
+  position: absolute;
+  bottom: -62px; right: 0;
 }
