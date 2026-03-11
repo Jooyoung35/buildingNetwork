@@ -15,16 +15,24 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word; 
 }
 
-/* color variables */
+
 :root{
+/* color variables */
   --color-main-text :#222222;
   --color-sub-text : #333333;
 
   --color-primary : #10365C;
-  /* --color-primary : #2c5044; */
   --color-secondary : #d2b48c;
   --color-bg : #fbf9f6;
-  --color-white :#fdfdfd
+  --color-white :#fdfdfd;
+
+/* 폰트 사이즈 체계 정의 */
+  --fs-xl: 24px;
+  --fs-lg: 20px;
+  --fs-md: 16px;
+  --fs-sm: 14px;
+  --fs-xsm: 13px;
+
 }
 
 
@@ -370,13 +378,12 @@ body {
   border-color: var(--color-white);
 }
 
-/* 기본 상태: 로그인 후 메뉴 숨김 */
+/* 기본 상태: 로그인 후 메뉴 숨김 (Spring Security sec:authorize로 제어하므로 비활성화)
 
 .status-logged-in {
   display: none;
 }
 
-/* 로그인 상태 클래스가 붙었을 때 */
 body.is-logged-in .status-logged-in {
   display: flex;
   gap: 10px;
@@ -385,6 +392,8 @@ body.is-logged-in .status-logged-in {
 body.is-logged-in .status-logged-out {
   display: none;
 }
+
+*/
 
 
 /* --------------------------------------------------- */
@@ -462,6 +471,8 @@ body.is-logged-in .status-logged-out {
   bottom: 20px;
   right: 8%;
 }
+/* 모바일 로그인/로그아웃 노출 제어 (Spring Security sec:authorize로 제어하므로 비활성화)
+
 .mo-status-logged-in{
   display: none;
 }
@@ -471,6 +482,8 @@ body.is-logged-in .mo-status-logged-in{
 body.is-logged-in .mo-status-logged-out{
   display: none;
 }
+
+*/
 .mo-top-area li .mo-logout{
   border: none;
   background: none;
@@ -617,7 +630,7 @@ body.is-logged-in .mo-status-logged-out{
 }
 .title-area p{
   color: var(--color-sub-text);
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
   font-weight: 300;
   margin-top: 12px;
 }
@@ -933,5 +946,204 @@ body.is-logged-in .mo-status-logged-out{
     }
     100%{
         bottom: 30px;
+    }
+}
+
+/* ============================================
+  fragments/common.css에서 추가된 스타일
+   ============================================ */
+
+/* 스크롤바 숨김 (일부 페이지에서 사용) */
+html.scrollbar-hidden {
+    scrollbar-width: none;        /* Firefox - 스크롤바 숨김 */
+    -ms-overflow-style: none;     /* IE, Edge - 스크롤바 숨김 */
+}
+
+html.scrollbar-hidden::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari - 스크롤바 숨김 */
+}
+
+/* 공통 유틸리티 클래스 */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.breadcrumb a {
+    color: #999;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #333;
+}
+
+.page-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+
+.card {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* 공통 버튼 스타일 */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #555;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* 공통 폼 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.form-group input.error,
+.form-group select.error {
+    border-color: #dc3545;
+}
+
+.required {
+    color: #ff4444;
+    margin-left: 3px;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 공통 알림 스타일 */
+.alert {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* 반응형 디자인 (fragments/common.css 추가) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px 30px;
+    }
+    
+    .page-header h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px 20px;
+    }
+    
+    .page-header h2 {
+        font-size: 18px;
     }
 }

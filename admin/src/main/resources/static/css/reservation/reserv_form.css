@@ -1,0 +1,440 @@
+@charset "UTF-8";
+
+
+.reserv-summary{
+  width: 85%;
+  margin: 0 auto;
+}
+.summary-card{
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  border-bottom: 1px solid #ddd;
+}
+.summary-left{
+  display: flex;
+  align-items: center;
+}
+.summary-item{
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  padding: 24px 0;
+}
+.summary-item:last-child{
+  border-top: 1px solid #ddd;
+}
+
+
+.booker-info{
+  width: 85%;
+  margin: 100px auto;
+}
+.input-row{
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  padding: 24px 0;
+  border-bottom: 1px solid #ddd;
+}
+input, textarea{
+  width: 20%;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+}
+input:focus, textarea:focus {
+    outline: none;   
+    border: 1px solid #1a375f; 
+    box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+select{
+  width: 20%;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  appearance: none;
+  color: #818181 !important;
+  font-weight: 400 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center; 
+  background-size: 14px; 
+  cursor: pointer;
+}
+select:focus {
+    outline: none;   
+    border: 1px solid #1a375f; 
+    box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+
+/* 연락처 셀렉트/인풋박스 */
+.tel-input{
+  width: 15%;
+}
+.tel-select{
+  width: 8%;
+}
+
+/* 인원추가 셀렉트/인풋박스 */
+.add-adult, .add-child{
+  margin: 0 10px;
+  width: 10%;
+}
+span.notice-text{
+  color: #c5c5c5;
+}
+
+/* 부가서비스 셀렉트/인풋 */
+.service-input input{
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  align-items: end;
+}
+.service-input {
+    display: flex;
+    align-items: center; 
+    gap: 15px;           
+    flex-wrap: wrap;    
+}
+.checkbox-label {
+    display: flex;
+    align-items: center; 
+    gap: 5px;          
+    cursor: pointer;
+    line-height: 1;  
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+}
+
+/* 요청사항 */
+textarea.request-box{
+  width: 80%;
+  height: 100px;
+}
+
+
+
+/* 약관동의------------------------------ */
+.terms-area{
+  width: 85%;
+  margin: 100px auto;
+}
+/* 약관 섹션 레이아웃 */
+.agreement-section {
+    max-width: 100%;
+    margin: 40px auto;
+}
+.agree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+/* 개별 항목 스타일 */
+.agreement-item {
+    border-bottom: 1px solid #ddd;
+}
+.item-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.item-title {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.required {
+    color: #0099ff;
+    margin-left: 5px;
+    font-size: 12px;
+}
+/* 체크박스 정렬 */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #007bff; /* 체크박스 포인트 색상 */
+}
+/* 내용보기 버튼 */
+.btn-view-terms {
+    background: none;
+    border: none;
+    color: #888;
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+/* 약관 내용박스 및 스크롤 */
+.terms-content {
+    display: none;
+    background: #f8f9fa;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.terms-content.active {
+    display: block;
+}
+/* 스크롤바 커스텀 */
+.terms-content::-webkit-scrollbar { 
+  width: 5px; 
+}
+.terms-content::-webkit-scrollbar-thumb { 
+  background: #ccc; border-radius: 10px; 
+}
+
+
+
+
+/* 결제하기 영역-------------------- */
+
+.payment-area{
+  width: 85%;
+  margin: 100px auto;
+}
+.price-row{
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  padding: 24px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#accountHolder[readonly] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;     
+  color: #666;
+}
+.payment-select{
+  display: flex;
+  gap: 25px;
+}
+.payment-method label input[type="radio"]{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  align-items: end;
+}
+.payment-method label input[type="radio"]:focus{
+  box-shadow: none;
+}
+
+.pay-label{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.bank-info select{
+  width: 10%;
+}
+.bank-info span{
+  margin-left: 20px;
+}
+.bank-info input{
+  margin-left: 5px;
+}
+.total span{
+  font-weight: 600;
+}
+
+.btn-wrap{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.pay-btn{
+  width: 200px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* --- 예약 정보 입력 페이지 반응형 작업 (1279px 이하) --- */
+@media (max-width: 1279px) {
+    .reserv-summary, 
+    .booker-info, 
+    .terms-area, 
+    .payment-area {
+        width: 85%;
+        margin: 80px auto;
+    }
+
+    /* 요약 카드 세로 배치 */
+    .summary-card {
+        grid-template-columns: 1fr;
+    }
+    .summary-left {
+        padding: 20px 0;
+        border-bottom: 1px dashed #ddd;
+    }
+
+    /* 모든 입력 행(row)을 1열로 변경 */
+    .summary-item, .input-row, .price-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    /* 입력 요소 너비 조정 */
+    input, select, textarea {
+        width: 100% !important; 
+    }
+
+    /* 연락처 입력 그룹 최적화 */
+    .tel-group {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .tel-select { width: 25% !important; }
+    .tel-input { width: 35% !important; }
+
+    /* 인원 추가 영역 */
+    .add-adult, .add-child {
+        width: 25% !important;
+        margin: 0 10px 0 0;
+    }
+
+    /* 부가서비스 체크박스 줄바꿈 방지 */
+    .service-input {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 15px;
+    }
+
+    .checkbox-label {
+        display: flex; 
+        align-items: center;
+        width: auto !important; 
+        white-space: nowrap; 
+    }
+
+
+    .checkbox-label input[type="checkbox"] {
+        width: 24px !important; 
+        height: 24px !important;
+        margin-right: 8px;
+        flex-shrink: 0; 
+    }
+
+    /* 셀렉트 박스들만 100% 유지 */
+    .service-input select {
+        width: 100% !important;
+    }
+
+    /* 약관 동의 영역 */
+    .item-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .item-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* 결제정보 */
+    .bank-info span{
+      margin: 20px 0 8px 0;
+      display: block;
+    }
+    .bank-info input{
+      margin-left: 0px;
+    }
+
+    .payment-select {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 15px 20px; 
+    }
+
+    .pay-label {
+        width: auto !important;
+    }
+
+    .payment-method label input[type="radio"] {
+        width: 24px !important; 
+        height: 24px !important;
+    }
+}
+
+/* --- (879px 이하) --- */
+@media (max-width: 879px) {
+    .reserv-summary, .booker-info, .terms-area, .payment-area {
+        margin: 60px auto;
+    }
+
+    .bank-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bank-info select, .bank-info input, .bank-info span {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* 결제 수단 라디오 버튼 간격 */
+    .payment-select {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pay-label:last-child input {
+        margin-left: 0;
+    }
+    .btn-wrap{
+      margin-top: 50px;
+    }
+}
+
+/* --- (480px 이하) --- */
+@media (max-width: 480px) {
+    .reserv-summary, .booker-info, .terms-area, .payment-area {
+        width: 90%; /* 화면이 아주 작을 땐 여백 최소화 */
+    }
+
+    .contents-title {
+        font-size: 20px;
+    }
+    .pay-btn {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .label-text {
+        font-size: 14px;
+    }
+}

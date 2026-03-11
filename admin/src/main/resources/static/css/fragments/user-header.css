@@ -1,0 +1,221 @@
+/* 일반 사용자 헤더 스타일 */
+html {
+    overflow-y: scroll; /* 페이지마다 스크롤바 유무로 레이아웃이 흔들리는 것 방지 */
+}
+
+.user-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+.user-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-header-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin: 0; /* 페이지별 기본 h1 margin 차이를 없애 헤더 높이 통일 */
+}
+
+.user-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-header-welcome {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.user-header-welcome strong {
+    color: #333;
+}
+
+.user-header-actions form {
+    display: inline;
+    flex-shrink: 0;
+}
+
+.user-header-auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-header-guest-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-header-login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    white-space: nowrap;
+}
+
+.user-header-login-btn:hover {
+    background-color: #555;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.user-header-login-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.user-header-admin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.user-header-admin-btn:hover {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.user-header-admin-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.user-header-admin-icon {
+    font-size: 16px;
+}
+
+.user-header-logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.user-header-logout-btn:hover {
+    background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+    transform: translateY(-1px);
+}
+
+.user-header-logout-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+}
+
+.user-header-logout-icon {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .user-header {
+        padding: 15px 0;
+    }
+
+    .user-header-title {
+        font-size: 24px;
+    }
+
+    .user-header-content {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .user-header-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .user-header-welcome {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .user-header-admin-btn,
+    .user-header-logout-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    .user-header-actions form {
+        width: 100% !important;
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-header-title {
+        font-size: 20px;
+    }
+
+    .user-header-content {
+        padding: 0 15px;
+    }
+
+    .user-header-welcome {
+        font-size: 12px;
+    }
+
+    .user-header-admin-btn,
+    .user-header-logout-btn {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+}

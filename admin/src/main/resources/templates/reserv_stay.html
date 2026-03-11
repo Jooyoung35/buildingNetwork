@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/reservation/reserv_stay.css" th:href="@{/css/reservation/reserv_stay.css}">   
+  <link rel="stylesheet" href="../static/css/reservation/reserv_common.css" th:href="@{/css/reservation/reserv_common.css}">   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <script src="../static/js/reservation.js" th:src="@{/js/reservation.js}" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+</head>
+
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+
+    <section class="sect-top-area">
+      <div class="title-area">
+        <h2 class="main-text font-en">RESERVATION</h2>
+      </div>
+      <div class="step-container">
+        <div class="step-item active">
+          <div class="step-circle">1</div>
+          <div class="step-text">객실 선택</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-text">정보 입력</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-text">예약 완료</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar-area">
+      <div class="calendar-wrap">
+        <div class="calendar-box">
+          <div id="calendar1"></div>
+        </div>
+
+        <div class="calendar-box">
+          <div id="calendar2"></div>
+        </div>
+
+        <div class="booking-panel">
+          <h3 class="contents-title">날짜를 선택해 주세요</h3>
+
+          <div class="field">
+            <label class="placeholder-text">CHECK IN</label>
+            <input id="checkin" readonly>
+          </div>
+
+          <div class="field">
+            <label class="placeholder-text">CHECK OUT</label>
+            <input id="checkout" readonly>
+          </div>
+
+          <button class="search-btn reservation-common-btn">SEARCH</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation-detail-area">
+      <div class="room-list-container">
+          <h3 class="contents-title">객실선택</h3>
+          <ul class="room-list-wrap">
+            <li class="room">
+              <div class="room-img">
+                <img src="../static/images/reservation/room.png" alt="101호이미지">
+              </div>
+              <div class="room-info-area">
+                <div class="room-detail-info">
+                  <h4 class="room-type">101동</h4>
+                  <p class="contents-desc-sm"><b>투숙인원</b> 4명(최대 6명)</p>
+                  <p class="contents-desc-sm"><b>1층</b> 침대2, 화장실, 샤워시설, 테이블</p>
+                  <p class="contents-desc-sm"><b>2층</b> 침대2, 한실, 화장실, 샤워시설, 테이블</p>
+                </div>
+                <div class="room-price">
+                  <p class="room-price-day">320,000 KRW</p>
+                  <p class="day-one">1박(세금포함)</p>
+                </div>
+              </div>
+              <div class="room-select">
+                <button type="button" class="view-detail-btn reservation-common-btn" data-id="101" data-title="101동 객실정보">객실보기</button>
+                <button type="button" class="room-select-btn reservation-common-btn" data-id="101" >객실선택</button>
+              </div>
+            </li>
+            <li class="room">
+              <div class="room-img">
+                <img src="../static/images/reservation/room.png" alt="101호이미지">
+              </div>
+              <div class="room-info-area">
+                <div class="room-detail-info">
+                  <h4 class="room-type">102동</h4>
+                  <p class="contents-desc-sm"><b>투숙인원</b> 4명(최대 6명)</p>
+                  <p class="contents-desc-sm"><b>1층</b> 침대2, 화장실, 샤워시설, 테이블</p>
+                  <p class="contents-desc-sm"><b>2층</b> 침대2, 한실, 화장실, 샤워시설, 테이블</p>
+                </div>
+                <div class="room-price">
+                  <p class="room-price-day">320,000 KRW</p>
+                  <p class="day-one">1박(세금포함)</p>
+                </div>
+              </div>
+              <div class="room-select">
+                <button type="button" class="view-detail-btn reservation-common-btn" data-id="102" data-title="102동 객실정보">객실보기</button>
+                <button type="button" class="room-select-btn reservation-common-btn" data-id="102">객실선택</button>
+              </div>
+            </li>
+            <li class="room">
+              <div class="room-img">
+                <img src="../static/images/reservation/room.png" alt="101호이미지">
+              </div>
+              <div class="room-info-area">
+                <div class="room-detail-info">
+                  <h4 class="room-type">103동</h4>
+                  <p class="contents-desc-sm"><b>투숙인원</b> 4명(최대 6명)</p>
+                  <p class="contents-desc-sm"><b>1층</b> 침대2, 화장실, 샤워시설, 테이블</p>
+                  <p class="contents-desc-sm"><b>2층</b> 침대2, 한실, 화장실, 샤워시설, 테이블</p>
+                </div>
+                <div class="room-price">
+                  <p class="room-price-day">320,000 KRW</p>
+                  <p class="day-one">1박(세금포함)</p>
+                </div>
+              </div>
+              <div class="room-select">
+                <button type="button" class="view-detail-btn reservation-common-btn" data-id="101" data-title="103동 객실정보">객실보기</button>
+                <button type="button" class="room-select-btn reservation-common-btn" data-id="103">객실선택</button>
+              </div>
+            </li>
+            <li class="room">
+              <div class="room-img">
+                <img src="../static/images/reservation/room.png" alt="101호이미지">
+              </div>
+              <div class="room-info-area">
+                <div class="room-detail-info">
+                  <h4 class="room-type">205동</h4>
+                  <p class="contents-desc-sm"><b>투숙인원</b> 4명(최대 6명)</p>
+                  <p class="contents-desc-sm"><b>1층</b> 침대2, 화장실, 샤워시설, 테이블</p>
+                  <p class="contents-desc-sm"><b>2층</b> 침대2, 한실, 화장실, 샤워시설, 테이블</p>
+                </div>
+                <div class="room-price">
+                  <p class="room-price-day">320,000 KRW</p>
+                  <p class="day-one">1박(세금포함)</p>
+                </div>
+              </div>
+              <div class="room-select">
+                <button type="button" class="view-detail-btn reservation-common-btn" data-id="205" data-title="205동 객실정보">객실보기</button>
+                <button type="button" class="room-select-btn reservation-common-btn" data-id="205">객실선택</button>
+              </div>
+            </li>
+            <li class="room">
+              <div class="room-img">
+                <img src="../static/images/reservation/room.png" alt="101호이미지">
+              </div>
+              <div class="room-info-area">
+                <div class="room-detail-info">
+                  <h4 class="room-type">206동</h4>
+                  <p class="contents-desc-sm"><b>투숙인원</b> 4명(최대 6명)</p>
+                  <p class="contents-desc-sm"><b>1층</b> 침대2, 화장실, 샤워시설, 테이블</p>
+                  <p class="contents-desc-sm"><b>2층</b> 침대2, 한실, 화장실, 샤워시설, 테이블</p>
+                </div>
+                <div class="room-price">
+                  <p class="room-price-day">320,000 KRW</p>
+                  <p class="day-one">1박(세금포함)</p>
+                </div>
+              </div>
+              <div class="room-select">
+                <button type="button" class="view-detail-btn reservation-common-btn" data-id="206" data-title="206동 객실정보">객실보기</button>
+                <button type="button" class="room-select-btn reservation-common-btn" data-id="206">객실선택</button>
+              </div>
+            </li>
+          </ul>  
+          <!-- 객실 없을 때 표출 -->
+          <div id="no-rooms-message">
+            <p class="contents-desc-sm">해당 날짜에는 예약 가능한 객실이 없습니다.</p>
+          </div>      
+      </div>
+
+      <aside class="reservation-sidebar">
+        <div class="booking-info-card">
+          <h3 class="contents-title">예약정보</h3>
+          <div class="info-list-wrap">
+            <dl class="info-item">
+              <dt class="label-text">숙소명</dt>
+              <dd class="hotel-name basic-desc">죽도 상화원 한국빌라</dd>
+            </dl>
+            <dl class="info-item">
+              <dt class="label-text">체크인/체크아웃</dt>
+              <dd class="check-in-out-date basic-desc">2026.03.04 - 2026.03.05 (1박 2일)</dd>
+            </dl>
+            <dl class="info-item">
+              <dt class="label-text">객실</dt>
+              <dd class="room-number basic-desc">201동</dd>
+            </dl>
+            <dl class="info-item">
+              <dt class="label-text">인원</dt>
+              <dd>
+                <div class="personnel-main basic-desc">기준인원 4명 (최대 6명)</div>
+                <ul class="personnel-detail contents-desc-sm">
+                  <li>&#183; 성인 : 만 12세 이상</li>
+                  <li>&#183; 아동 : 만 4세 이상 - 만 12세 미만</li>
+                  <li>&#183; 유아 : 만 4세 미만(무료)</li>
+                </ul>
+                <p class="notice-text  contents-desc-sm">기준 인원을 추가하는 경우, 추가 인원에 대해 비용이 부과됩니다.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="booking-notice-card">
+          <h3 class="contents-title">예약안내</h3>
+          <div class="notice-text-wrap">
+            <p class="contents-desc-sm">
+              * 결제 후, 결제 당일에 바로 취소하는 경우에도 일자 별 환불 정책에 따라 환불되오니 신중히 예약 부탁드립니다. <br> 
+              * 무통장 입금 시 반드시 예약자명 성함으로 입금 부탁드리며,  예약자명과 입금자명이 다를 경우 예약 확인이 어려워 예약이 취소될 수 있으며, 해당 내용으로 예약이 취소될 경우 저희 숙소에서는 예약 확정을 드릴 수 없습니다.
+            </p>
+            <dl>
+              <dt class="contents-desc-tt">
+                입실/퇴실안내
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 입실 시간  15:00 / 퇴실 시간  11:00<br>
+                &#183; 체크인 시간(15시) 이전에 상화원 내에 입장을 원하실 경우, 관람료가 부과되오니 체크인 시간에 맞춰 입장 부탁드립니다.
+              </dd>
+              <dt class="contents-desc-tt">
+                인원추가요금
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 기준 인원 초과시 1인당 추가 비용 : 36개월 이상 20,000원 / 36개월 미만 무료 <br>
+                &#183; 침구류 추가 비용 : 1세트 당 20,000원<br>
+                &#183; 각 객실마다 정해진 최대 수용 인원(영유아 포함)초과를 엄격히 금하며, 예약된 인원 외에는 입실이 불가합니다.
+              </dd>
+              <dt class="contents-desc-tt">
+                바비큐장 이용요금
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 제공품목 : 가스그릴<br>
+                &#183; 이용요금 : 테이블 당 25,000원(4인 기준)/그릴 교체 시 10,000원 추가 비용이 발생됩니다.<br>
+                &#183; 이용시간 : 17:00 - 21:00<br>
+                &#183; 이용장소 : 객실에서 도보 5~7분 거리 / 그릇 및 집기류는 사랑채 뒷편 공용 주방에 있습니다.<br>
+              </dd>
+              <dt class="contents-desc-tt">
+                침구추가 및 바비큐장 이용 비용 입금처
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 국민은행 827901-04-129264 (주)케이씨에스
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="reserv-btn-wrap">
+          <a href="reserv_form.html" class="next-step-btn reservation-common-btn" >다음단계</a>
+          <a class="cancel-step-btn reservation-common-btn">취소</a>
+        </div>
+
+      </aside>
+    </section>
+
+    <section id="room-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <div class="modal-body">
+          <div class="modal-top">
+            <h2 class="main-text font-en">Room Type: 101-104</h2>
+            <div class="swiper mySwiper" autoplay-delay="5000">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../static/images/reservation/modal-room-01.png" alt="객실이미지1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/reservation/modal-room-02.png" alt="객실이미지1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="../static/images/reservation/modal-room-03.png" alt="객실이미지1">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="room-info-wrap">
+            <div class="basic-info">
+              <div class="basic-text">
+                <h3 id="point-text-title" class="point-text">
+                  빌라 사이로 일렁이는 푸른 조각,<br>나만의 바다 프레임
+                </h3>
+                <p class="basic-light">
+                  101~104동은 다른 객실보다 조금 더 여유로운 공간을 품고 있습니다. <br>200동 라인 뒤편에 자리 잡아, 앞 건물 사이사이로 바다 뷰가 보이는 객실입니다.
+                </p>
+              </div>
+            </div>
+            <ul class="room-info-graphic">
+              <li>
+                <img src="../static/images/reservation/ico-home.png" alt="객실아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실크기</p>
+                  <p id="roomSize" class="basic-desc">43평</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/reservation/ico-people.png" alt="사람아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">투숙인원</p>
+                  <p class="basic-desc">기준 4인 / 최대 6인</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/reservation/ico-compos.png" alt="객실구성아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실구성</p>
+                  <p class="basic-desc">침실2, 한실1, 화장실2</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/reservation/ico-bed.png" alt="침대아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">침대타입</p>
+                  <p class="basic-desc">싱글 4개</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/reservation/ico-time.png" alt="시계아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">체크인/아웃</p>
+                  <p class="basic-desc">15:00 / 11:00</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="room-provision">
+            <h3 class="contents-title">비품 및 어메니티</h3>
+            
+            <div class="wrap-provision">
+              <div class="provision-row">
+                <div class="provision-label">비품</div>
+                <ul class="provision-list" id="modal-facilities-list">
+                  <li class="contents-desc-sm">화장대</li>
+                  <li class="contents-desc-sm">테이블</li>
+                  <li class="contents-desc-sm">의자</li>
+                  <li class="contents-desc-sm">소파</li>
+                  <li class="contents-desc-sm">옷걸이</li>
+                  <li class="contents-desc-sm">컵</li>
+                  <li class="contents-desc-sm">커피</li>
+                  <li class="contents-desc-sm">차</li>
+                  <li class="contents-desc-sm">전기주전자</li>
+                  <li class="contents-desc-sm">캡슐커피머신</li>
+                  <li class="contents-desc-sm">헤어드라이기</li>
+                  <li class="contents-desc-sm">냉장고</li>
+                  <li class="contents-desc-sm">TV</li>
+                  <li class="contents-desc-sm">에어컨</li>
+                </ul>
+              </div>
+
+              <div class="provision-row">
+                <div class="provision-label">어메니티</div>
+                <ul class="provision-list" id="modal-amenity-list">
+                  <li class="contents-desc-sm">샴푸</li>
+                  <li class="contents-desc-sm">컨디셔너</li>
+                  <li class="contents-desc-sm">바디워시</li>
+                  <li class="contents-desc-sm">바디로션</li>
+                  <li class="contents-desc-sm">1회용 면도기</li>
+                  <li class="contents-desc-sm">면도크림</li>
+                  <li class="contents-desc-sm">칫솔</li>
+                  <li class="contents-desc-sm">치약</li>
+                  <li class="contents-desc-sm">샤워타올</li>
+                  <li class="contents-desc-sm">샤워캡</li>
+                  <li class="contents-desc-sm">화장솜</li>
+                  <li class="contents-desc-sm">비누</li>
+                  <li class="contents-desc-sm">샤워타올</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="other-info-text">
+            <h3 class="contents-title">기타 안내 사항</h3>
+            <dl>
+              <dt class="contents-desc-tt">
+                인원추가요금
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 기준 인원 초과 시 1인당 추가 비용 : 36개월 이상 20,000원 / 36개월 미만 무료<br>
+                &#183; 침구류 추가 비용 : 1세트 당 20,000원<br>
+                &#183; 각 객실마다 정해진 최대 수용 인원(영유아 포함) 초과를 엄격히 금하며, 예약된 인원 외에는 입실이 불가합니다.
+              </dd>
+              <dt class="contents-desc-tt">
+                [바비큐]
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 바비큐 가스그릴 비용 : 25,000원 (4인 기준) <br>
+                &#183; 인원 추가 및 바비큐 추가는 사전 연락 후 진행 가능합니다.
+              </dd>
+              <dt class="contents-desc-tt">
+                침구추가 및 바비큐장 이용요금 입금처
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 국민은행 827901-04-129264 (주)케이씨에스
+              </dd>
+              <dt class="contents-desc-tt">
+                이용 주의사항
+              </dt>
+              <dd class="contents-desc-sm">
+                &#183; 전 객실 취사 불가합니다.<br>
+                &#183; 이용 시 시설물에 대한 책임은 투숙객에게 있으므로 유의 부탁드립니다.<br>
+                &#183; 이용자의 귀중품 분실 시 책임은 이용자에게 있으니 관리 부탁드립니다.<br>
+                &#183; 상화원 안에서는 객실을 비롯하여 모든 구역에서 절대 금연입니다. <br>
+                &#183; 반려동물은 부득이 타 객실 및 고객을 위해 입실을 금하오니 양해 부탁드립니다.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

@@ -71,7 +71,9 @@ main{
 
 /* destinations */
 
-
+.destination-area{
+  margin: 100px 0;
+}
 .wrap-destination{
   width: 100%;
   margin: 0 auto;
@@ -86,7 +88,12 @@ main{
 .wrap-destination > .title-area .wrap-text{
   width: 30%;
   margin-left: 7%;
-  border: 1px solid red;
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+}
+.wrap-text h2{
+  margin: 22px 0 60px;
 }
 .wrap-text .sub-desc{
   font-weight: 500;
@@ -99,5 +106,23 @@ main{
   display: flex;
   gap: 20px;
   position: absolute;
-  bottom: -62px; right: 0;
+  bottom: -147px; right: 0;
+}
+
+.desti-desc{
+  margin-top: 30px;
+}
+.left-txt h3{
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
+  color: var(--color-sub-text);
+  font-weight: 600;
+}
+.left-txt p{
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--color-secondary);
+  margin: 15px 0 25px;
+}
+.left-txt a{
+  font-size: clamp(0.93rem, 1.5vw, 1rem);
+  color: #7d7d7d;
 }

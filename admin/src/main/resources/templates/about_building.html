@@ -35,6 +35,7 @@
       </div>
       <div class="map-img"></div>
     </section>
+    
     <section class="sticky-container">
       <div class="sticky-text title-area">
         <h2>사대문 안 핵심 입지가<br>선사하는 비즈니스 인프라</h2>
@@ -43,7 +44,7 @@
       </div>
 
       <div class="scroll-content">
-        <div class="card">
+        <div class="building-card">
           <img src="../static/images/about/cheonggye.png" th:src="@{/images/about/cheonggye.png}" alt="청계한국빌딩">
           <div class="wrap-card-txt">
             <div class="building-name-desc">
@@ -55,7 +56,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="building-card">
           <img src="../static/images/about/eulji.png" th:src="@{/images/about/eulji.png}" alt="을지한국빌딩">
           <div class="wrap-card-txt">
             <div class="building-name-desc">
@@ -67,7 +68,7 @@
             </div>
           </div>
         </div>        
-        <div class="card">
+        <div class="building-card">
           <img src="../static/images/about/sogong.png" th:src="@{/images/about/sogong.png}" alt="소공한국빌딩">
           <div class="wrap-card-txt">
             <div class="building-name-desc">
@@ -79,7 +80,7 @@
             </div>
           </div>
         </div>        
-        <div class="card">
+        <div class="building-card">
           <img src="../static/images/about/jongro.png" th:src="@{/images/about/jongro.png}" alt="종로한국빌딩">
           <div class="wrap-card-txt">
             <div class="building-name-desc">
@@ -97,7 +98,6 @@
   
   <!-- footer -->
   <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
-
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {

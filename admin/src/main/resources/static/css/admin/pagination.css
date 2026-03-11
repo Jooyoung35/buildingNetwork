@@ -1,0 +1,53 @@
+/* 공통 페이징 스타일 */
+.pagination {
+    padding: 30px 40px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination .btn {
+    padding: 8px 12px;
+    min-width: 36px;
+    text-align: center;
+}
+
+.pagination-current {
+    cursor: default;
+}
+
+.pagination-ellipsis {
+    padding: 8px 4px;
+}
+
+.page-info {
+    margin-left: 16px;
+    font-size: 13px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .pagination-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .page-info {
+        margin-left: 0;
+        text-align: center;
+    }
+}

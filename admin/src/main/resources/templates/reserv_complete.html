@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK H</title>
+
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/reservation/reserv_complete.css" th:href="@{/css/reservation/reserv_complete.css}">   
+  <link rel="stylesheet" href="../static/css/reservation/reserv_common.css" th:href="@{/css/reservation/reserv_common.css}">   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div> 
+  
+  <main>
+    <section class="sect-top-area">
+      <div class="title-area">
+        <h2 class="main-text font-en">RESERVATION</h2>
+      </div>
+      <div class="step-container">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-text">객실 선택</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-text">정보 입력</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item active">
+          <div class="step-circle">3</div>
+          <div class="step-text">예약 완료</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="completed-info">
+      <h3 class="complete-message">예약이 완료되었습니다.</h3>
+      <div class="booking-info-card">
+        <h3 class="contents-title">예약정보</h3>
+        <div class="info-list-wrap">
+          <dl class="info-item">
+            <dt class="label-text">예약번호</dt>
+            <dd class="booking-number basic-desc">20260304001123</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">예약자명</dt>
+            <dd class="booker-name basic-desc">김주영</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">숙소명</dt>
+            <dd class="hotel-name basic-desc">죽도 상화원 한국빌라</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">체크인/체크아웃</dt>
+            <dd class="check-in-out-date basic-desc">2026.03.04 - 2026.03.05 (1박 2일)</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">객실</dt>
+            <dd class="room-number basic-desc">201동</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">인원추가</dt>
+            <dd class="personnel-main basic-desc">0명</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">바비큐</dt>
+            <dd class="bbq-option basic-desc">실외 / 1부</dd>
+          </dl>
+          <dl class="info-item">
+            <dt class="label-text">침구류</dt>
+            <dd class="bedding-option basic-desc">추가안함</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="home-btn-wrap">
+        <a href="index.html" class="home-btn reservation-common-btn" >홈으로</a>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      includeHTML(initCommonDesign);
+    })
+  </script>
+</body>
+</html>

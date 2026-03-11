@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.completed-info{
+  width: 85%;
+  margin: 0 auto;
+}
+.completed-info h3.complete-message{
+  text-align: center;
+}
+.booking-info-card{
+  width: 35%;
+  margin: 100px auto 30px;
+}
+
+.info-item {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.personnel-detail{
+  margin-top: 10px;
+}
+
+.home-btn-wrap{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 100px;
+}
+.home-btn-wrap a{
+  width: 35%;
+  padding: 10px 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 1279px) {
+  .completed-info h3.complete-message{
+    margin-top: 30px;
+  }
+  .booking-info-card{
+    width: 95%;
+    margin: 50px auto 30px;
+  }
+}

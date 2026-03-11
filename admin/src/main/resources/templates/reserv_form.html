@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/reservation/reserv_form.css" th:href="@{/css/reservation/reserv_form.css}">   
+  <link rel="stylesheet" href="../static/css/reservation/reserv_common.css" th:href="@{/css/reservation/reserv_common.css}">   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+</head>
+
+
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div> 
+  
+  
+
+  <main class="reserv-info-main">
+    <section class="sect-top-area">
+      <div class="title-area">
+        <h2 class="main-text font-en">RESERVATION</h2>
+      </div>
+      <div class="step-container">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-text">객실 선택</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item active">
+          <div class="step-circle">2</div>
+          <div class="step-text">정보 입력</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-text">예약 완료</div>
+        </div>
+      </div>
+    </section>
+
+    <form class="reserv-form">
+
+      <!-- 예약정보 -->
+      <section class="reserv-summary">
+        <h2 class="contents-title">예약정보</h2>
+        <div class="summary-card">
+          <div class="summary-left">
+            <h3 class="hotel-name">죽도 상화원 한국빌라</h3>
+          </div>
+          <div class="summary-right">
+            <dl class="summary-item">
+              <dt class="label-text">체크인/체크아웃</dt>
+              <dd class="check-in-out-date basic-desc">2026.03.04 - 2026.03.05 (1박 2일)</dd>
+            </dl>
+            <dl class="summary-item">
+              <dt class="label-text">객실</dt>
+              <dd class="room-number basic-desc">201동</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 예약자 정보 -->
+      <section class="booker-info">
+        <h2 class="contents-title">예약자 정보</h2>
+        <div class="input-form-wrap">
+          <div class="input-row">
+            <label for="bookerName" class="label-text">예약자명</label>
+            <input
+              id="bookerName"
+              name="bookerName"
+              type="text"
+              class="placeholder-text name-input"
+              placeholder="필수입력"
+              required
+            >
+          </div>
+
+          <div class="input-row">
+            <label for="phone" class="label-text">연락처</label>
+            <div class="inline-flex tel-group">
+              <select class="basic-desc tel-select">
+                <option value="010" selected>010</option>
+                <option value="011">011</option>
+                <option value="016">016</option>
+                <option value="017">017</option>
+                <option value="018">018</option>
+                <option value="019">019</option>
+              </select>
+              
+              <span class="dash">-</span>
+              <input type="text" id="phone" class="placeholder-text tel-input" maxlength="4" inputmode="numeric" required pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="필수입력">
+              <span class="dash">-</span>
+              <input type="text" class="placeholder-text tel-input" maxlength="4" inputmode="numeric" required pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');"  placeholder="필수입력">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <label for="extraPhone" class="label-text">추가연락처</label>
+            <div class="inline-flex tel-group">
+              <select class="basic-desc tel-select">
+                <option value="010" selected>010</option>
+                <option value="011">011</option>
+                <option value="016">016</option>
+                <option value="017">017</option>
+                <option value="018">018</option>
+                <option value="019">019</option>
+              </select>
+              
+              <span class="dash">-</span>
+              <input type="text" class="placeholder-text tel-input" maxlength="4" inputmode="numeric" pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+              <span class="dash">-</span>
+              <input type="text" class="placeholder-text tel-input" maxlength="4" inputmode="numeric" pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <label class="label-text">인원추가</label>
+            <div class="inline-inputs">
+              <span class="label-text">성인</span>
+              <select name="adultCount" class="basic-desc add-adult">
+                <option value="">성인</option>
+                <option value="2">1</option>
+                <option value="3">2</option>
+              </select>
+
+              <span class="label-text">아동</span>
+              <select name="childCount" class="basic-desc add-child">
+                <option value="">아동</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+
+              <span class="notice-text contents-desc-sm">
+                인원추가 성인 20,000 / 아동 10,000
+              </span>
+
+            </div>
+          </div>
+
+
+          <div class="input-row">
+            <label class="label-text">부가서비스</label>
+            <div class="inline-inputs service-input">
+              <label class="checkbox-label">
+                <input type="checkbox" name="bbq">
+                바비큐 추가
+              </label>
+              <select name="bbqPlace" class="basic-desc serv-bbq-place">
+                <option value="">바비큐 장소 선택</option>
+                <option value="실내">실내</option>
+                <option value="실외">실외</option>
+              </select>
+
+              <select name="bbqTime" class="basic-desc serv-bbq-time">
+                <option value="">바비큐 이용시간</option>
+                <option value="">1부</option>
+                <option value="">2부</option>
+              </select>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="bedding">
+                침구류 추가
+              </label>
+
+              <select name="beddingCount" class="basic-desc serv-bedding">
+                <option value="">수량(최대2개)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+
+            </div>
+          </div>
+
+
+          <div class="input-row vertical">
+            <label for="request" class="label-text">요청사항</label>
+            <textarea
+              id="request"
+              name="request"
+              class="request-box"
+            ></textarea>
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <!-- 약관동의 -->
+      <section class="terms-area">
+        <h2 class="contents-title">약관동의</h2>
+        <div class="agreement-section">
+          <div class="agree-header">
+            <label class="checkbox-label all-agree">
+              <input type="checkbox" id="check-all"> 
+              <strong>모두동의</strong>
+            </label>
+          </div>
+
+          <hr class="divider">
+
+          <div class="agreement-item">
+            <div class="item-main">
+              <div class="item-title">
+                <span>유의사항/환불규정 <small class="required">(필수)</small></span>
+                <button type="button" class="btn-view-terms">내용보기</button>
+              </div>
+              <label class="checkbox-label"><input type="checkbox" class="agree-check"> 동의</label>
+            </div>
+            <div class="terms-content">
+              [환불 규정 고지]<br>
+              - 이용 7일 전: 100% 환불<br>
+              - 이용 4~6일 전: 70% 환불<br>
+              - 이용 1~3일 전: 50% 환불<br>
+              - 당일 및 노쇼: 환불 불가<br>
+              * 천재지변으로 인한 예약 취소 시 전액 환불됩니다.
+            </div>
+          </div>
+
+          <div class="agreement-item">
+            <div class="item-main">
+              <div class="item-title">
+                <span>개인정보 수집 및 이용동의 <small class="required">(필수)</small></span>
+                <button type="button" class="btn-view-terms">내용보기</button>
+              </div>
+              <label class="checkbox-label"><input type="checkbox" class="agree-check"> 동의</label>
+            </div>
+            <div class="terms-content">
+              1. 수집 항목: 성명, 연락처, 예약 정보<br>
+              2. 수집 목적: 숙소 예약 확인 및 본인 확인<br>
+              3. 보유 기간: 서비스 제공 완료 후 6개월 (관계 법령 준수)
+            </div>
+          </div>
+
+          <div class="agreement-item">
+            <div class="item-main">
+              <div class="item-title">
+                <span>개인정보 제3자 제공동의 <small class="required">(필수)</small></span>
+                <button type="button" class="btn-view-terms">내용보기</button>
+              </div>
+              <label class="checkbox-label"><input type="checkbox" class="agree-check"> 동의</label>
+            </div>
+            <div class="terms-content">
+              [개인정보 제3자 제공 안내]<br>
+              1. 제공받는 자: 죽도 상화원 및 해당 숙박업소<br>
+              2. 제공 목적: 숙박 예약 서비스 이행, 고객 식별, 서비스 이용 관련 상담 및 민원 처리<br>
+              3. 제공 항목: 예약자명, 휴대폰 번호, 예약번호, 결제 정보<br>
+              4. 보유 및 이용기간: 숙박 서비스 제공 완료 후 즉시 파기
+            </div>
+          </div>
+
+          <div class="agreement-item">
+            <div class="item-main">
+              <div class="item-title">
+                <span>미성년자 아님 동의 <small class="required">(필수)</small></span>
+                <button type="button" class="btn-view-terms">내용보기</button>
+              </div>
+              <label class="checkbox-label"><input type="checkbox" class="agree-check"> 동의</label>
+            </div>
+            <div class="terms-content">
+              [미성년자 투숙 관련 규정 안내]<br>
+              1. 본 숙박 시설은 만 19세 미만 미성년자의 단독 투숙이 불가능합니다.<br>
+              2. 미성년자 투숙 시 반드시 법정대리인(부모님 등)과 동행해야 하며, 현장에서 신분증 확인을 요구할 수 있습니다.<br>
+              3. 허위 예약 또는 보호자 동행 없는 미성년자 투숙으로 인해 발생하는 입실 거부 및 환불 불가 상황에 대한 책임은 예약자 본인에게 있습니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 결제 -->
+      <section class="payment-area">
+        <h2 class="contents-title">결제하기</h2>
+        <div class="payment-method price-row">
+          <span class="label-text">결제수단 선택</span>
+          <div class="payment-select">
+            <label class="pay-label">
+              <input type="radio" name="pay" value="card" checked>
+              신용카드/체크카드
+            </label>
+            <label class="pay-label">
+              <input type="radio" name="pay" value="bank">
+              무통장입금
+            </label>
+          </div>
+        </div>
+
+        <div class="price-table">
+          <div class="price-row">
+            <span class="label-text">환불계좌정보</span>
+            <div class="bank-info">
+              <select name="bank-name" id="bankName">
+                <option value="">은행명</option>
+                <option value="신한">신한</option>
+                <option value="우리">우리</option>
+                <option value="농협">농협</option>
+              </select>
+
+              <span class="label-text">계좌번호</span>
+              <input type="text" class="placeholder-text bank-input" maxlength="4" inputmode="numeric" pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="숫자만 입력해주세요.">
+
+              <span class="label-text">예금주</span>
+              <input type="text" id="accountHolder" class="placeholder-text bank-input" placeholder="예약자명과 동일" readonly>
+              <span class=" contents-desc-sm">예약자명 본인 계좌를 입력해주세요.</span>
+            </div>
+          </div>
+          <div class="price-row">
+            <span class="label-text">객실</span>
+            <span id="roomPrice" class="basic-desc">320,000</span>
+          </div>
+
+          <div class="price-row">
+            <span class="label-text">인원추가</span>
+            <span id="extraPersonPrice" class=" basic-desc">20,000</span>
+          </div>
+
+          <div class="price-row">
+            <span class="label-text">부가서비스</span>
+            <span id="servicePrice" class="basic-desc">20,000</span>
+          </div>
+
+          <div class="price-row">
+            <label for="promo" class="label-text">프로모션코드</label>
+            <input id="promo" name="promo" type="text" class="code-input">
+          </div>
+
+          <div class="price-row">
+            <span class="label-text">할인금액</span>
+            <span id="discountPrice" class="basic-desc">-100,000</span>
+          </div>
+
+          <div class="price-row total">
+            <span class="label-text">최종 이용 금액</span>
+            <span id="totalPrice" class="total-price point-text">260,000</span>
+          </div>
+
+        </div>
+
+
+        <div class="btn-wrap">
+          <button type="submit" class="pay-btn reservation-common-btn">
+            결제하기
+          </button>
+        </div>
+
+      </section>
+
+    </form>
+
+  </main>
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>  
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 내용보기 토글 및 체크박스 로직
+    $('.btn-view-terms').on('click', function() {
+        const $content = $(this).closest('.agreement-item').find('.terms-content');
+        $content.toggleClass('active');
+        $(this).text($content.hasClass('active') ? '닫기' : '내용보기');
+    });
+
+    $('#check-all').on('change', function() {
+        $('.agree-check').prop('checked', this.checked);
+    });
+
+    $('.agree-check').on('change', function() {
+        const total = $('.agree-check').length;
+        const checked = $('.agree-check:checked').length;
+        $('#check-all').prop('checked', total === checked);
+    });
+
+    // 2. 예약자명 동기화 (예금주)
+    $('#bookerName').on('input', function() {
+        $('#accountHolder').val($(this).val());
+    });
+
+    // 3. 결제 버튼 클릭 시 통합 검사
+    $('.pay-btn').on('click', function(e) {
+        e.preventDefault(); // 우선 멈춤
+
+        // [검사 1] 예약자명
+        if ($('#bookerName').val().trim() === '') {
+            alert('예약자명을 입력해주세요.');
+            $('#bookerName').focus();
+            return false;
+        }
+
+        // [검사 2] 필수 연락처 (id="phone"이 있는 행의 입력창들)
+        let telValid = true;
+        let $firstEmptyTel = null;
+
+        // .tel-group 내의 모든 input을 검사하도록 수정
+        $('.tel-group').first().find('.tel-input').each(function() {
+            if ($(this).val().trim() === '') {
+                telValid = false;
+                $firstEmptyTel = $(this);
+                return false;
+            }
+        });
+
+        if (!telValid) {
+            alert('연락처를 모두 입력해주세요.');
+            $firstEmptyTel.focus();
+            return false;
+        }
+
+        // [검사 3] 약관 동의
+        let allChecked = true;
+        let $firstUnchecked = null;
+
+        $('.agree-check').each(function() {
+            if (!$(this).is(':checked')) {
+                allChecked = false;
+                $firstUnchecked = $(this).closest('.agreement-item');
+                return false;
+            }
+        });
+
+        if (!allChecked) {
+            alert('모든 필수 약관을 확인해주세요.');
+            $('html, body').animate({
+                scrollTop: $firstUnchecked.offset().top - 100
+            }, 500);
+            return false;
+        }
+
+        // 퍼블 테스트용!!!!
+        window.location.href = "reserv_complete.html";
+    });
+
+    // 기타 초기화 함수
+    if(typeof includeHTML === 'function') includeHTML(initCommonDesign);
+});
+</script>
+</body>
+</html>

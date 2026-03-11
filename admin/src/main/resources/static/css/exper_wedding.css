@@ -186,6 +186,7 @@ main{
   background-image: url(../images/experiences/wedding-membership.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   color: var(--color-white);
   padding-left: 7%;
   padding-top: 60px;

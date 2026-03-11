@@ -1,0 +1,72 @@
+/* Admin Detail 페이지 스타일 */
+.info-item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    width: 150px;
+    font-weight: 500;
+    color: #666;
+}
+
+.info-value {
+    flex: 1;
+    color: #333;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.badge-admin {
+    background: #333;
+    color: #fff;
+}
+
+.badge-manager {
+    background: #007bff;
+    color: #fff;
+}
+
+.badge-user {
+    background: #6c757d;
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .info-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .info-label {
+        width: 100%;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

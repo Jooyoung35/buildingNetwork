@@ -1,0 +1,135 @@
+/* Dashboard 페이지 스타일 */
+body {
+    background-color: #ffffff;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #333;
+}
+
+.user-info {
+    line-height: 2;
+}
+
+.info-item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 500;
+    width: 100px;
+    color: #666;
+}
+
+.info-value {
+    color: #333;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.badge-admin {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.badge-manager {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.badge-approved {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-user {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    max-width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.qr-code p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
+}
+
+.actions {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .info-label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .info-item {
+        padding: 10px 0;
+    }
+}

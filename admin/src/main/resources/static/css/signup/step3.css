@@ -1,0 +1,119 @@
+/* Signup Step3 스타일 */
+.container {	
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;    
+}
+
+.completion-container {
+    background: #fff;
+    padding: 60px 40px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.completion-message {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.completion-submessage {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.user-info {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 4px;
+    margin: 40px 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.user-info-item:last-child {
+    border-bottom: none;
+}
+
+.user-info-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.user-info-value {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .completion-container {
+        padding: 40px 30px;
+    }
+    
+    .completion-message {
+        font-size: 20px;
+    }
+    
+    .completion-submessage {
+        font-size: 14px;
+    }
+    
+    .user-info {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .completion-container {
+        padding: 30px 20px;
+    }
+    
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .completion-message {
+        font-size: 18px;
+    }
+    
+    .completion-submessage {
+        font-size: 13px;
+    }
+    
+    .user-info {
+        padding: 15px;
+    }
+    
+    .user-info-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
