@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+    <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/exper_stay.css" th:href="@{/css/exper_stay.css}">
+  <link rel="stylesheet" href="../static/assets/js/swiper-element-bundle.min.js" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script>
+  <script src="../static/assets/js/gsap.min.js" th:src="@{/assets/js/gsap.min.js}"></script>
+  <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <!-- <script src="../static/js/ui.js" th:src="@{/js/ui.js}" defer></script> -->
+</head>
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+
+  <main>
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Experiences</h1>
+        <p class="visual-txt">숙박</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="stay-title">
+        <h3 class="common-title">자연을 벗삼아 편안함과 힐링을 선사하는 숙소</h3>
+        <p class="common-desc">
+          인천 동검도, 충남 보령, 충남 태안 안면도, 제주도에 이르기까지 다양한 공간의 숙소들은 서로 다른 매력의 편안함을 선사합니다.
+        </p>        
+      </div>
+    </section>
+
+    <section class="contents-wrap">
+      <ul class="stay-tab-list">
+        <li class="stay-tab-item active" data-stay="sanghwawon-hv">상화원 한국빌라</li>
+        <li class="stay-tab-item" data-stay="donggeomdo-hv">동검도 한국빌라</li>
+      </ul>
+      <div class="stay-indicator"></div> 
+      <ul class="stay-contents-area">
+        <li id="sanghwawon-hv" class="stay-content active">
+          <div class="room-info-intro">
+            <div class="img-area">
+              <img src="../static/images/experiences/intro-img-sanghwawon.png" alt="상화원외관사진">
+            </div>
+            <div class="text-area">
+              <div class="wrap-text">
+                <h3 class="common-title intro-title">
+                  죽도의 자연과 유기적으로 호흡하는 독채 빌라
+                </h3>
+                <p class="common-desc intro-desc">
+                  충남 보령시 죽도에 위치한 상화원 안에 있는 프라이빗 숙박시설입니다. 1, 2층 객실이 내부 계단으로 연결된 독창적인 구조로 독립된 공간을 제공하며, 전면 유리창으로 펼쳐지는 파노라마 바다 뷰와 깊은 솔내음이 편안함을 선사합니다.
+                </p>
+              </div>
+              <div class="wrap-btn">
+                <a href="reserv_stay.html">예약하기</a>
+                <a href="destinations.html?tab=jukdo">자세히보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="room-information">
+            <div class="room-detail-img">
+              <img src="../static/images/experiences/room-img-sanghwawon-01.png" alt="상화원2층객실이미지">
+              <img src="../static/images/experiences/room-img-sanghwawon-02.png" alt="상화원침실이미지">
+              <img src="../static/images/experiences/room-img-sanghwawon-03.png" alt="상화원2층계단">
+            </div>
+            <ul class="room-info-graphic">
+              <li>
+                <img src="../static/images/experiences/ico-home.png" alt="객실아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실크기</p>
+                  <p id="roomSize" class="basic-desc">38평 / 43평</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/experiences/ico-people.png" alt="사람아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">투숙인원</p>
+                  <p class="basic-desc">기준 4인 / 최대 6인</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/experiences/ico-compos.png" alt="객실구성아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실구성</p>
+                  <p class="basic-desc">침실2, 한실1, 화장실2</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/experiences/ico-bed.png" alt="침대아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">침대타입</p>
+                  <p class="basic-desc">싱글 4개</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/experiences/ico-time.png" alt="시계아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">체크인/아웃</p>
+                  <p class="basic-desc">15:00 / 11:00</p>
+                </div>
+              </li>
+            </ul>  
+            <div class="room-provision">
+              <h3 class="contents-title">비품 및 어메니티</h3>            
+              <div class="wrap-provision">
+                <div class="provision-row">
+                  <div class="provision-label">비품</div>
+                    <ul class="provision-list" id="modal-facilities-list">
+                      <li class="contents-desc-sm">화장대</li>
+                      <li class="contents-desc-sm">테이블</li>
+                      <li class="contents-desc-sm">의자</li>
+                      <li class="contents-desc-sm">소파</li>
+                      <li class="contents-desc-sm">옷걸이</li>
+                      <li class="contents-desc-sm">컵</li>
+                      <li class="contents-desc-sm">커피</li>
+                      <li class="contents-desc-sm">차</li>
+                      <li class="contents-desc-sm">전기주전자</li>
+                      <li class="contents-desc-sm">캡슐커피머신</li>
+                      <li class="contents-desc-sm">헤어드라이기</li>
+                      <li class="contents-desc-sm">냉장고</li>
+                      <li class="contents-desc-sm">TV</li>
+                      <li class="contents-desc-sm">에어컨</li>
+                    </ul>
+                </div>
+
+                <div class="provision-row">
+                  <div class="provision-label">어메니티</div>
+                  <ul class="provision-list" id="modal-amenity-list">
+                    <li class="contents-desc-sm">샴푸</li>
+                    <li class="contents-desc-sm">컨디셔너</li>
+                    <li class="contents-desc-sm">바디워시</li>
+                    <li class="contents-desc-sm">바디로션</li>
+                    <li class="contents-desc-sm">1회용 면도기</li>
+                    <li class="contents-desc-sm">면도크림</li>
+                    <li class="contents-desc-sm">칫솔</li>
+                    <li class="contents-desc-sm">치약</li>
+                    <li class="contents-desc-sm">샤워타올</li>
+                    <li class="contents-desc-sm">샤워캡</li>
+                    <li class="contents-desc-sm">화장솜</li>
+                    <li class="contents-desc-sm">비누</li>
+                    <li class="contents-desc-sm">샤워타올</li>
+                  </ul>
+                </div>
+              </div>
+            </div>          
+          </div>
+          
+          <div class="dining">
+            <h3 class="contents-title">다이닝</h3>       
+            <div class="wrap-dining-contents">
+              <div class="dining-img">
+                <img src="../static/images/experiences/dining-img.png" alt="다이닝이미지">
+              </div>
+              <div class="dining-text-area">
+                <h4>조식서비스</h4>
+                <p>
+                  시간 : 07:30~09:00<br>
+                  메뉴 : 토스트, 계란, 시리얼, 과일, 황태 해장국 등
+                </p>
+                <h4>부가서비스</h4>
+                <p>
+                  바비큐 가스그릴 대여<br>
+                  시간 : 17:00~21:00
+                </p>
+                <strong class="dining-notice">
+                  *전 객실 금연 및 취사불가합니다.
+                </strong>
+              </div>
+            </div>          
+          </div>
+
+          <div class="membership-banner">
+            <h3>THE H CLUB 멤버십 혜택</h3>
+            <P>
+              숙박 예약 시 20% 상시 할인
+              <span>단, 공식 홈페이지 내에서 예약한 경우에 적용</span>
+            </P>
+            <P class="info">
+              <b>문의·예약</b>&ensp;
+              <a href="tel:+02-6377-5162">02-6377-5162/5254</a> &ensp;
+              <b>E-mail</b>&ensp;
+              <a href="mailto:reservation.kci.co.kr">
+                reservation.kci.co.kr
+              </a>
+            </P>
+          </div>
+        </li>
+        <li id="donggeomdo-hv" class="stay-content">
+          <div class="room-info-intro">
+            <div class="img-area">
+              <img src="../static/images/experiences/intro-img-donggumdo.png" alt="동검도외관사진">
+            </div>
+            <div class="text-area">
+              <div class="wrap-text">
+                <h3 class="common-title intro-title">
+                  서해의 끝자락, 바다의 숨결이 머무는 미니멀 안식처
+                </h3>
+                <p class="common-desc intro-desc">
+                  인천 강화 동검도 가장 깊숙한 곳, 시시각각 변하는 서해의 풍경을 가장 가까이서 마주합니다. 심플하고 세련된 인테리어와 쾌적한 공간 설계와 함께, 머무는 것만으로도 자연과 하나가 되는 특별한 쉼의 시간을 제공합니다.
+                </p>
+              </div>
+              <div class="wrap-btn">
+                <a href="reserv_stay.html">예약하기</a>
+                <a href="destinations.html?tab=jukdo">자세히보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="room-information">
+            <div class="room-detail-img">
+              <img src="../static/images/experiences/room-img-donggumdo-01.png" alt="동검도객실이미지">
+              <img src="../static/images/experiences/room-img-donggumdo-02.png" alt="동검도2층침대이미지">
+              <img src="../static/images/experiences/room-img-donggumdo-03.png" alt="동검도뷰이미지">
+            </div>
+            <ul class="room-info-graphic">
+              <li>
+                <img src="../static/images/experiences/ico-home.png" alt="객실아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실크기</p>
+                  <p id="roomSize" class="basic-desc">10평/12평/18평/20평A/20평B</p>
+                </div>
+              </li>
+              <li>
+                <img src="../static/images/experiences/ico-people.png" alt="사람아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">투숙인원</p>
+                  <p class="basic-desc">2인~8인</p>
+                </div>
+              </li>
+              <!-- <li>
+                <img src="../../static/images/experiences/ico-compos.png" alt="객실구성아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">객실구성</p>
+                  <p class="basic-desc">객실타입별상이</p>
+                </div>
+              </li> -->
+              <!-- <li>
+                <img src="../../static/images/experiences/ico-bed.png" alt="침대아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">침대타입</p>
+                  <p class="basic-desc">객실타입별상이</p>
+                </div>
+              </li> -->
+              <li>
+                <img src="../static/images/experiences/ico-time.png" alt="시계아이콘">
+                <div class="wrap-room-info-text">
+                  <p class="contents-desc-sm">체크인/아웃</p>
+                  <p class="basic-desc">15:00 / 11:00</p>
+                </div>
+              </li>
+            </ul>  
+            <div class="room-provision">
+              <h3 class="contents-title">비품 및 어메니티</h3>            
+              <div class="wrap-provision">
+                <div class="provision-row">
+                  <div class="provision-label">비품</div>
+                    <ul class="provision-list" id="modal-facilities-list">
+                      <li class="contents-desc-sm">식탁</li>
+                      <li class="contents-desc-sm">의자</li>
+                      <li class="contents-desc-sm">에어컨</li>
+                      <li class="contents-desc-sm">소파</li>
+                      <li class="contents-desc-sm">전기주전자</li>
+                      <li class="contents-desc-sm">헤어드라이기</li>
+                      <li class="contents-desc-sm">냉장고</li>
+                      <li class="contents-desc-sm">TV</li>
+                      <li class="contents-desc-sm">침대</li>
+
+                    </ul>
+                </div>
+
+                <div class="provision-row">
+                  <div class="provision-label">어메니티</div>
+                  <ul class="provision-list" id="modal-amenity-list">
+                    <li class="contents-desc-sm">샴푸</li>
+                    <li class="contents-desc-sm">컨디셔너</li>
+                    <li class="contents-desc-sm">바디워시</li>
+                    <li class="contents-desc-sm">바디로션</li>
+                    <li class="contents-desc-sm">타월</li>
+                  </ul>
+                </div>
+              </div>
+            </div>          
+          </div>
+          
+          <div class="dining">
+            <h3 class="contents-title">다이닝</h3>       
+            <div class="wrap-dining-contents">
+              <div class="dining-img">
+                <img src="../static/images/experiences/dining-img.png" alt="다이닝이미지">
+              </div>
+              <div class="dining-text-area">
+                <h4>조식서비스</h4>
+                <p>
+                  시간 : 08:30~09:30<br>
+                  메뉴 : 토스트, 계란, 시리얼, 과일, 커피, 주스 등 제공
+                </p>
+                <h4>부가서비스</h4>
+                <p>
+                  바비큐 가스그릴 대여(시간 : 17:00~21:00)<br>
+                  수영장(운영기간 : 7월~8월)
+                  
+                </p>
+                <strong class="dining-notice">
+                  *전 객실 금연 및 취사불가합니다.
+                </strong>
+              </div>
+            </div>          
+          </div>
+
+          <div class="membership-banner">
+            <h3>THE H CLUB 멤버십 혜택</h3>
+            <P>
+              숙박 예약 시 20% 상시 할인
+              <span>단, 공식 홈페이지 내에서 예약한 경우에 적용</span>
+            </P>
+            <P class="info">
+              <b>문의·예약</b>&ensp;
+              <a href="tel:+02-6377-5162">02-6377-5162/5254</a> &ensp;
+              <b>E-mail</b>&ensp;
+              <a href="mailto:reservation.kci.co.kr">
+                reservation.kci.co.kr
+              </a>
+            </P>
+          </div>
+        </li>
+      </ul>
+
+
+    </section>
+
+  </main>
+
+
+<!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.stay-tab-item');
+  const contents = document.querySelectorAll('.stay-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-stay');
+
+      // 1. 모든 탭에서 active 클래스 제거
+      tabs.forEach(t => t.classList.remove('active'));
+      // 2. 모든 컨텐츠에서 active 클래스 제거
+      contents.forEach(c => c.classList.remove('active'));
+
+      // 3. 클릭한 탭에 active 클래스 추가
+      tab.classList.add('active');
+      // 4. 클릭한 탭의 data-stay와 일치하는 id를 가진 컨텐츠에 active 추가
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+});
+</script>
+</body>
+</html>
