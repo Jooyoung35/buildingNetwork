@@ -121,5 +121,10 @@
 
   <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
 
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
 </body>
 </html>

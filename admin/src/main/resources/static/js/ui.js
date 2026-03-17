@@ -46,10 +46,11 @@ function initPageUI() {
     initDestinationMaps();
 }
 
+
 // [추가된 빌딩 탭 로직]--------
 function initBuildingTabs() {
     const tabs = document.querySelectorAll('.tab-wrapper li');
-    const contents = document.querySelectorAll('.tab-content');
+    const contents = document.querySelectorAll('.contents-area  > .tab-content');
     const indicator = document.querySelector('.tab-indicator');
 
     if (!tabs.length || !indicator) return;
@@ -144,7 +145,7 @@ function initBuildingTabs() {
 
     function initAllSwipers() {
     // 각 탭 컨텐츠(#jukdo, #donggeomdo 등)를 돌면서 슬라이더를 찾습니다.
-    document.querySelectorAll('.tab-content').forEach((content) => {
+    document.querySelectorAll('.contents-area  > .tab-content').forEach((content) => {
         const tabId = content.id;
         const swiperElement = content.querySelector('.mySwiper');
 

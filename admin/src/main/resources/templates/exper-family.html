@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+	
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/exper_famaily.css" th:href="@{/css/exper_famaily.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+<body>
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Experiences</h1>
+        <p class="visual-txt">가족연회</p>
+      </div>
+    </section>
+
+    <section class="wrap-family">
+      <div class="family-title">
+        <img src="../static/images/experiences/family-event-typo.png" th:src="@{/images/experiences/family-event-typo.png}" alt="가족연회타이포">
+        <h3 class="common-title">가족의 소중한 기념일을 위한 프라이빗 연회</h3>
+        <p class="common-desc">
+          행복한 우리 가족의 가장 아름다운 순간, 돌잔치, 회갑연, 고희연 등 가족∙친지들과의 소중한 연회를 여유롭고 프라이빗하게 즐겨보세요.<br>우리 가족만을 위해 준비된 만찬과 자연의 정취는 소중한 분들과 따뜻한 기억을 나누는 특별한 자리가 됩니다.
+        </p>
+        <a class="inquiry-btn" href="tel:+02-6377-5162">문의하기</a>
+      </div>
+      <ul class="family-contents">
+        <li class="rental-wrap">
+          <div class="rental-contents-wrap">
+            <div class="rental-text-wrap">
+              <h2 class="family-common-title">기본장비</h2>
+              <p class="family-common-desc">다양한 장비 대여 가능</p>
+            </div>
+            <ul class="rental-item-wrap">
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-01-beam.png" alt="빔프로젝터아이콘">
+                <p class="rental-item-name">빔 프로젝터</p>
+              </li>
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-02-screen.png" alt="스크린아이콘">
+                <p class="rental-item-name">스크린</p>
+              </li>
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-03-mic.png" alt="마이크아이콘">
+                <p class="rental-item-name">마이크</p>
+              </li>
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-04-speaker.png" alt="스피커아이콘">
+                <p class="rental-item-name">스피커</p>
+              </li>
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-05-chair.png" alt="의자아이콘">
+                <p class="rental-item-name">의자</p>
+              </li>
+              <li class="rental-item">
+                <img src="../static/images/experiences/rental-item-06-table.png" alt="테이블아이콘">
+                <p class="rental-item-name">테이블</p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="family-event-venue">
+          <div class="venue-header">
+            <h2 class="family-common-title venue-title">대관장소</h2>
+            <p class="family-common-desc">상화원 한옥마을 내</p>
+          </div>
+
+          <ul class="venue-list">
+            <li><img src="../static/images/experiences/family-place-01.png" th:src="@{/images/experiences/family-place-01.png}" alt="테이블 셋팅"></li>
+            <li><img src="../static/images/experiences/family-place-02.png" th:src="@{/images/experiences/family-place-02.png}" alt="야외 한옥 예식장"></li>
+            <li><img src="../static/images/experiences/family-place-03.png" th:src="@{/images/experiences/family-place-03.png}" alt="바다 배경 테이블"></li>
+            <li><img src="../static/images/experiences/family-place-04.png" th:src="@{/images/experiences/family-place-04.png}" alt="한옥 전경"></li>
+          </ul>
+        </li>
+
+        <li class="add-service">
+          <div class="service-header">
+            <h2 class="family-common-title">추가 선택 서비스</h2>
+          </div>
+
+          <div class="service-container">
+            <div class="service-img-box">
+              <img src="../static/images/experiences/wedding-add-service.png" th:src="@{/images/experiences/wedding-add-service.png}" alt="숙박 객실 내부">
+              <p class="img-location">진행 가능 장소 : 죽도 상화원</p>
+            </div>
+
+            <ul class="service-info-box">
+              <li class="info-item">
+                <h3>숙박</h3>
+                <p class="family-common-desc">해송 사이로 보이는 서해바다의 풍경을 한눈에 볼 수 있는 아늑한 객실에서의 휴식은 또 하나의 여운과 추억을 선사합니다.</p>
+              </li>
+              <li class="info-item">
+                <h3>스냅촬영</h3>
+                <p class="family-common-desc">
+                  전문작가의 따듯한 시선으로 만들어 드리는 스냅촬영은 행복하고 아름다운 찰나의 순간을 담아 두고 간직할 수 있는 추억으로 담아 드립니다.
+                </p>
+              </li>
+              <li class="info-item">
+                <h3>장비 업그레이드</h3>
+                <p class="family-common-desc">
+                  음향 혹은 영상 장비 업그레이드 요청 시, 추가비용이 발생할 수 있습니다.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="bottom-banner">
+          <h3>THE H CLUB 멤버십 혜택</h3>
+          <P>대관료 10~20% 할인 적용, 1일 1팀 단독 진행</P>
+          <P class="info">
+            <b>문의·예약</b>&ensp;
+            <a href="tel:+02-6377-5162">02-6377-5162/5254</a> &ensp;
+            <b>E-mail</b>&ensp;
+            <a href="mailto:reservation.kci.co.kr">
+              reservation.kci.co.kr
+            </a>
+          </P>
+        </li>
+      </ul>
+    </section>
+  </main>
+  
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
+
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+main{
+  margin: 100px auto 0;
+  width: 70%;
+}
+
+.contents-wrap{
+  padding-top: 100px;
+}
+/* 탭메뉴 */
+.my-tab-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+.my-content {
+  display: none;
+}
+.my-content.active {
+  display: block;
+}
+.my-tab-item {
+  cursor: pointer;
+  padding: 5px 20px;
+  border: 1px solid var(--color-sub-text);
+  color: var(--color-sub-text);
+  border-radius: 30px;
+  font-size: var(--fs-md);
+}
+.my-tab-item.active {
+  background-color: var(--color-sub-text);
+  color: var(--color-white);
+}
+/* ------------------------------------------ */
+
+.my-contents-area{
+  padding: 100px 0;
+}
+
+/* 내정보 */
+.simple-info-section{
+  display: flex;
+  justify-content: space-between;
+}
+.user-name-area{
+  display: flex;
+  align-items: baseline;
+}
+.simple-info-section .user-name{
+  font-size: 32px;
+  margin-bottom: 0 !important;
+}
+.simple-info-section .user-name::after{
+  content: "님";
+  font-size: var(--fs-md);
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+/* 이용자 등급 뱃지공통스타일 */
+.user-class-badge {
+  width: 80px;
+  height: 20px;
+  display: inline-flex;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px 8px 3px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 50px;
+  margin-left: 10px;
+  color: var(--color-main-text);
+}
+
+/* 등급별 뱃지 */
+.user-class-badge.basic {
+  background-color: #ddd;
+}
+.user-class-badge.auth {
+  background-color: #e8d5be;
+}
+.user-class-badge.admin {
+  background-color: var(--color-secondary)
+}
+.user-class-badge.super{
+  background-color: #9AADBF;
+}
+
+
+/* 멤버십카드 */
+.member-card-area{
+  max-width: 430px;
+  height: 250px;
+}
+.membership-card-design{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background:linear-gradient(-45deg, #e2cbad, #ae926d, #ae926d, #d1bca1 );
+  padding: 40px;
+}
+.membership-name img{
+  width: 100px;
+} 
+.membership-name p{
+  font-size: clamp(1.5rem, 2.2vw, 2.5rem);
+  color: var(--color-white);
+}
+
+.member-number-qr{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+.user-membership-number{
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+}
+.qr-code-area{
+  background-color: var(--color-white);
+  padding: 8px;
+}
+
+
+
+/* 캡쳐방지 문구 */
+.capture-prevention-bar {
+  width: 100%;
+  overflow: hidden; 
+  background-color: #eee;
+  padding: 8px 0;
+  display: flex;
+  margin-top: 10px;
+}
+
+.marquee-wrapper {
+  display: flex;
+  white-space: nowrap; 
+  animation: scroll-left 20s linear infinite; 
+}
+
+.capture-prevention {
+  font-size: 14px;
+  color: #7d7d7d;
+  font-weight: 500;
+}
+
+/* 왼쪽으로 흐르는 애니메이션 설정 */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-70%); 
+  }
+}
+
+/* 내 정보영역 */
+.detail-profile{
+  margin-top: 100px;
+}
+.my-profile-title{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #7d7d7d;
+}
+.my-profile-title h3,
+.my-reserv-title h3{
+  font-size: var(--fs-xl);
+  color: var(--color-main-text);
+  margin-bottom: 20px !important;
+}
+
+.modify-text, .save {
+  cursor: pointer;
+  color: var(--color-main);
+  text-decoration: underline;
+}
+.modify.editing {
+  color: var(--color-main-text); 
+}
+
+.wrap-profile .info-item,
+.wrap-profile-modify .info-item{
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.wrap-profile .info-item dd{
+  font-size: var(--fs-md);
+  color: var(--color-main-text);
+  font-weight: 500;
+}
+.label-text{
+  font-size: var(--fs-md);
+  color: var(--color-sub-text);
+}
+
+
+
+/* 프로필 수정 */
+.edit-input {
+  width: 40%;
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus {
+    outline: none;   
+    border: 1px solid #1a375f; 
+    box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+
+select{
+  width: 40%;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  appearance: none;
+  color: #818181 !important;
+  font-weight: 400 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center; 
+  background-size: 14px; 
+  cursor: pointer;
+}
+select:focus {
+  outline: none;   
+  border: 1px solid #1a375f; 
+  box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+.no-edit-notice{
+  font-size: var(--fs-sm);
+  display: inline-block;
+  margin-left: 10px;
+  color: #7d7d7d;
+}
+
+
+
+/* 예약 페이지------------------------------------------- */
+
+.contents-title{
+  margin-bottom: 40px;
+}
+.reservation-grid {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 1.3fr 0.8fr 2fr 1fr 1fr;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.reservation-grid.header {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-top: 2px solid var(--color-sub-text);
+}
+
+.reservation-grid.item div {
+  font-size: 15px;
+  color: #555;
+}
+
+/* 취소 버튼 */
+.btn-cancel {
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  color: var(--color-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
+}
+
+
+@media (max-width: 900px) {
+  main{
+    width: 85%;
+  }
+  .contents-wrap{
+    padding-top: 50px;
+  }
+
+  /* 마이페이지 내정보 */
+
+  .my-contents-area{
+    padding: 50px 0;
+  } 
+  .simple-info-section{
+    display: block;
+  }
+  .simple-info-section .user-name{
+    font-size: 24px;
+    margin-bottom: 30px !important;
+  }
+
+  /* 멤버십카드 */
+  .member-card-area{
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 2 / 1;
+  }
+
+/* 내정보수정 */
+  .edit-input {
+    width: 90%;
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  select{
+    width: 90%;
+  }
+
+
+  /* 내 예약 */
+  .reservation-grid.header {
+    display: none; 
+  }
+
+  .reservation-grid.item {
+    grid-template-columns: 1fr; 
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    gap: 10px;
+  }
+
+
+  .reservation-grid.item div::before {
+    content: attr(data-label);
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .res-action {
+    text-align: right;
+    margin-top: 10px;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+  }
+}
+
+
+@media (max-width: 380px) {
+  /* 멤버십카드 */
+  .member-card-area{
+    max-width: 380px;
+    aspect-ratio: 2 / 0.5;
+  }
+  .membership-card-design{
+    padding: 30px;
+  }
+  .membership-name p{
+    font-size: clamp(1.4rem, 1.8vw, 2.1rem);
+    color: var(--color-white);
+  }
+  .member-number-qr{
+    margin-top: 70px;
+  }
+}

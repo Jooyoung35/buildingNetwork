@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+    <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/cancel_detail.css" th:href="@{/css/mypage_reserv_list.css}">
+  <link rel="stylesheet" href="../static/assets/js/swiper-element-bundle.min.js" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script>
+  <script src="../static/assets/js/gsap.min.js" th:src="@{/assets/js/gsap.min.js}"></script>
+  <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+<body>
+  
+
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+
+  <main>
+    <section class="cancel-container">
+      <h2 class="contents-title">예약 취소 및 환불 확인</h2>
+      
+      <div class="cancel-summary-box">
+        <p>고객님의 취소 요청에 따른 <strong>환불 예정 금액</strong>입니다.</p>
+        <p class="notice-sm">* 환불 규정에 따라 위약금이 발생할 수 있습니다.</p>
+      </div>
+
+      <div class="refund-grid">
+        <div class="refund-row header">
+          <div>구분</div>
+          <div>금액 세부내용</div>
+        </div>
+        
+        <div class="refund-row">
+          <div class="label">결제 금액</div>
+          <div class="value original">350,000원</div>
+        </div>
+        
+        <div class="refund-row">
+          <div class="label">차감 금액 (위약금)</div>
+          <div class="value deduction">- 35,000원</div>
+        </div>
+        
+        <div class="refund-row total">
+          <div class="label">최종 환불 예정 금액</div>
+          <div class="value final">315,000원</div>
+        </div>
+
+        <div class="refund-row cash-user-only">
+          <div class="label">환불계좌정보</div>
+          <div class="value deduction">
+            <select name="bank-name" id="bankName">
+              <option value=""disabled selected>은행명</option>
+              <option value="신한">신한</option>
+              <option value="우리">우리</option>
+              <option value="농협">농협</option>
+            </select>
+            <span class="label-text">계좌번호</span>
+              <input type="text" class="placeholder-text bank-input" maxlength="4" inputmode="numeric" pattern="[0-9]*"      oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="숫자만 입력">
+
+              <span class="label-text">예금주</span>
+              <input type="text" id="accountHolder" class="placeholder-text bank-input" placeholder="예약자명과 동일">
+          </div>
+        </div>
+      </div>
+
+      <div class="cancel-btn-group">
+        <!-- <a href="mypage.html" class="btn-back">돌아가기</a> -->
+        <a type="button" class="btn-final-cancel" href="cancel_complete.html">취소하기</a>
+      </div>
+    </section>
+  </main>
+
+<!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

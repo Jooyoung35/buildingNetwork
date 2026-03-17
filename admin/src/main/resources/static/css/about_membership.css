@@ -6,28 +6,7 @@ main{
 }
 /* 상단 영역 */
 .sub-visual {
-  width: 100%;
-  height: 540px;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/about/building4-top-bg.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  background-attachment: fixed;
-}
-
-.visual-tit{
-  font-size: 30px;
-  font-weight: 500;
-}
-.visual-txt{
-  font-size: 36px;
-  font-weight: 300;
-  margin-top: 10px;
 }
 
 
@@ -105,8 +84,13 @@ main{
   width: 50%;
   display: flex;
   gap: 20px;
+  justify-content: flex-end;
   position: absolute;
-  bottom: -147px; right: 0;
+  top: 0; right: 7%;
+}
+.wrap-destination > .desti-img-area img{
+  max-width: 100%;
+  /* height: auto; */
 }
 
 .desti-desc{
@@ -120,9 +104,99 @@ main{
 .left-txt p{
   font-size: clamp(1rem, 1.8vw, 1.25rem);
   color: var(--color-secondary);
-  margin: 15px 0 25px;
+  margin: 5px 0 25px;
 }
 .left-txt a{
   font-size: clamp(0.93rem, 1.5vw, 1rem);
   color: #7d7d7d;
+}
+
+/* coming soon */
+.coming-soon{
+  width: 85%;
+  margin: 0 auto ;
+  padding-top: 130px;
+}
+.wrap-island{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+.wrap-island li{
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 1;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--color-white);
+  font-size: clamp(1.15rem, 1vw, 1.5rem);
+  font-weight: 500;
+  transition: all 0.5s;
+}
+li.anmyeon-hankook-buil{
+  background-image: url(../images/about/membership-anmyeon-hk.png);
+}
+li.jeju-sanghwawon{
+  background-image: url(../images/about/membership-jeju-sanghwawon.png);
+}
+li.jodo-sanghwawon{
+  background-image: url(../images/about/membership-jodo-sanghwawon.png);
+}
+.wrap-island li:hover{
+  transform: translateY(-5px)
+}
+
+/* 혜택-------------------- */
+.h-members-benefits{
+  width: 85%;
+  margin: 100px auto 0;
+}
+.h-members-benefits h2{
+  margin: 10px 0px 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #7d7d7d;
+}
+.stay-benefit li dl{
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+.stay-benefit li dl dt{
+  font-weight: 600;
+}
+.place-discount{
+  margin-top: 60px;
+}
+.notice{
+  color: #7d7d7d;
+  font-weight: 300;
+}
+
+
+/* h benefits----------------- */
+.h-benefits{
+  margin-top: 300px;
+}
+.h-benefits .wrap-destination > .desti-img-area{
+  width: 55%;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  position: absolute;
+  top: -10%;
+  border: 1px solid red;
+}
+.h-benefits .wrap-destination > .desti-img-area img{
+  max-width: 100%;
+  /* height: auto; */
+}
+.h-benefits .left-txt h3{
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+.h-benefits .left-txt p{
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--color-sub-text);
+  margin: 10px 0 25px;
 }

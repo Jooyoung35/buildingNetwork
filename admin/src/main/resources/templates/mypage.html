@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+
+    <!-- css -->
+  <link rel="preload" href="../../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../../static/css/mypage.css" th:href="@{/css/mypage.css}">
+  <link rel="stylesheet" href="../../static/assets/js/swiper-element-bundle.min.js" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/assets/js/swiper-element-bundle.min.js" th:src="@{/assets/js/swiper-element-bundle.min.js}"></script>
+  <script src="../static/assets/js/gsap.min.js" th:src="@{/assets/js/gsap.min.js}"></script>
+  <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+<body>
+  
+
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+
+  <main>
+    <section class="contents-wrap">
+      <ul class="my-tab-list">
+        <li class="my-tab-item active" data-my="profile">마이페이지</li>
+        <li class="my-tab-item" data-my="modify">회원정보수정</li>
+        <li class="my-tab-item" data-my="myreservation">내 예약</li>
+      </ul>
+      <div class="my-indicator"></div> 
+      <ul class="my-contents-area">
+        <li id="profile" class="my-content active">
+          <div class="simple-info-section">
+            <div class="user-name-area">
+              <h2 class="contents-title user-name">User Name</h2>
+              <span class="user-class-badge basic">일반사용자</span>
+              <span class="user-class-badge auth">승인사용자</span>
+              <span class="user-class-badge admin">일반관리자</span>
+              <span class="user-class-badge super">최고관리자</span>
+            </div>
+            <div class="member-card-area">
+              <div class="membership-card-design">
+                <div class="membership-name">
+                  <img src="../../static/images/index/thelink.png" alt="더링크에이치로고">
+                  <p class="font-en">MEMBERSHIP VIP</p>
+                </div>
+                <div class="member-number-qr">
+                  <div class="wrap-mem-number">
+                    <p class="user-membership-number">9504127814</p>
+                    <p class="user-membership-number pending">승인대기중</p>
+                  </div>
+                  <div class="qr-code-area">
+                    <img src="../../static/images/mypage/qr-code.png" alt="큐알코드">
+                  </div>
+                </div>
+              </div>
+              <div class="capture-prevention-bar">
+                <div class="marquee-wrapper">
+                  <p class="capture-prevention">
+                    캡쳐된 화면은 이용이 제한될 수 있습니다. 캡쳐된 화면은 이용이 제한될 수 있습니다.
+                  </p>
+                  <p class="capture-prevention" aria-hidden="true">
+                    캡쳐된 화면은 이용이 제한될 수 있습니다. 캡쳐된 화면은 이용이 제한될 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="detail-profile">
+            <div class="my-profile-title">
+              <h3 class="contents-title">내 정보</h3>
+              <a href="mypage.html?tab=modify" class="modify-text">수정하기</a>
+            </div>
+            <div class="wrap-profile">
+              <dl class="info-item">
+                <dt class="label-text">이름</dt>
+                <dd class="user-name">User Name</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">이메일</dt>
+                <dd class="user-mail">admin@admin.com</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">전화번호</dt>
+                <dd class="user-phone">010-1234-5678</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">빌딩</dt>
+                <dd class="user-building">을지한국빌딩</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">회사</dt>
+                <dd class="user-company">스타벅스</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">권한</dt>
+                <dd class="user-clsss">승인사용자</dd>
+              </dl>
+              <dl class="info-item">
+                <dt class="label-text">가입일</dt>
+                <dd class="user-join-date">2026-02-27</dd>
+              </dl>
+            </div>
+          </div>
+
+        </li>
+
+        <li id="modify" class="my-content">
+          <div class="profile-modify">
+            <div class="my-profile-title">
+              <h3 class="contents-title">내 정보수정</h3>
+              <a class="save">저장하기</a>
+            </div>
+            <div class="wrap-profile-modify">
+              <dl class="info-item">
+                <dt class="label-text">이름</dt>
+                <dd class="user-name info-data">
+                  <input type="text" class="edit-input" value="User Name">
+                </dd>
+              </dl>
+
+              <dl class="info-item">
+                <dt class="label-text">이메일</dt>
+                <dd class="user-mail info-data">
+                  <input type="email" class="edit-input" value="admin@admin.com" disabled>
+                  <span class="no-edit-notice">이메일은 수정할 수 없습니다.</span>
+                </dd>
+              </dl>
+
+              <dl class="info-item">
+                <dt class="label-text">전화번호</dt>
+                <dd class="user-phone info-data">
+                  <input type="text" class="edit-input" value="010-1234-5678">
+                </dd>
+              </dl>
+
+              <dl class="info-item">
+                <dt class="label-text">빌딩</dt>
+                <dd class="user-building info-data">
+                  <select name="user-building" id="userBuinging">
+                    <option value="" disabled selected hidden>빌딩을 선택하세요</option>
+                    <option value="B001">을지한국빌딩</option>
+                    <option value="B002">청계한국빌딩</option>
+                    <option value="B003">종로한국빌딩</option>
+                    <option value="B004">소공한국빌딩</option>
+                  </select>
+                </dd>
+              </dl>
+
+              <dl class="info-item">
+                <dt class="label-text">회사</dt>
+                <dd class="user-company info-data">
+                  <select name="user-company" id="userCompany">
+                    <option value="" disabled selected hidden>먼저 빌딩을 선택하세요</option>
+                    <option value="C001">스타벅스</option>
+                    <option value="C002">탐앤탐스</option>
+                    <option value="C003">폴바셋</option>
+                    <option value="C004">투썸플레이스</option>
+                  </select>
+                </dd>
+              </dl>
+
+              <dl class="info-item">
+                <dt class="label-text">새 비밀번호</dt>
+                <dd class="user-password info-data">
+                  <input type="password" class="edit-input">
+                  <span class="no-edit-notice">변경하지 않으려면 비워두세요.</span>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+
+
+        <li id="myreservation" class="my-content">
+          <h3 class="contents-title my-reserv-title">내 예약 내역</h3>
+            
+            <div class="reservation-grid header">
+              <div>예약번호</div>
+              <div>예약자명</div>
+              <div>숙소명</div>
+              <div>객실명</div>
+              <div>예약날짜</div>
+              <div>예약상태</div>
+              <div>취소</div>
+            </div>
+
+            <div class="reservation-list">
+              <div class="reservation-grid item">
+                <div class="res-num" data-label="예약번호">20240522-001</div>
+                <div class="res-name" data-label="예약자명">홍길동</div>
+                <div class="res-stay" data-label="숙소명">상화원 한국빌라</div>
+                <div class="res-room" data-label="객실명">212동</div>
+                <div class="res-date" data-label="예약날짜">2026.05.15 - 05.16</div>
+                <div class="res-date" data-label="예약상태">결제완료</div>
+                <div class="res-action">
+                  <a href="cancel_detail.html?res_id=20240522-001" class="btn-cancel-link btn-cancel">취소요청</a>
+                </div>
+              </div>
+
+              <div class="reservation-grid item">
+                <div class="res-num" data-label="예약번호">20240520-042</div>
+                <div class="res-name" data-label="예약자명">홍길동</div>
+                <div class="res-stay" data-label="숙소명">동검도 한국빌라</div>
+                <div class="res-room" data-label="객실명">104호</div>
+                <div class="res-date" data-label="예약날짜">2026.04.11 - 04.12</div>
+                <div class="res-date" data-label="예약상태">결제완료</div>
+                <div class="res-action">
+                  <a href="cancel_detail.html?res_id=20240520-042" class="btn-cancel-link btn-cancel">취소요청</a>
+                </div>
+              </div>
+            </div>
+        </li>
+      </ul>
+
+
+    </section>
+  </main>
+
+<!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- 전환 공통 로직 ---
+    const tabs = document.querySelectorAll('.my-tab-item');
+    const contents = document.querySelectorAll('.my-content');
+
+    const switchTab = (targetId) => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      const activeTab = document.querySelector(`[data-my="${targetId}"]`);
+      const activeContent = document.getElementById(targetId);
+
+      if (activeTab && activeContent) {
+        activeTab.classList.add('active');
+        activeContent.classList.add('active');
+      }
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-my');
+        switchTab(targetId);
+      });
+    });
+
+    // 주소창 파라미터 체크 (mypage.html?tab=modify)
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+
+    if (tabParam) {
+      switchTab(tabParam);
+    }
+
+    // ---저장하기 버튼 클릭 시 
+    const saveBtn = document.querySelector('.save');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        alert('변경사항이 저장되었습니다.');
+        switchTab('profile'); 
+      });
+    }
+  });
+</script> 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

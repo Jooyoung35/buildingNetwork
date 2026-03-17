@@ -221,8 +221,8 @@
       <div class="rest-bnr">
         <div class="rs-bnr-txt-area">
           <em class="font-en">FIRST ACCESS TO RETREAT</em>
-          <p>THE LINK 멤버십을 위한 상화원/동검도 한국빌라</p>
-          <a class="reserv-btn" href="destinations.html?tab=jukdo">자세히보기</a>
+          <p>THE LINK H멤버십을 위한 상화원/동검도 한국빌라</p>
+          <a class="reserv-btn" href="exper_stay.html">자세히보기</a>
         </div>
       </div>
       <div class="rest-contents">
@@ -236,17 +236,20 @@
         </div>
         <swiper-container class="swiper-rest" init="false" pagination-type="none" space-between="20" style="--swiper-theme-color: #10365C;
             --swiper-pagination-progressbar-bg-color:#bbb; 
-            " centered-slides="false"   slides-offset-before="0"  slides-offset-after="0"   grab-cursor="true" loop="true" autoplay-delay="4000" autoplay-disable-on-interaction="false">
+            " centered-slides="false"   slides-offset-before="0"  slides-offset-after="0"  loop="true" autoplay-delay="4000" autoplay-disable-on-interaction="false">
           <!-- <swiper-slide class="dummy-slide" aria-hidden="true" ></swiper-slide> -->
           <swiper-slide class="cont-slide sd1">
             <a href="destinations.html?tab=jukdo">
               <div class="slide-img-area"></div>
               <div class="slide-txt-area">
-                <div class="slide-tit-area">
-                  <p class="slide-sub-tit">
-                    자연을 간직한 비밀정원
-                  </p>
-                  <h3 class="slide-main-tit">상화원</h3>
+                <div class="slide-title-text-wrap">
+                  <div class="slide-tit-area">
+                    <p class="slide-sub-tit">
+                      자연을 간직한 비밀정원
+                    </p>
+                    <h3 class="slide-main-tit">상화원</h3>
+                  </div>
+                  <a href="reserv_stay.html" class="reservation-btn">예약하기</a>
                 </div>
                 <div class="slide-sub-area">
                   <p class="slide-sub-desc">
@@ -261,11 +264,14 @@
             <a href="destinations.html?tab=donggeomdo">
               <div class="slide-img-area"></div>
               <div class="slide-txt-area">
-                <div class="slide-tit-area">
-                  <p class="slide-sub-tit">
-                    당신의 하루를 더 행복하게
-                  </p>
-                  <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                <div class="slide-title-text-wrap">
+                  <div class="slide-tit-area">
+                    <p class="slide-sub-tit">
+                      당신의 하루를 더 행복하게
+                    </p>
+                    <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                  </div>
+                  <a href="#" class="reservation-btn">예약하기</a>
                 </div>
                 <div class="slide-sub-area">
                   <p class="slide-sub-desc">
@@ -280,11 +286,14 @@
             <a href="">
               <div class="slide-img-area"></div>
               <div class="slide-txt-area">
-                <div class="slide-tit-area">
-                  <p class="slide-sub-tit">
-                    자연을 간직한 비밀정원
-                  </p>
-                  <h3 class="slide-main-tit">상화원</h3>
+                <div class="slide-title-text-wrap">
+                  <div class="slide-tit-area">
+                    <p class="slide-sub-tit">
+                      자연을 간직한 비밀정원
+                    </p>
+                    <h3 class="slide-main-tit">상화원</h3>
+                  </div>
+                  <a href="reserv_stay.html" class="reservation-btn">예약하기</a>
                 </div>
                 <div class="slide-sub-area">
                   <p class="slide-sub-desc">
@@ -299,11 +308,14 @@
             <a href="">
               <div class="slide-img-area"></div>
               <div class="slide-txt-area">
-                <div class="slide-tit-area">
-                  <p class="slide-sub-tit">
-                    당신의 하루를 더 행복하게
-                  </p>
-                  <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                <div class="slide-title-text-wrap">
+                  <div class="slide-tit-area">
+                    <p class="slide-sub-tit">
+                      당신의 하루를 더 행복하게
+                    </p>
+                    <h3 class="slide-main-tit">동검도 한국빌라</h3>
+                  </div>
+                  <a href="#" class="reservation-btn">예약하기</a>
                 </div>
                 <div class="slide-sub-area">
                   <p class="slide-sub-desc">
@@ -330,5 +342,12 @@
 
 <!-- footer -->
   <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+  
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
 </body>
 </html>

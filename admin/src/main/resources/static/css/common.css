@@ -15,24 +15,32 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word; 
 }
 
-
-:root{
 /* color variables */
+:root{
   --color-main-text :#222222;
   --color-sub-text : #333333;
 
   --color-primary : #10365C;
+  /* --color-primary : #2c5044; */
   --color-secondary : #d2b48c;
   --color-bg : #fbf9f6;
   --color-white :#fdfdfd;
 
-/* 폰트 사이즈 체계 정의 */
-  --fs-xl: 24px;
-  --fs-lg: 20px;
-  --fs-md: 16px;
-  --fs-sm: 14px;
-  --fs-xsm: 13px;
+  /* 26px */
+  /* --fs-2xl: clamp(1.375rem, 0.5vw + 1.2rem, 1.75rem); */
+  --fs-2xl: clamp(1.25rem, 0.5vw + 1.1rem, 1.625rem);
+  
+  /* 20px */
+  --fs-xl: clamp(1.125rem, 0.2vw + 1.1rem, 1.25rem);
+  
+  /* 18px*/
+  --fs-lg: clamp(1rem, 0.2vw + 0.9rem, 1.125rem);
 
+  /* 16px */
+  --fs-md: clamp(0.938rem, 0.1vw + 0.9rem, 1rem);
+
+  /* 14px */
+  --fs-sm: clamp(0.813rem, 0.1vw + 0.8rem, 0.875rem);
 }
 
 
@@ -156,7 +164,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 150px;
   transition: opacity 0.4s ease;
 }
 .logo-b {
@@ -501,6 +509,7 @@ body.is-logged-in .mo-status-logged-out{
   font-weight: 300;
   pointer-events: auto !important;
 }
+.mo-top-area li .mo-btn-mypage,
 .mo-top-area li .mo-logout,
 .mo-top-area li a.mo-join{
   margin-left: 10px;
@@ -512,7 +521,7 @@ body.is-logged-in .mo-status-logged-out{
   display: none;
 }
 .mo-logo a img{
-  width: 100px;
+  width: 130px;
   position: absolute;
   top:0px; left: 0%;
   transition: opacity 0.4s ease;
@@ -597,7 +606,7 @@ body.is-logged-in .mo-status-logged-out{
 }
 
 .tab-content {
-  display: none; /* 평소엔 숨김 */
+  display: none; 
 }
 
 .tab-content.active {
@@ -668,17 +677,45 @@ body.is-logged-in .mo-status-logged-out{
 }
 /* --------------------------------------------- */
 
+
+/* 서브페이지 상단 영역 */
+/* 상단 영역 */
+.sub-visual {
+  width: 100%;
+  height: 540px;
+  /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/experiences/wedding-top-bg.png'); */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.visual-tit{
+  font-size: 30px;
+  font-weight: 500;
+}
+.visual-txt{
+  font-size: 36px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+
 /* 서브페이지 작은타이틀/ 설명텍스트 공통 */
 /* h3, p  텍스트 공통 */
 .common-title{
   color: var(--color-secondary);
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 500;
   line-height: 1.5;
 }
 .common-desc{
   color: var(--color-sub-text);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   line-height: 1.6;
   margin-top: 8px;
 }
@@ -950,7 +987,7 @@ body.is-logged-in .mo-status-logged-out{
 }
 
 /* ============================================
-  fragments/common.css에서 추가된 스타일
+   fragments/common.css에서 추가된 스타일
    ============================================ */
 
 /* 스크롤바 숨김 (일부 페이지에서 사용) */

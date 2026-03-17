@@ -438,7 +438,11 @@
   
   <!-- footer -->
   <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
-
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -5,28 +5,8 @@ main{
 }
 /* 상단 영역 */
 .sub-visual {
-  width: 100%;
-  height: 540px;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/about/building4-top-bg.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  background-attachment: fixed;
-}
 
-.visual-tit{
-  font-size: 30px;
-  font-weight: 500;
-}
-.visual-txt{
-  font-size: 36px;
-  font-weight: 300;
-  margin-top: 10px;
 }
 
 
@@ -76,7 +56,7 @@ main{
 .building-card {
   margin-bottom: 100px; 
 }
-.building- img{
+.building-card img{
   max-width: 100%;
 }
 .wrap-card-txt{

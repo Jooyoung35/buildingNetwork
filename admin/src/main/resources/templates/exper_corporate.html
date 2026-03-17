@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
 <title>한국빌딩 통합 플랫폼 - THE LINK</title>
 
   <!-- css -->
@@ -17,7 +18,7 @@
 </head>
 <body>
   <!-- header -->
-  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+  <div data-include="fragments/header.html" th:replace="~{user/fragments/header :: header}"></div>
   
   <main>
     <section class="sub-visual">
@@ -35,13 +36,88 @@
         </p>
       </div>
     </section>
+
+    <section class="package">
+      <div class="workshop-title-bg-wrap">
+        <div class="workshop-title">
+          <div class="small-title-wrap">
+            <h3>워크숍 Package</h3>
+            <span>객실 1박 + 한옥 세미나실 + 만찬 + 조식</span>
+          </div>
+          <a href="tel:+02-6377-5162">문의하기</a>
+        </div>
+      </div>
+      <div class="workshop-detail">
+        <ul class="package-wrap">
+          <li class="room workshop-cont">
+            <div class="img-wrap">
+              <img src="../static/images/experiences/corporate-package-01.png" alt="객실이미지">
+            </div>
+            <div class="text-wrap">
+              <h4>객실</h4>
+              <p>독채 1동 : 기준 4인 (층당 2인)</p>
+              <p>1층 : 원룸, 화장실</p>
+              <p>2층 : 원룸, 화장실+한실</p>
+            </div>
+          </li>
+          <li class="seminar workshop-cont">
+            <div class="img-wrap">
+              <img src="../static/images/experiences/corporate-package-02.png" alt="세미나실이미지">
+            </div>
+            <div class="text-wrap">
+              <h4>한옥 세미나실</h4>
+              <p>장비: 스피커, 무선 마이크, 빔 프로젝터, 스크린 구비</p>
+            </div>
+          </li>
+          <li class="dining workshop-cont">
+            <div class="img-wrap">
+              <img src="../static/images/experiences/corporate-package-03.png" alt="만찬이미지">
+            </div>
+            <div class="text-wrap">
+              <h4>만찬</h4>
+              <p>뷔페, 해산물 정식 중 선택가능</p>
+              <p>(행사형태에 따라 변경 가능)</p>
+            </div>
+          </li>
+          <li class="breakfast workshop-cont">
+            <div class="img-wrap">
+              <img src="../static/images/experiences/corporate-package-04.png" alt="만찬이미지">
+            </div>
+            <div class="text-wrap">
+              <h4>조식</h4>
+              <p>토스트, 계란, 시리얼, 과일, 밥, 반찬 3종, 황태해장국, 커피, 주스 등</p>
+            </div>
+          </li>
+        </ul>
+        <div class="detail-text">
+          <p>&#183; 장소 : 죽도 상화원, 동검도 한국빌라</p>
+          <p>&#183; 상기 패키지는 사전 예약제로 운영되며 당일 예약이 불가합니다.</p>
+          <p>&#183; 행사 규모와 형식에 따라 장소 및 구성 제안 받으실 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-banner">
+      <h3>THE H CLUB 멤버십 혜택</h3>
+      <P>
+        대관료 20% 할인 적용(25인 이상 단체 행사 시)<br>
+        평일 이용 시 단독 대관
+      </P>
+      <P class="info">
+        <b>문의·예약</b>&ensp;
+        <a href="tel:+02-6377-5162">02-6377-5162/5254</a> &ensp;
+        <b>E-mail</b>&ensp;
+        <a href="mailto:reservation.kci.co.kr">
+          reservation.kci.co.kr
+        </a>
+      </P>
+    </section>
   </main>
 
 
 
   <!-- footer -->
-  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
-
+  <div data-include="fragments/footer.html" th:replace="~{user/fragments/footer :: footer}"></div>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {

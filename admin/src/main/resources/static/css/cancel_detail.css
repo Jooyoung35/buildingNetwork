@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+
+main{
+  margin: 100px auto 0;
+  width: 85%;
+}
+.cancel-container{
+  padding: 100px 0;
+}
+.label-text{
+  font-size: var(--fs-md);
+  color: var(--color-sub-text);
+}
+
+.contents-title{
+  margin-bottom: 40px;
+}
+
+.cancel-summary-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 정산 그리드 스타일 */
+.refund-grid {
+  border-top: 2px solid #333;
+  margin-bottom: 40px;
+}
+
+.refund-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 왼쪽 라벨, 오른쪽 금액 */
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+
+.refund-row.header {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+.refund-row .label {
+  color: var(--color-sub-text);
+  font-weight: 500;
+}
+.refund-row.total .label{
+  color: var(--color-white);
+}
+.refund-row .value {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 최종 금액 강조 */
+.refund-row.total {
+  background: var(--color-primary);
+}
+
+.refund-row .value.final {
+  color: var(--color-white);
+  font-size: var(--fs-xl);
+}
+
+/* 버튼 스타일 */
+.cancel-btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btn-back, .btn-final-cancel {
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-back {
+  background: #ddd;
+  color: #333;
+}
+
+.btn-final-cancel {
+  background: #ddd;
+  color: var(--color-sub-text);
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-final-cancel:hover {
+  background: var(--color-sub-text);
+  color: var(--color-white);
+}
+
+
+/* 환불계좌 정보 */
+.cash-user-only{
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+}
+input{
+  width: 25%;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+input:focus, textarea:focus {
+    outline: none;   
+    border: 1px solid #1a375f; 
+    box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+.label-text{
+  margin-right: 5px;
+  font-size: var(--fs-sm);
+  color: #7a7a7a;
+  font-weight: 400;
+}
+select{
+  width: 20%;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  appearance: none;
+  color: #818181 !important;
+  font-weight: 400 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center; 
+  background-size: 14px; 
+  cursor: pointer;
+  margin-right: 15px;
+}
+select:focus {
+    outline: none;   
+    border: 1px solid #1a375f; 
+    box-shadow: 0 0 5px rgba(26, 55, 95, 0.2); 
+}
+
+/* 모바일 대응 */
+
+/* 모바일 대응 */
+@media (max-width: 870px) {
+
+  /* 환불계좌 */
+  .input-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  /* 입력 요소 너비 조정 */
+  input, select {
+    width: 100% !important; 
+  }
+  .label-text{
+    display: block;
+    margin: 10px 0 5px !important;
+  }
+  .cash-user-only .value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .refund-row {
+    grid-template-columns: 1fr; /* 세로 정렬 */
+    gap: 10px;
+  }
+  .refund-row .value {
+    text-align: left;
+  }
+
+
+}

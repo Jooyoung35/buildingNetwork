@@ -120,6 +120,20 @@ main{
   flex: 2;
 }
 
+.room-mo-detail-img{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
+  display: none;
+
+}
+.room-mo-detail-img img{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
 .room-info-graphic{
   display: flex;
   justify-content: space-between;
@@ -242,16 +256,16 @@ main{
   margin-top: 100px;
 }
 .membership-banner h3{
-  font-size: clamp(1.35rem, 1.9vw, 1.97rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.75rem);
   font-weight: 500;
 }
 .membership-banner p{
-  font-size: clamp(1em, 1.7vw, 1.3rem);
+  font-size: clamp(1em, 1.7vw, 1.25rem);
   margin: 5px 0 90px;
   font-weight: 300;
 }
 .membership-banner .info{
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
   font-weight: 300;
 }
 .membership-banner .info b{
@@ -264,7 +278,37 @@ main{
 
 
 @media (max-width: 1279px) {
-  
+  .stay-tab-list{
+    width: 85%;
+    gap: 100px;
+  }
+  .stay-tab-item {
+    padding: 7px ;
+    font-size: var(--fs-lg);
+  }
+  .room-info-intro{
+    display: block;
+    padding: 0;
+  }
+  .room-info-intro .img-area{
+    width: 100%;
+  }
+  .room-info-intro .img-area img{
+    width: 100%;
+  }
+  .room-info-intro .text-area{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .intro-title{
+    font-size: var(--fs-lg);
+  }
+  .text-area .wrap-btn{
+    justify-content: left;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
   /* room-infomation */
 .room-info-graphic{
     display: block;
@@ -294,7 +338,23 @@ main{
   }
 
 }
-@media (max-width: 767px){
+@media (max-width: 900px){
+  .sub-visual {
+    height: 400px;
+  }
+
+  .stay-tab-list{
+    width: 85%;
+    gap: 40px;
+  }
+  .room-detail-img{
+    display: none;
+  }
+  .room-mo-detail-img{
+    display: flex;
+  }
+
+
   /* 비품 및 어메니티 */
   .provision-row {
     display: block;
@@ -308,12 +368,27 @@ main{
   }
 
 
+  /* 다이닝 */
+  .wrap-dining-contents{
+    display: block;
+  }
+  .dining-img img{
+  /* width: 30%; */
+    display: none;
+  }
+
+  .dining-text-area{
+    margin-top: 30px;
+  }
+
+
   /* 멤버십혜택 배너 */
   .membership-banner{
     width: 85%;
-    margin: 0 auto 40px;
+    margin: 70px auto 40px;
     border-radius: 10px;
     padding: 60px 5% 0;
+    background-position: 70% 0;
   }
   .membership-banner .info{
     padding-right: 15px;

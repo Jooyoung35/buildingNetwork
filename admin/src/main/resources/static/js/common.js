@@ -57,11 +57,67 @@ function initCommonDesign() {
         $('.mo-main-menu li').removeClass('active');
         $(this).addClass('active');
         const tabId = $(this).attr('data-tab');
-        $('.tab-content').removeClass('active');
-        $('#' + tabId).addClass('active');
+
+        $('.mo-sub-content .tab-content').removeClass('active');
+        $('.mo-sub-content #' + tabId).addClass('active');
     });
 
 
+// 모바일 서브메뉴 기억하기----------
+    // const currentPath = window.location.pathname;
+    // $('.mo-sub-content .tab-content li a').each(function() {
+    //     const linkHref = $(this).attr('href');
+        
+    //     if (linkHref !== '/' && currentPath.includes(linkHref)) {
+    //         const activeTabId = $(this).closest('.tab-content').attr('id');
+
+    //         $('.mo-main-menu li').removeClass('active');
+    //         $('.mo-sub-content .tab-content').removeClass('active');
+
+    //         $(`.mo-main-menu li[data-tab="${activeTabId}"]`).addClass('active');
+            
+    //         $('#' + activeTabId).addClass('active');
+
+    //         return false; 
+    //     }
+    // });
+
+
+    // 모바일 서브메뉴 기억하기
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search; // ?tab=... 부분 포함
+    const fullPath = currentPath + currentSearch;
+
+    // 1. 범위를 '.mo-sub-content' 내부로 엄격하게 제한합니다.
+    // 2. 본문의 .tab-content와 섞이지 않도록 $(this).closest를 사용합니다.
+    $('.mo-sub-content .tab-content li a').each(function() {
+        const linkHref = $(this).attr('href');
+        
+        if (linkHref && linkHref !== '#' && linkHref !== '/') {
+            // 현재 경로가 링크 주소를 포함하고 있는지 확인
+            // (파일명이 포함되어 있는지 혹은 전체 경로가 일치하는지)
+            if (currentPath.includes(linkHref) || fullPath.includes(linkHref)) {
+                
+                // 본문의 요소가 아닌, 반드시 '.mo-sub-content' 내부의 부모를 찾음
+                const $parentTab = $(this).closest('.mo-sub-content .tab-content');
+                const activeTabId = $parentTab.attr('id');
+
+                if (activeTabId) {
+                    // 초기화 (GNB 내부 요소만)
+                    $('.mo-main-menu li').removeClass('active');
+                    $('.mo-sub-content .tab-content').removeClass('active');
+
+                    // 활성화
+                    $(`.mo-main-menu li[data-tab="${activeTabId}"]`).addClass('active');
+                    $parentTab.addClass('active');
+
+                    return false; // 매칭 성공 시 종료
+                }
+            }
+        }
+    });
+
+    
     // 푸터 & 유틸
     $(".site-con").hover(
         function() { $(".site-con ul").stop().slideDown(500); },
@@ -88,10 +144,7 @@ function initCommonDesign() {
 
 // 실행부
 document.addEventListener("DOMContentLoaded", () => {
-    includeHTML(() => {
-        initCommonDesign();
-        // ui.js에 있는 함수 호출
-        if (typeof initPageUI === 'function') initPageUI(); 
-    }
-);
+    // includeHTML 없이 바로 공통 UI만 초기화
+    initCommonDesign();
+    if (typeof initPageUI === 'function') initPageUI(); 
 });
