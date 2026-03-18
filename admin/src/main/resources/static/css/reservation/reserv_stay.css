@@ -5,6 +5,9 @@
 
 
 /* 달력 --------------------- */
+.calendar-area{
+  margin-bottom: 130px;
+}
 .calendar-wrap{
   display:grid;
   grid-template-columns: 1fr 1fr 0.8fr;
@@ -126,7 +129,7 @@
   display: flex;
   justify-content: space-between;
   width: 85%;
-  margin:  130px auto;
+  margin:  0 auto 130px;
 }
 .room-list-container{
   width: 60%;
@@ -167,6 +170,11 @@
 }
 .room-price{
   margin-top: 40px;
+}
+.room-price .origin-price{
+  color: #7d7d7d;
+  font-weight: 200;
+  line-height: 1.6;
 }
 .room-price .room-price-day{
   font-size: var(--fs-2xl);

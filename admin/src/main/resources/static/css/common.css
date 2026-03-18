@@ -634,7 +634,7 @@ body.is-logged-in .mo-status-logged-out{
 }
 .title-area h2{
   color: var(--color-primary);
-  font-size: clamp(1.8rem, 2.2vw, 3rem);
+  font-size: clamp(1.25rem, 2.2vw, 2.625rem);
   line-height: 1.3;
 }
 .title-area p{
@@ -938,7 +938,7 @@ body.is-logged-in .mo-status-logged-out{
     padding: 15px 15px;
   }
   .title-area h2{
-    font-size: clamp(1.8rem, 2.2vw, 1.5rem);
+    font-size: clamp(1.375rem, 2.2vw, 1.5rem);
   }
   /* footer */
   #footer{

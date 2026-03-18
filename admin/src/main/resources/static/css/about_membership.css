@@ -2,7 +2,7 @@
 
 
 main{
-  margin: 100px 0 ;
+  margin: 100px 0  50px;
 }
 /* 상단 영역 */
 .sub-visual {
@@ -46,30 +46,30 @@ main{
   background-image: url(../images/about/membership-map.png);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
-/* destinations */
+/* destinations  / benefit*/
 
 .destination-area{
   margin: 100px 0;
 }
-.wrap-destination{
+.wrap-destination-bg{
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  position: relative;
-}
-.wrap-destination > .title-area{
   background-color: #F5F5F5;
-  width: 100%;
-  height: 500px;
+  padding: 80px 0px;
 }
-.wrap-destination > .title-area .wrap-text{
-  width: 30%;
-  margin-left: 7%;
-  position: absolute;
-  top: 50%; left: 0;
-  transform: translateY(-50%);
+.destination-cont-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+}
+.destination-cont-wrap > .title-area{
+  flex: 0.8;
+  padding-right: 50px;
 }
 .wrap-text h2{
   margin: 22px 0 60px;
@@ -80,15 +80,13 @@ main{
   color: var(--color-secondary);
 }
 
-.wrap-destination > .desti-img-area{
-  width: 50%;
+.destination-cont-wrap> .desti-img-area{
+  flex: 1;
   display: flex;
   gap: 20px;
   justify-content: flex-end;
-  position: absolute;
-  top: 0; right: 7%;
 }
-.wrap-destination > .desti-img-area img{
+.destination-cont-wrap > .desti-img-area img{
   max-width: 100%;
   /* height: auto; */
 }
@@ -97,25 +95,30 @@ main{
   margin-top: 30px;
 }
 .left-txt h3{
-  font-size: clamp(1.5rem, 2vw, 1.7rem);
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
   color: var(--color-sub-text);
   font-weight: 600;
 }
 .left-txt p{
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
   color: var(--color-secondary);
   margin: 5px 0 25px;
 }
 .left-txt a{
   font-size: clamp(0.93rem, 1.5vw, 1rem);
   color: #7d7d7d;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.left-txt a:hover{
+  transform: scale(1.1);
 }
 
 /* coming soon */
 .coming-soon{
   width: 85%;
   margin: 0 auto ;
-  padding-top: 130px;
+  /* padding-top: 130px; */
 }
 .wrap-island{
   display: flex;
@@ -126,13 +129,14 @@ main{
 .wrap-island li{
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   flex: 1;
   text-align: center;
   padding: 60px 0;
   color: var(--color-white);
   font-size: clamp(1.15rem, 1vw, 1.5rem);
   font-weight: 500;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 li.anmyeon-hankook-buil{
   background-image: url(../images/about/membership-anmyeon-hk.png);
@@ -175,28 +179,236 @@ li.jodo-sanghwawon{
 
 /* h benefits----------------- */
 .h-benefits{
-  margin-top: 300px;
+  margin-top: 100px;
 }
-.h-benefits .wrap-destination > .desti-img-area{
-  width: 55%;
-  display: flex;
-  gap: 20px;
-  justify-content: flex-end;
-  position: absolute;
-  top: -10%;
-  border: 1px solid red;
+.h-benefits .img-text{
+  margin-left: 20px;
 }
-.h-benefits .wrap-destination > .desti-img-area img{
-  max-width: 100%;
-  /* height: auto; */
-}
-.h-benefits .left-txt h3{
-  font-size: clamp(1.5rem, 2vw, 1.7rem);
+.h-benefits .img-text h3{
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   color: var(--color-secondary);
   font-weight: 600;
 }
-.h-benefits .left-txt p{
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+.h-benefits .img-text p{
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
   color: var(--color-sub-text);
-  margin: 10px 0 25px;
+  margin: 5px 0 0;
+}
+.h-benefits .benefit-img-area{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} 
+.benefit-img-area .benefit-img-desc-wrap{
+  display: flex;
+  align-items: flex-end;
+}
+.benefit-img-area .benefit-img-desc-wrap .img-wrap{
+  flex: 0 0 65%;
+  max-width: 65%;
+  height: auto;
+  overflow: hidden;
+}
+.benefit-img-area .benefit-img-desc-wrap .img-wrap img{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+/* 제휴 */
+.buildings-benefit {
+  width: 100%;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+}
+.benefit-table {
+  min-width: 800px; 
+}
+.buildings-benefit span{
+  color: #7D7D7D;
+  font-size: var(--fs-md);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.table-header, .sub-row {
+  display: grid;
+  grid-template-columns: 120px 100px repeat(4, 1fr);
+  text-align: center;
+  align-items: center;
+}
+
+.table-header {
+  background-color: #D9D9D9;
+  padding: 10px 0;
+}
+
+.row-group {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.category-label {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F5F5;
+}
+.fnb{
+  background-color: #fff;
+}
+.fnb .sub-row{
+  line-height: 1.5;
+}
+.weekend{
+  background-color: #F5F5F5;
+}
+.sub-rows { 
+  flex: 1; 
+}
+
+/* F&B 전용 그리드 설정 */
+.fnb-grid {
+  display: grid;
+
+  grid-template-columns: 100px repeat(4, 1fr);
+  flex: 1;
+}
+.sub-label.merged {
+  grid-row: span 2; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; 
+}
+.fnb-grid .content {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-row {
+  grid-template-columns: 100px repeat(4, 1fr); 
+  min-height: 50px;
+}
+
+
+/* 이용안내 */
+.service-guide-detail{
+  padding: 50px;
+  background-color: #F5F5F5;
+}
+.service-guide-detail h4{
+  margin: 30px 0 10px ;
+  color: var(--color-sub-text);
+  font-weight: 500;
+}
+.service-guide-detail p{
+  line-height: 1.7;
+  color: var(--color-sub-text);
+}
+
+
+@media (max-width: 900px) {
+  .destination-cont-wrap{
+    display: block;
+  }
+  .destination-cont-wrap > .title-area{
+    margin-bottom: 50px;
+  }
+  .wrap-text h2{
+    margin: 22px 0 30px;
+  }
+  /* 다이닝/발렛 등 */
+  .benefit-img-area .benefit-img-desc-wrap{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .h-benefits .benefit-img-area{
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  } 
+  .h-benefits .img-text{
+    margin: 10px 0px 0;
+  }
+  .benefit-img-area .benefit-img-desc-wrap .img-wrap{
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: min-content;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .sub-visual {
+    height: 400px;
+  }
+  /* map */
+  .map-area{
+    display: block;
+  }
+  .map-text{
+    width: 85%;
+    margin-top: 50px;
+  }
+    .map-img{
+    width: 100%;
+  }
+
+
+  /* destinations  / benefit*/
+  .destination-area{
+    margin: 50px 0;
+  }
+  .destination-cont-wrap> .desti-img-area{
+    display: block;
+  }
+  .destination-cont-wrap> .desti-img-area > li > div{
+    height: 350px;
+    margin-top: 30px;
+  }
+  .destination-cont-wrap > .desti-img-area img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom 50% left 0px;
+  }
+  .destination-cont-wrap > .title-area{
+    padding-right: 0px;
+    margin-bottom: 30px;
+  }
+    
+
+  /* 다이닝/발렛 등 */
+
+  .h-benefits .benefit-img-area{
+    display: block;
+  } 
+  .benefit-img-area .benefit-img-desc-wrap .img-wrap{
+    margin-top: 20px;
+  }
+
+
+  /* coming soon */
+  .wrap-island{
+    display: block;
+  }
+  .wrap-island li{
+    margin-top: 20px;
+  }
+
+
+  /* 이용안내 */
+  .service-guide-detail{
+    padding: 20px;
+  }
 }

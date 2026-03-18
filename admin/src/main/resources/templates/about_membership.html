@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <title>한국빌딩 통합 플랫폼 - THE LINK</title>
 
   <!-- css -->
@@ -10,7 +11,7 @@
   <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
   <link rel="stylesheet" href="../static/css/about_membership.css" th:href="@{/css/about_membership.css}">
-  <link rel="stylesheet" href="../static/assets/js/swiper-bundle.min.css" th:href="@{/assets/js/swiper-bundle.min.css}">
+  <link rel="stylesheet" href="../static/assets/js/swiper-element-bundle.min.js" th:href="@{/assets/js/swiper-bundle.min.css}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 
 
@@ -20,6 +21,9 @@
   <script src="../static/assets/js/ScrollTrigger.min.js" th:src="@{/assets/js/ScrollTrigger.min.js}"></script>
   <script src="../static/js/index.js" th:src="@{/js/index.js}" defer></script>
   <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+
 <body>
   
   <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
@@ -34,52 +38,54 @@
 
     <section class="map-area">
       <div class="map-text title-area">
-        <b class="sub-title font-en">THE H CLUB</b>
+        <b class="sub-title font-en">THE LINK H</b>
         <h2>빌딩과 섬, 도심과 자연을 <br>잇는 단 하나의 멤버십</h2>
-        <p>THE H CLUB 멤버십 서비스는 H가 관리 보존해 온 유무형의 자산을 한국빌딩 네트워크, THE H CLUB 멤버와 공유하고 연결하는 서비스입니다. THE H CLUB 멤버에게는 H가 가꾸어 온 각 지역의 인프라와일상의 질을 높이는 도심 서비스를 향유할 수 있는 특별한 권한이 주어집니다.</p>
+        <p>THE LINK H 멤버십 서비스는 H가 관리 보존해 온 유무형의 자산을 한국빌딩 네트워크, THE LINK H 멤버와 공유하고 연결하는 서비스입니다.<br> THE LINK H 멤버에게는 H가 가꾸어 온 각 지역의 인프라와일상의 질을 높이는 도심 서비스를 향유할 수 있는 특별한 권한이 주어집니다.</p>
       </div>
       <div class="map-img"></div>
     </section>
 
     <section class="destination-area">
-      <div class="wrap-destination">
-        <div class="title-area">
-          <div class="wrap-text">
-            <b class="sub-title font-en">H DESTINATIONS</b>
-            <h2>빌딩을 넘어,<br>자연으로 이어지는 특권</h2>
-            <p class="sub-desc">
-              자산의 가치를 나누는 THE H CLUB의 특별한 혜택
-            </p>
-            <p class="common-desc">H의 안목으로 조성중인 전국 각지의 인프라는 THE H CLUB멤버가 언제든 마주할 수 있는 특별한 목적지가 됩니다.</p>
+      <div class="wrap-destination-bg">
+        <div class="destination-cont-wrap">
+          <div class="title-area">
+            <div class="wrap-text">
+              <b class="sub-title font-en">H DESTINATIONS</b>
+              <h2>빌딩을 넘어,<br>자연으로 이어지는 특권</h2>
+              <p class="sub-desc">
+                자산의 가치를 나누는 THE LINK H의 특별한 혜택
+              </p>
+              <p class="common-desc">H의 안목으로 조성중인 전국 각지의 인프라는 THE LINK H 멤버가 언제든 마주할 수 있는 특별한 목적지가 됩니다.</p>
 
-          </div>
-        </div>
-        <ul class="desti-img-area">
-          <li class="sanghwawon-wrap">
-            <div><img src="../static/images/about/membership-desti-sanghwawon.png" alt="상화원이미지" th:src="@{/images/about/membership-desti-sanghwawon.png}"></div>
-            <ul class="desti-desc">
-              <li class="left-txt">
-                <h3>보령 죽도 상화원</h3>
-                <p>한국의 전통미가 어우러진 비밀의 정원</p>
-                <a href="">자세히보기 +</a>
-              </li>
-            </ul>
-          </li>
-          <li class="donggeomdo-wrap">
-            <div>
-              <img src="../static/images/about/membership-desti-donggeom.png" alt="상화원이미지" th:src="@{/images/about/membership-desti-donggeom.png}">
             </div>
-            <ul class="desti-desc">
-              <li class="left-txt">
-                <h3>강화 동검도 한국빌라</h3>
-                <p>한국의 전통미가 어우러진 비밀의 정원</p>
-              </li>
-              <li class="more-txt">
-                <a href="">자세히보기 +</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+          <ul class="desti-img-area">
+            <li class="sanghwawon-wrap">
+              <div>
+                <img src="../static/images/about/membership-desti-sanghwawon.png" alt="상화원이미지" th:src="@{/images/about/membership-desti-sanghwawon.png}">
+              </div>
+              <ul class="desti-desc">
+                <li class="left-txt">
+                  <h3>죽도 상화원</h3>
+                  <p>한국의 전통미가 어우러진 비밀의 정원</p>
+                  <a href="">자세히보기 +</a>
+                </li>
+              </ul>
+            </li>
+            <li class="donggeomdo-wrap">
+              <div>
+                <img src="../static/images/about/membership-desti-donggeom.png" alt="상화원이미지" th:src="@{/images/about/membership-desti-donggeom.png}">
+              </div>
+              <ul class="desti-desc">
+                <li class="left-txt">
+                  <h3>동검도 한국빌라</h3>
+                  <p>서울 근교, 고즈넉한 힐링 스팟</p>
+                  <a href="destinations(tab='donggumdo')">자세히보기 +</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -101,30 +107,180 @@
     </section>
 
     <section class="h-members-benefits">
-      <div class="wrap-text">
+      <div class="wrap-text title-area">
         <b class="sub-title font-en">H DESTINATIONS</b>
         <h2>혜택</h2>
       </div>
       <ul class="stay-benefit">
         <li class="stay-discount">
           <dl>
-            <dt>상화원 & 동검도 객실 할인</dt>
-            <dd>주중(월~목) 30%</dd>
-            <dd>주말(금~토) 20%</dd>
-            <dd class="notice">*2026년 운영기간 : 4월~11월</dd>
+            <dt class="common-desc">상화원 & 동검도 객실 할인</dt>
+            <dd class="common-desc">
+              주중(월~목) 30%<br>
+              주말(금~토) 20%<br>
+              <p class="notice">*2026년 운영기간 : 4월~11월</p>
+            </dd>
+          </dl>
+        </li>
+        <li class="place-discount">
+          <dl>
+            <dt class="common-desc">상화원 & 동검도 시설 대관료 할인</dt>
+            <dd class="common-desc">
+              주중, 주말 15%<br>
+              <p class="notice">
+                [해당시설]<br>
+                상화원 - 웨딩, 가족연회, 워케이션, 세미나실<br>
+                동검도 한국빌라 - 워케이션, 세미나실
+              </p>
+            </dd>
           </dl>
         </li>
       </ul>
+    </section>
+
+    <section class="h-benefits">
+      <div class="wrap-destination-bg">
+        <div class="destination-cont-wrap">
+          <div class="title-area">
+            <div class="wrap-text">
+              <b class="sub-title font-en">H BENEFITS</b>
+              <h2>일상의 품격을 높이는 세심한 배려</h2>
+              <p class="common-desc">
+                THE LINK H 멤버십은 멀리 떠나는 휴식 뿐만 아니라, 업무 몰입과 일상의 편의를 지원하기 위한 도심 내 서비스 체계를 순차적으로 확충하고 있습니다.
+              </p>
+
+            </div>
+          </div>
+          <ul class="benefit-img-area">
+            <li class="dining-wrap benefit-img-desc-wrap">
+              <div class="img-wrap">
+                <img src="../static/images/about/membership-dining.png" alt="다이닝이미지" th:src="@{/images/about/membership-dining.png}">
+              </div>
+              <div class="desti-desc img-text">
+                <h3 class="font-en">Dining/Wellness</h3>
+                <p>입주사 다이닝 및 웰니스 인프라 이용 할인 헤택</p>
+              </div>
+            </li>
+            <li class="parking-wrap benefit-img-desc-wrap">
+              <div class="img-wrap">
+                <img src="../static/images/about/membership-valet.png" alt="발렛이미지" th:src="@{/images/about/membership-valet.png}">
+              </div>
+              <div class="desti-desc img-text">
+                <h3 class="font-en">Parking Valet</h3>
+                <p>주차 지원 및 전용 발렛 서비스 지원</p>
+              </div>
+            </li>
+            <li class="business-wrap benefit-img-desc-wrap">
+              <div class="img-wrap">
+                <img src="../static/images/about/membership-business.png" alt="비지니스이미지" th:src="@{/images/about/membership-business.png}">
+              </div>
+              <div class="desti-desc img-text">
+                <h3 class="font-en">Business Support</h3>
+                <p>멤버십 전용 라운지 및 회의 공간 우선 예약 시스템</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="h-members-benefits">
+      <div class="wrap-text title-area">
+        <b class="sub-title font-en">H DESTINATIONS</b>
+        <h2>제휴</h2>
+      </div>
+      <div class="buildings-benefit">
+        <span>*빌딩별 혜택사항(해당 빌딩의 입주사 임직원 대상)</span>
+        <div class="benefit-table">
+          <div class="table-header">
+            <div></div><div></div> <div>을지 한국빌딩</div>
+            <div>청계 한국빌딩</div>
+            <div>소공 한국빌딩</div>
+            <div>종로 한국빌딩</div>
+          </div>
+
+          <div class="row-group">
+            <div class="category-label">주차</div>
+            <div class="sub-rows">
+              <div class="sub-row">
+                <div class="sub-label">주중</div>
+                <div class="content">발렛 파킹 & 주차 할인</div>
+                <div class="content">발렛 파킹 & 주차 할인</div>
+                <div class="content">발렛 파킹 & 주차 할인</div>
+                <div class="content">발렛 파킹 & 주차 할인</div>
+              </div>
+              <div class="sub-row weekend">
+                <div class="sub-label">주말</div>
+                <div class="content">주차 할인</div>
+                <div class="content">주차 할인</div>
+                <div class="content">주차 할인</div>
+                <div class="content">주차 할인</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-group">
+            <div class="category-label fnb">F&B</div>
+            <div class="sub-rows fnb-grid">
+              <div class="sub-label merged">상시</div>
+              <div class="content">스타벅스</div>
+              <div class="content">올리페페</div>
+              <div class="content">크리스탈 제이드</div>
+              <div class="content">투썸플레이스</div>
+
+              <div class="content">　</div>
+              <div class="content">블루보틀</div>
+              <div class="content">커피빈</div>
+              <div class="content">미소한우</div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="h-members-benefits service-guide">
+      <div class="wrap-text title-area">
+        <b class="sub-title font-en">H DESTINATIONS</b>
+        <h2>이용안내</h2>
+      </div>
+      <div class="service-guide-detail">
+        <h4>[공통]</h4>
+        <p>
+          &#183; THE LINK H 멤버십의 유효기간은 입주사 임대 계약이 유지될때까지 유지됩니다.<br>
+          &#183; THE LINK H 멤버십은 개인회원으로 본인만 사용할 수 있으며, 혜택 이용 시 본인 확인 절차를 요청할 수 있습니다.<br>
+          &#183; 할인 및 쿠폰 사용을 위해서는 웹/앱의 멤버십 카드 화면을 제시하여야 하며, 제시가 불가할 경우 할인 및 쿠폰 사용이 적용되지 않습니다.<br>
+          &#183; 제휴혜택은 제휴업체의 영업 정책에 따라 사전 고지 없이 취소, 변경될 수 있습니다.
+        </p>
+        <h4>[객실]</h4>
+        <p>
+          &#183; 무료 숙박권은 객실 상황에 따라 사용이 제한될 수 있습니다.<br>
+          &#183; 객실 할인은 상화원, 동검도 한국빌라 공식 홈페이지를 통한 예약 시에만 적용되며, 타 사이트(OTA)를 이용한 예약 시에는 할인 적용이 불가합니다.<br>
+          &#183; 멤버십 할인 적용 시 타 할인과 중복 적용되지 않습니다.<br>
+          &#183; 환불 및 취소는 홈페이지 내 환불 정책에 따릅니다.
+        </p>
+        <h4>[시설대관]</h4>
+        <p>
+          &#183; 시설 대관은 메일 및 유선 예약으로만 진행됩니다.<br>
+          &nbsp; - 메일문의 : reservation@kci.co.kr<br>
+          &nbsp; - 유선문의 : 02-6377-5162, 02-6377-5254<br>
+          &#183; 세미나실 대관은 입주사 행사 및 회원 본인이 포함한 모임일 경우 할인이 적용됩니다.<br>
+          &#183; 웨딩 및 가족 연회  대관료 할인 혜택은 회원 본인  또는 직계가족 의 행사(회갑, 돌잔치 등)에 한해 적용됩니다.
+        </p>
+        <h4>[F&B 할인]</h4>
+        <p>
+          &#183; 멤버십 할인 적용 시 다른 할인과 중복 적용되지 않습니다.<br>
+          &#183; 식음료 할인은 각 제휴 브랜드의  운영 정책에 따라 상이할 수 있으므로, 이용 전 현장에서 혜택 적용 여부를 확인해 주시기 바랍니다.
+        </p>
+      </div>
     </section>
   </main>
 
 
   <div data-include="fragments/footer.html" th:replace="~{fragments/header :: footer}"></div>
-
-    <script>
+  <script>
     window.addEventListener('DOMContentLoaded', () => {
       includeHTML(initCommonDesign);
     });
   </script>
+
 </body>
 </html>
