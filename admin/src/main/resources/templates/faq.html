@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 통합 플랫폼 - THE LINK</title>
+
+    <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/RobotoCondensed-Variable.woff2" th:href="@{/assets/font/RobotoCondensed-Variable.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/notice.css" th:href="@{/css/notice.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+  <script src="../static/js/notice.js" th:src="@{/js/notice.js}" defer></script>
+</head>
+
+<body>
+
+  <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main class="faq-wrap">
+    <section class="notice-title sub-page-header">
+      <ul class="wrap-bd-header">
+        <li class="title-area">
+          <h2 class="font-en">FAQ</h2>
+          <p>도움이 필요하신가요? 자주 묻는 질문을 확인해 보세요.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="notice-wrapper">    
+      <nav class="tab-menu">
+        <button class="tab-btn active" onclick="filterBranch('all')">공통</button>
+        <button class="tab-btn" onclick="filterBranch('branch1')">빌딩</button>
+        <button class="tab-btn" onclick="filterBranch('branch2')">한국빌라</button>
+        <button class="tab-btn" onclick="filterBranch('branch3')">주차</button>
+        <button class="tab-btn" onclick="filterBranch('branch4')">THE LINK H 멤버십</button>
+      </nav>
+
+      <ul class="notice-list" id="noticeList">
+        <li class="notice-item">
+          <div class="notice-header" onclick="toggleAccordion(this)">
+            <span class="branch-tag">한국빌라</span>
+            <div class="info">
+              <p class="title">한국빌라 예약은 어떻게 하나요?</p>
+              <span class="date">2026.02.13</span>
+            </div>
+            <span class="arrow-icon">▼</span>
+          </div>
+          <div class="detail-content">
+            <div class="inner">
+              <p>한국빌라 예약은 숙박페이지 내 예약하기 버튼을<br>누르시면 예약페이지로 이동됩니다.</p>
+            </div>
+          </div>
+        </li>
+        <li class="notice-item">
+          <div class="notice-header" onclick="toggleAccordion(this)">
+            <span class="branch-tag">빌딩</span>
+            <div class="info">
+              <p class="title">빌딩안에 입주사에서 할인을 어떻게 받나요?</p>
+              <span class="date">2026.02.13</span>
+            </div>
+            <span class="arrow-icon">▼</span>
+          </div>
+          <div class="detail-content">
+            <div class="inner">
+              <p>결제 시 THE LINK H 멤버십 카드를 보여주시면<br>즉시 할인 받으실 수 있습니다.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+  
+  <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+</body>
+</html>

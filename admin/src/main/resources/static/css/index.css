@@ -84,13 +84,13 @@ body{
 /* ---------------------------------------- */
 
 .mainSwiper .bg1{
-  background-image: url(../images/index/m_banner_01.png);
+  background-image: url(../images/index/m_banner_01.webp);
 }
 .mainSwiper .bg2{
-  background-image: url(../images/index/m_banner_02.png);
+  background-image: url(../images/index/m_banner_02.webp);
 }
 .mainSwiper .bg3{
-  background-image: url(../images/index/m_banner_03.png);
+  background-image: url(../images/index/m_banner_03.webp);
 }
 
 .mainSwiper .slide a{
