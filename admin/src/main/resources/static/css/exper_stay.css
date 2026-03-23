@@ -2,7 +2,7 @@
 
 
 main{
-  margin: 100px 0 ;
+  margin: 100px 0 0 ;
 }
 /* 상단 영역 */
 .sub-visual {
@@ -104,6 +104,16 @@ main{
   display: flex;
   gap: 10px;
   width: 100%;
+}
+.room-detail-img-mo{
+  width: 85%;
+  margin: 0 auto;
+  display: none;
+}
+.room-detail-img-mo > img{
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 .room-detail-img img{
   height: auto;      
@@ -349,6 +359,9 @@ main{
   }
   .room-detail-img{
     display: none;
+  }
+  .room-detail-img-mo{
+    display: block;
   }
   .room-mo-detail-img{
     display: flex;
