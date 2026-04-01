@@ -7,7 +7,7 @@
 .completed-info h3.complete-message{
   text-align: center;
 }
-.booking-info-card{
+.completed-info > div{
   width: 35%;
   margin: 100px auto 30px;
 }
@@ -41,7 +41,7 @@
   .completed-info h3.complete-message{
     margin-top: 30px;
   }
-  .booking-info-card{
+  .completed-info > div{
     width: 95%;
     margin: 50px auto 30px;
   }

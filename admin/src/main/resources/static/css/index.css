@@ -84,15 +84,21 @@ body{
 /* ---------------------------------------- */
 
 .mainSwiper .bg1{
-  background-image: url(../images/index/m_banner_01.webp);
+  background-image: url(../images/index/m_banner_01.png);
 }
 .mainSwiper .bg2{
-  background-image: url(../images/index/m_banner_02.webp);
+  background-image: url(../images/index/m_banner_02.png);
 }
 .mainSwiper .bg3{
-  background-image: url(../images/index/m_banner_03.webp);
+  background-image: url(../images/index/m_banner_03.png);
 }
-
+.mainSwiper .bg4{
+  background-image: url(../images/index/m_banner_04.jpg);
+}
+/* .mainSwiper .bg5{
+  background-image: url(../images/index/m_banner_05.png);
+  background-image: url(../images/index/111.jpg);
+} */
 .mainSwiper .slide a{
   display: block;
   width: 100%;
@@ -113,7 +119,7 @@ body{
   color: white;
 }
 .mainSwiper .slide .ban-txt h2{
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 300;
 }
 .mainSwiper .slide .ban-txt img{
@@ -360,6 +366,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   aspect-ratio: 1 / 1.2;
+  background-size: cover;
 }
 .rest-contents{
   width: 62%;
@@ -422,7 +429,7 @@ body{
   background-image: url(../images/index/rest-02.png);
 }
 .rest-contents .swiper-rest .cont-slide .slide-txt-area{
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   padding-bottom: 40px;
 }
@@ -671,7 +678,7 @@ body{
     width: 85%;
     display: flex;
     flex-direction: column-reverse;
-    padding: 100px 0px;
+    padding: 30px 0px;
     margin-top: 40px;
   }
   .brand-txt{
@@ -687,7 +694,7 @@ body{
   }
   .brand-img{
     width: 100%;
-    height: 500px;
+    height: 150px;
     margin-bottom: 30px;
     margin: 0 auto 30px;
   }
@@ -701,24 +708,26 @@ body{
   /* our buildings ------------------*/
   .our-building{
     width: 85%;
-    margin: 40px auto 0;
+    margin: 20px auto 0;
   }
   .build-tit{
     text-align: left;
   }
   .buildings{
-    margin-top: 30px;
+    margin-top: 0px;
     display: block;
   }
   .buildings .building{
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
+    height: 250px;
     margin: 20px auto 0;
     border-radius: 10px;
     overflow: hidden;
   }
   .buildings .building::after{
-    height: 400px;
+    /* height: 400px; */
+    height: 250px;
   }
   .buildings li+li{
     margin-left: 0px;
@@ -727,18 +736,23 @@ body{
     width: 100%;
   }
   .buildings .building .txt{
-    height: 280px;
-    padding-top: 100px;
+    /* height: 280px; */
+    height: 150px;
+    padding-top: 80px;
   }
   .building .txt h3{
   font-size: 1.25rem;
   }
-
+  .building .view-more{
+    width: 120px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
 
 /* membership benefits ------------------*/
   .membership{
     width: 85%;
-    margin: 80px auto 0;
+    margin: 50px auto 0;
   }
   .membership-tit{
     margin-left: 0px;
@@ -765,7 +779,7 @@ body{
 /* your rest ------------------*/
   .rest{
     width: 85%;
-    margin: 80px auto 0;
+    margin: 50px auto 0;
   }
   .rest-contents .swiper-rest{
     margin-top: 30px;
@@ -776,6 +790,9 @@ body{
   }
   .rest-contents .swiper-rest .cont-slide .slide-img-area{
     border-radius: 10px;
+  }
+  .rest-contents .swiper-rest .cont-slide .slide-txt-area{
+    padding-bottom: 20px;
   }
   .rest-contents .swiper-rest .cont-slide .slide-txt-area .slide-main-tit{
     font-weight: 600;
@@ -803,6 +820,11 @@ body{
   }
   .join-banner .join-txt h3{
     font-size: 0.975rem;
+  }
+  .join-banner .join-txt .join-btn{
+    width: 120px;
+    font-size: 14px;
+    padding: 10px 0;
   }
 }
 

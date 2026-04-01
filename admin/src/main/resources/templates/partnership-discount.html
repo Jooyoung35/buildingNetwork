@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 네트워킹 서비스 플랫폼 - THE LINK H</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/benefits_common.css" th:href="@{/css/benefits_common.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+<body>
+    <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual discount">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Benefits</h1>
+        <p class="visual-txt">제휴 할인</p>
+      </div>
+    </section>
+
+    <section class="wrap-partnership-discount">
+      <div class="benefits-contents">
+        <div class="text-area">
+          <h3 class="common-title">
+            제휴 할인
+          </h3>
+          <!-- <a href="join.html">멤버십 가입 &nbsp;&#62;</a> -->
+        </div>
+
+        <ul class="contents">
+          <li class="benefit01 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/cheonggye_main.png" th:src="@{/images/benefits/cheonggye_main.png}" alt="청계한국빌딩">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>청계 한국빌딩</h3>
+              <p>◎ 올리페페(2F) (추후 안내)</p>
+              <!-- <p class="sub-txt">
+                - 객실 숙박 40% 할인
+              </p> -->
+              <p>◎ 엉터리 생고기(1F) (추후 안내)</p>
+              <p class="sub-txt">
+                &ensp;- 5% 할인 (5월 초 오픈 예정)
+              </p>
+            </div>
+          </li>
+          <li class="benefit02 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/sogong_main.png" th:src="@{/images/benefits/sogong_main.png}" alt="소공한국빌딩">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>소공 한국빌딩</h3>
+              <p>◎ 크리스탈제이드(B1)</p>
+              <p class="sub-txt">
+                &ensp;- 평일 런치 10% 할인<br>
+                &ensp;- 평일 디너 20% 할인<br>
+                <span style="font-size: 14px; line-height: 1;" >
+                &ensp;적용 매장: 크리스탈 제이드 소공점<br>
+                &ensp;- 음주류/세트/코스의 경우 할인 제외<br>
+                &ensp;- 타 프로모션과 중복 불가<br>
+                </span>
+              </p>
+
+              <p>◎ 셀린피부과의원(1F)</p>
+              <p class="sub-txt">
+                &ensp;- 정가 시술의 15% 할인<br>
+                &ensp;- 월 이벤트 시술의 10% 할인<br>
+                <span style="font-size: 14px; line-height: 1;" >
+                  단 회원권 멤버십, 첫방문 체험가, 평일 타임특가 등 일부 이벤트 중복 적용 불가
+                </span>
+              </p>
+            </div>
+          </li>
+          <li class="benefit03 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/jongro_main.png" th:src="@{/images/benefits/jongro.png}" alt="종로한국빌딩">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>종로 한국빌딩</h3>
+              <p>◎ 민소한우(B1)</p>
+              <p class="sub-txt">
+                &ensp;- 5% 할인 (6월 초 오픈 예정)
+              </p>
+              <p>◎ 투썸플레이스(1F) (추후 안내)</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="benefits-precautions service-guide">
+      <div class="text-area">
+          <h3 class="common-title">
+            유의 사항
+          </h3>
+        </div>
+      <div class="service-guide-detail">
+        <!-- <h4>[공통]</h4> -->
+        <p>
+          &#183; 주문/결제시 THE LINK H '멤버십 카드'을 제시하셔야만 할인 혜택을 제공 받으실 수 있습니다.(캡처, 촬영, 프린트된 멤버십 카드 등은 사용하실 수 없습니다.)<br>
+          &#183; 할인혜택은 회원 동반자/테이블에 함께 적용됩니다.<br>
+          &#183; 멤버십 할인 적용 시 다른 할인과 중복 적용되지 않을 수 있습니다.<br>
+          &#183; 식음료 할인은 각 제휴 브랜드의 운영 정책에 따라 상이할 수 있으므로, 이용 전 현장에서 혜택 적용 여부를 확인해 주시기 바랍니다.<br>
+          &#183; 제휴 F&B 및 할인혜택의 변경은 본 페이지에서 제공되지 않습니다. 변경사항은 "공지사항"을 참고하시기 바랍니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+    <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+    
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+
+</body>
+</html>

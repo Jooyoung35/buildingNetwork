@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 네트워킹 서비스 플랫폼 - THE LINK H</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/benefits_common.css" th:href="@{/css/benefits_common.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+<body>
+    <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual lounge">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Benefits</h1>
+        <p class="visual-txt">라운지 예약</p>
+      </div>
+    </section>
+
+    <section class="wrap-partnership-discount">
+      <div class="benefits-contents">
+        <div class="text-area">
+          <h3 class="common-title">
+            입주사의 고객 초청행사, 전시회, 창립기념일 등 특별한 행사 공간을 제공합니다.
+          </h3>
+          <!-- <a href="join.html">멤버십 가입 &nbsp;&#62;</a> -->
+        </div>
+
+        <ul class="contents">
+          <li class="benefit01 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/lounge-cont.png" th:src="@{/images/benefits/lounge-cont.png}" alt="라운지이미지">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>클럽 한국빌딩 : 준비중</h3>
+              <p>◎ 위치 : 을지 한국빌딩 10F 라운지</p>
+              <p>◎ THE LINK H 멤버 전용 라운지를 오픈 준비 중입니다.<br>곧 새로운 모습으로 찾아뵙겠습니다.</p>
+              <!-- <p>◎ 혜택 : 무료 대관<br>(장비, 만찬 등 대관 이외의 실비성 비용은 제외됩니다.)</p>
+              <p>◎ 이용 방법 : 사전 문의 및 예약</p>
+              <p>
+                ◎ 문의 및 예약 : <br>
+                &emsp;<a href="tel:0263775162" class="item-contact">
+                  ☎ 02-6377-5162
+                </a><br>
+                &emsp;<a href="tel:0263775254" class="item-contact">
+                  ☎ 02-6377-5254
+                </a><br>
+                &emsp;<a href="mainto:reservaion@kci.co.kr" class="item-contact">
+                  ✉ reservation@kci.co.kr
+                </a>
+              </p> -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+    <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+    
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+
+</body>
+</html>

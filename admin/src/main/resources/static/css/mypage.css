@@ -101,13 +101,13 @@ main{
   height: 100%;
   border-radius: 10px;
   background:linear-gradient(-45deg, #e2cbad, #ae926d, #ae926d, #d1bca1 );
-  padding: 40px;
+  padding: 30px;
 }
 .membership-name img{
   width: 100px;
 } 
 .membership-name p{
-  font-size: clamp(1.5rem, 2.2vw, 2.5rem);
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   color: var(--color-white);
 }
 
@@ -123,7 +123,10 @@ main{
 }
 .qr-code-area{
   background-color: var(--color-white);
-  padding: 8px;
+  padding: 3px;
+}
+.qr-code-area img{
+  /* width: 130%; */
 }
 
 

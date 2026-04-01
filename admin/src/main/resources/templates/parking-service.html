@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국빌딩 네트워킹 서비스 플랫폼 - THE LINK H</title>
+
+  <!-- css -->
+  <link rel="preload" href="../static/assets/font/Pretendard-Regular.woff2" th:href="@{/assets/font/Pretendard-Regular.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/assets/font/Pretendard-Bold.woff2" th:href="@{/assets/font/Pretendard-Bold.woff2}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+  <link rel="stylesheet" href="../static/css/benefits_common.css" th:href="@{/css/benefits_common.css}">
+
+  <!-- js -->
+  <script src="../static/assets/js/jquery-3.7.1.min.js" th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+  <script src="../static/js/common.js" th:src="@{/js/common.js}" defer></script>
+</head>
+
+<body>
+    <!-- header -->
+  <div data-include="fragments/header.html" th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <section class="sub-visual parking-service">
+      <div class="visual-content">
+        <h1 class="visual-tit font-en">Benefits</h1>
+        <p class="visual-txt">주차 서비스</p>
+      </div>
+    </section>
+
+    <section class="wrap-partnership-discount">
+      <div class="benefits-contents">
+        <div class="text-area">
+          <h3 class="common-title">
+            주차 및 발레파킹 서비스
+          </h3>
+          <!-- <a href="join.html">멤버십 가입 &nbsp;&#62;</a> -->
+        </div>
+
+        <ul class="contents">
+          <li class="benefit01 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/park1.png" th:src="@{/images/benefits/cheonggye_main.png}" alt="청계한국빌딩">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>입주 빌딩</h3>
+              <p>◎ 주차 할인</p>
+              <!-- <p>◎ 주차 할인 : 입주사별 무료 주차 및 주차 할인<br>(사전 등록 운영)</p> -->
+              <p class="sub-txt">
+                - 입주사별 무료 주차 및 주차 할인<br>
+                &emsp;(임대차 계약에 따라 사전 등록 운영)
+              </p>
+              <p>◎ 발레파킹 서비스</p>
+              <p class="sub-txt">
+                - 등록 차량 무료 발레파킹 서비스<br>
+                &emsp;(사전 등록 운영)
+              </p>
+              <!-- <p>◎ 발레파킹 서비스 : 등록 차량 무료 발레파킹 서비스<br>(사전 등록 운영)</p> -->
+            </div>
+          </li>
+          <li class="benefit02 destination-benefit">
+            <div class="destination-benefit-img-area">
+              <img src="../static/images/benefits/park2.png" th:src="@{/images/benefits/sogong_main.png}" alt="소공한국빌딩">
+            </div>
+            <div class="destination-benefit-text-area">
+              <h3>THE LINK H 한국빌딩 (입주 빌딩 이외)</h3>
+              <p>
+                <!-- ◎ 주차 할인 : 1시간 무료 주차 쿠폰<br>
+                (각 빌딩 "안내실"에서 THE LINK H '전자 회원증'과 '차량번호' 제공) -->
+              </p>
+              <p>
+                ◎ 발레파킹 서비스 : 준비중
+                <!-- <br>
+                (각 빌딩 "발레파킹 요원"에게 THE LINK H '전자 회원증'을 제시) -->
+              </p>
+              <!-- <p>
+                ◎ 발레파킹 서비스 : 무료 발레파킹 서비스<br>
+                (각 빌딩 "발레파킹 요원"에게 THE LINK H '전자 회원증'을 제시)
+              </p> -->
+              <!-- <p class="sub-txt">
+                - 무료 발레파킹 서비스<br>
+                &emsp;(각 빌딩 "발레파킹 요원"에게 THE LINK H '전자 회원증'을 제시)
+              </p> -->
+              <p>
+                ◎ 기타 
+              </p>
+              <p class="sub-txt">
+                - 아래 THE LINK H 소속 한국빌딩에 한함
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="benefits-precautions service-guide">
+      <div class="text-area">
+          <h3 class="common-title">
+            문의(각 빌딩 관리사무소)
+          </h3>
+        </div>
+      <div class="service-guide-detail">
+        <!-- <h4>[공통]</h4> -->
+        <p>
+          &#183; 청계 한국빌딩 
+          <a href="tel:027259331" class="item-contact">☎ 02-725-9331</a><br>
+          &#183; 을지 한국빌딩 
+          <a href="tel:027786790" class="item-contact">☎ 02-778-6790</a><br>
+          &#183; 소공 한국빌딩 
+          <a href="tel:027555276" class="item-contact">☎ 02-755-5276</a><br>
+          &#183; 종로 한국빌딩 
+          <a href="tel:023997500" class="item-contact">☎ 02-399-7500</a><br>
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+    <!-- footer -->
+  <div data-include="fragments/footer.html" th:replace="~{fragments/footer :: footer}"></div>
+    
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      includeHTML(initCommonDesign);
+    });
+  </script>
+
+</body>
+</html>

@@ -5,7 +5,7 @@ main{
 }
 /* 상단 영역 */
 .sub-visual {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/experiences/family-top-bg.png');
+  background-image: url('../images/experiences/family-top-bg.png');
 }
 
 /* 상단 설명부분 */
@@ -118,7 +118,7 @@ main{
 .service-container{
   display: flex;
   gap: 50px; 
-  align-items: center;
+  align-items: flex-start;
 }
 /* 왼쪽 이미지 박스 */
 .service-img-box {
@@ -234,7 +234,7 @@ main{
 /* 767이하 */
 @media (max-width: 767px) {
   .sub-visual {
-    height: 400px;
+    height: 300px;
   }
   .family-title{     
     padding: 80px 20px;   

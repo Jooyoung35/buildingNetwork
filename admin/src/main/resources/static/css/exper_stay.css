@@ -93,6 +93,11 @@ main{
   border: 1.5px solid var(--color-secondary);
   padding: 5px 20px;
   display: block;
+  transition: all 0.3s;
+}
+.text-area .wrap-btn a:hover{
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 }
 
 
@@ -187,7 +192,7 @@ main{
 }
 .provision-row {
   display: flex;
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #ddd; 
 }
 .provision-label {
@@ -230,7 +235,7 @@ main{
   display: flex;
   gap: 40px;
   width: 100%;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 .dining-img img{
   width: 100%;
@@ -251,7 +256,10 @@ main{
   line-height: 1.5;
 }
 
-
+.dining-notice{
+  display: block;
+  margin-bottom: 20px;
+}
 
 /* 멤버십 배너 */
 .membership-banner{
@@ -283,6 +291,9 @@ main{
 }
 .membership-banner .info a{
   color: var(--color-white);
+}
+.membership-banner .desc-text{
+  font-size: 14px;
 }
 
 
@@ -320,14 +331,18 @@ main{
   }
 
   /* room-infomation */
-.room-info-graphic{
+  .room-info-graphic{
     display: block;
+    margin: 30px auto ;
   }
   .room-info-graphic li{
     display: flex;
-    padding: 20px 5px;
+    padding: 8px 5px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+  }
+  .room-info-graphic li .contents-desc-sm{
+    margin: 0px 0 5px;
   }
   .wrap-room-info-text{
     margin-left: 10%;
@@ -350,7 +365,7 @@ main{
 }
 @media (max-width: 900px){
   .sub-visual {
-    height: 400px;
+    height: 300px;
   }
 
   .stay-tab-list{
@@ -365,6 +380,23 @@ main{
   }
   .room-mo-detail-img{
     display: flex;
+  }
+  .room-information{
+    margin-top: 50px;
+  }
+
+  /* 공통부분 --------------------- */
+
+  .stay-title, .room-info-intro, .room-provision,  .dining{
+    margin: 50px auto 0;
+  }
+
+  .contents-wrap{
+    margin-top: 50px;
+  }
+
+  .room-info-graphic img{
+    width: 36px
   }
 
 
@@ -398,7 +430,7 @@ main{
   /* 멤버십혜택 배너 */
   .membership-banner{
     width: 85%;
-    margin: 70px auto 40px;
+    margin: 50px auto 40px;
     border-radius: 10px;
     padding: 60px 5% 0;
     background-position: 70% 0;

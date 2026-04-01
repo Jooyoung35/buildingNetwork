@@ -5,20 +5,22 @@ main{
 }
 /* 상단 영역 */
 .sub-visual {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/experiences/wedding-top-bg.png');
+  background-image: url('../images/experiences/wedding-top-bg.png');
 }
 
 /* 상단 웨딩 설명부분 */
 .wedding-title{
   display: flex;
   flex-direction: column;
-  align-items: center;   
-  text-align: center;      
+  align-items: flex-start;   
+  text-align: left;      
   padding: 150px 20px;     
   position: relative;
+  width: 65%;
+  margin: 0 auto;
 }
 .wedding-title img {
-  max-width: 400px;       
+  max-width: 300px;       
   margin-bottom: -60px;   
 }
 .wedding-title > p {
@@ -123,7 +125,7 @@ main{
 .service-container{
   display: flex;
   gap: 50px; 
-  align-items: center;
+  align-items: flex-start;
 }
 /* 왼쪽 이미지 박스 */
 .service-img-box {
@@ -241,17 +243,18 @@ main{
 /* 767이하 */
 @media (max-width: 767px) {
   .sub-visual {
-    height: 400px;
+    height: 300px;
   }
-  .wedding-title{     
-    padding: 80px 20px;   
+  .wedding-title{    
+    padding: 50px 0px;    
+    width: 85%;
   }
   .wedding-title img { 
     max-width: 250px; 
     margin-bottom: -40px;   
   }
   .inquiry-btn { 
-    margin-top: 50px;  
+    margin-top: 20px;  
   }
 
   /* programs */

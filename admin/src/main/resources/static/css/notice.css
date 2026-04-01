@@ -119,6 +119,7 @@ main{
 /* 탭 메뉴 스타일 */
 .tab-menu {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
   overflow-x: auto; /* 모바일에서 가로 스크롤 */

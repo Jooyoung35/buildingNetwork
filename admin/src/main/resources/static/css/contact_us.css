@@ -29,11 +29,19 @@ main{
   color: var(--color-primary);
 }
 
+
 .content-grid {
   display: grid;
   /* 오른쪽 콘텐츠 내에서도 2열로 나눔 */
   grid-template-columns: 1fr 1fr;
   gap: 40px 20px;
+}
+.info-section .content-grid span.desc-text{
+  display: block; 
+  margin-bottom: 5px;
+}
+.info-section .content-grid span.office{
+  margin: 10px 0 0;
 }
 
 .item-title {

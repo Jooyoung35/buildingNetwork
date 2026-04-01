@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* 레이아웃 공통 */
+main {
+  margin: 100px 0 0;
+}
+
+
+.wrap-tabs{
+  width: 85%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.tab-menu{
+  display: flex;
+  gap: 30px;
+}
+.policy-contents-area{
+  margin-top: 80px;
+}
+
+/* 제목 및 텍스트 스타일 */
+.policy-contents-area h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--color-main-text);
+}
+
+.policy-contents-area h4 {
+  font-size: 18px;
+  color: var(--color-main-text);
+  font-weight: 500;
+  margin-top: 30px; /* 섹션 간 간격 */
+  margin-bottom: 15px;
+}
+
+.policy-contents-area p {
+  line-height: 1.6; /* 가독성을 위해 조금 더 넓힘 */
+  margin: 5px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+
+.policy-content {
+  display: none;
+}
+.policy-content.active {
+  display: block;
+}
+/* 탭 메뉴 스타일 */
+.policy-tab-item {
+  cursor: pointer;
+  padding: 20px;
+}
+.policy-tab-item.active {
+  font-weight: bold;
+  color: var(--color-main-text);
+  border-bottom: 2px solid var(--color-main-text);
+}
+
+
+.policy-date {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* 1. 일반 동그라미 리스트 (ul, li) */
+.policy-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* 2. 원문자 리스트 (①, ②) */
+.policy-numeric-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.policy-item {
+  position: relative;
+  padding-left: 25px; /* 원문자가 들어갈 공간 */
+  margin: 8px 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.policy-item::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: normal;
+  color: var(--color-main-text);
+}
+
+/* 3. 개인정보 보호정책용 불릿 리스트 (-) */
+.policy-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.policy-bullet-list li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #555;
+}
+
+.policy-bullet-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 4. 강조 및 알림 스타일 */
+.policy-notice {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-secondary); /* 주의 문구용 붉은색 */
+  line-height: 1.5;
+}
+
+/* 5. 환불 규정 표 (Table) 스타일 */
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-top: 2px solid #333;
+}
+
+.policy-table th, 
+.policy-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.policy-table th {
+  background-color: #f8f9fa;
+  font-weight: 500;
+}
+
+.policy-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-weight: 500;
+  color: #666;
+}
+
+
+
+@media (max-width: 800px) {
+  /* 레이아웃 공통 */
+  main {
+    margin: 50px 0 0;
+  }
+  .wrap-tabs{
+    padding: 50px 0;
+  }
+  .tab-menu{
+    overflow-x: auto; 
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+  }
+  .tab-menu::-webkit-scrollbar {
+  display: none; /* 스크롤바 숨기기 (깔끔하게) */
+}
+  .policy-contents-area{
+    margin-top: 50px;
+  }
+}

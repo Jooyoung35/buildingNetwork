@@ -50,6 +50,7 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
   src: url('../assets/font/Pretendard-Light.woff2') format('woff2');
   font-weight: 300;
   font-display: fallback;
+  /* font-display: optional; */
 }
 
 @font-face {
@@ -57,7 +58,9 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
   src: url('../assets/font/Pretendard-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: fallback;
+  /* font-display: optional; */
   /* font-display: swap; */
+
 }
 
 @font-face {
@@ -65,6 +68,7 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
   src: url('../assets/font/Pretendard-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: fallback;
+  /* font-display: optional; */
 }
 
 @font-face {
@@ -194,10 +198,11 @@ body {
 
 .gnb{
   display: flex;
-  width: 60%;
+  width: 50%;
+  /* border: 1px solid red; */
   margin: 0 auto;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   position: absolute;
   top: 35%; left: 50%;
   transform: translateX(-50%);
@@ -251,7 +256,7 @@ body {
   width: fit-content;
   margin: 0 auto;
   color:  var(--color-main-text);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   transition: all 0.4s ease;
 }
@@ -756,6 +761,7 @@ body.is-logged-in .mo-status-logged-out{
   margin-right: 18px;
   transition: all 0.5s;
   font-weight: 400;
+  line-height: 1.6;
 }
 .wrap-ft .contents .ft-menu a:hover{
   color: var(--color-white);
@@ -932,13 +938,16 @@ body.is-logged-in .mo-status-logged-out{
 @media (max-width: 767px) {
   /* 서브페이지 타이틀 공통 */
   .sub-page-header{
-    padding: 50px 0;
+    padding: 30px 0 40px;
   }
   .tab-wrapper li {
-    padding: 15px 15px;
+    padding: 9px 9px;
   }
   .title-area h2{
     font-size: clamp(1.375rem, 2.2vw, 1.5rem);
+  }
+  .wrap-bd-header {
+    gap: 30px;
   }
   /* footer */
   #footer{
